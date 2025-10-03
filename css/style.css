@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --azul-escuro: #26333d;
+    --azul-marinho: #4a67df;
+    --ciano: #2fd6cb;
+    --branco-gelo: #e9f0ef;
+    --branco: #ffffff;
+}
+header{
+    width: 100vw;
+    height: 7vh;
+    background-color:var(--azul-escuro);
+    display: flex;
+    justify-content: space-between;
+}
+.logoSenai{
+    width: 100px;
+    height: 30;
+    /* margin-top: 10px; */
+    /* padding-left:  15px; */
+    padding: 20px 10px;
+}
+#cabecalho div{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+a{
+     font-family: "Montserrat", sans-serif;
+     font-optical-sizing: auto;
+     font-weight: bold;
+     font-style: normal;
+     color: #ffffff;
+}
+
+

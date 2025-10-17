@@ -4,12 +4,15 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
 }
-
 header{
     width: 100vw;
     height: 7vh;
     background-color:var(--azul-escuro);
+    display: flex;
+   
 }
 .logoSenai{
     width: 100px;
@@ -18,25 +21,51 @@ header{
     /* padding-left:  15px; */
     /* padding: 20px 10px; */
 }
-#cabecalho a {
-  margin-right: -55px;
+    header a {
+     /* margin-right: -55px; */
+     /* font-family: "Montserrat", sans-serif;
+     font-optical-sizing: auto; */
+     font-weight: bold;
+     font-style: normal;
+     color: var(--branco);
   
 }
-#cabecalho div{
+/* #cabecalho div{
     width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin: 0 auto; */
-    padding: 10px 20px; 
+    align-content: center;
+    margin-top: 10px;
+    padding: 20px 60px; 
 
+} */
+#pesquisa{
+    width: 20vw;
+    height: 50%;
+    border: none;
+    border-radius: 5px;
 }
-a{
-     font-family: "Montserrat", sans-serif;
-     font-optical-sizing: auto;
-     font-weight: bold;
-     font-style: normal;
-     color: var(--branco);
+.divLogo{
+width: 40vw;
+padding: 0 0 0 2%;
+justify-content: center;
+align-content: center;
 }
+.divPesquisa{
+width: 40vw;
+/* padding: 0 0 0 50vw; */
+padding-left: 50vw;
+justify-content: center;
+align-content: center;
+}
+
+.divLogin{
+width: 40vw;
+padding: 0 0 0 12vw;
+justify-content: center;
+align-content: center;
+}
+
 
 

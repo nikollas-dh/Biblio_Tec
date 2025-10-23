@@ -5,15 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
     <title>Login</title>
 </head>
+
 <body>
-    <header id ="cabecalho">
-        <div class="divLogo">
+    <header>
+        <div id="divLogo">
             <a href="inicio.html">
                 <img class="logoSenai" src="./img/SENAI_logo.png" alt="LogoSenai">
             </a>
         </div>
-    </header>     
+    </header>
+    <form action="">
+        <div id="caixinha">
+            <div>
+                <label for="email">Email: </label>
+                <input type="email" placeholder="exemplo@email.com" required>
+            </div>
+            <div>
+                <label for="senha">Senha: </label>
+                <input type="password" placeholder="Digite sua senha" required>
+
+            </div>
+            <div>
+                <a href="./recuperar.html">Esqueci minha senha?</a>
+                <a href="./cadastro.html">Novo Usuário?</a>
+            </div>
+            <div>
+                <input type="submit" id="btnLogin">
+            </div>
+        </div>
+    </form>
 </body>
+
 </html>

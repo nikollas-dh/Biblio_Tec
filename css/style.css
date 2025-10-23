@@ -1,71 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('cores.css');
+@import url('./main.css');
 
-*{
+html, body{
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-}
-header{
     width: 100vw;
+    height: 100vh;
+}
+
+header{
+    width: 100%;
     height: 7vh;
-    background-color:var(--azul-escuro);
     display: flex;
-   
+    justify-content: space-between;
+    align-items: center;
+    background-color:var(--azul-escuro);
+     
+} 
+#divLogo{
+    width: 10vw;
+    display: flex;
+    align-items: center;;
+    cursor: pointer;
 }
 .logoSenai{
-    width: 100px;
-    height: auto;
-    /* margin-top: 10px; */
-    /* padding-left:  15px; */
-    /* padding: 20px 10px; */
+    width: 7vw;
+    height: 4vh;
+    display: block;
 }
-    header a {
-     /* margin-right: -55px; */
-     /* font-family: "Montserrat", sans-serif;
-     font-optical-sizing: auto; */
+
+header a {
+    
      font-weight: bold;
      font-style: normal;
      color: var(--branco);
   
 }
-/* #cabecalho div{
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-    margin-top: 10px;
-    padding: 20px 60px; 
 
-} */
+
+
+#divPesquisa{
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+}
+
+#divLogin{
+    width: 5vw;
+    background-color: blue;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 30px;
+}
+
 #pesquisa{
-    width: 20vw;
-    height: 50%;
+    width: 30vw;
+    height: 5vh;
     border: none;
     border-radius: 5px;
 }
-.divLogo{
-width: 40vw;
-padding: 0 0 0 2%;
-justify-content: center;
-align-content: center;
-}
-.divPesquisa{
-width: 40vw;
-/* padding: 0 0 0 50vw; */
-padding-left: 50vw;
-justify-content: center;
-align-content: center;
-}
-
-.divLogin{
-width: 40vw;
-padding: 0 0 0 12vw;
-justify-content: center;
-align-content: center;
-}
-
-
-

@@ -15,7 +15,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:var(--azul-escuro);
+    background-color: var(--azul-escuro);
 } 
 .logoSenai{
     height: auto;
@@ -23,7 +23,7 @@ header{
     display: flex;
     align-items: center;;
     cursor: pointer;
-    margin-left: 50px;
+    margin-left: 40px;
     
 }
 
@@ -32,8 +32,8 @@ header a {
      font-weight: bold;
      font-style: normal;
      color: var(--branco);
-    margin-right: 20px;
-}
+     margin-right: 80px;
+} 
 
 
 
@@ -47,7 +47,6 @@ header a {
     width: 5vw;
     display: flex;
     justify-content: flex-end;
-    margin-left: 30px;
 }
 
 #pesquisa{
@@ -55,4 +54,5 @@ header a {
     height: 5vh;
     border: none;
     border-radius: 5px;
-}
+    /* margin-right: -60%;
+} */

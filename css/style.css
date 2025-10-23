@@ -16,26 +16,23 @@ header{
     justify-content: space-between;
     align-items: center;
     background-color:var(--azul-escuro);
-     
 } 
-#divLogo{
-    width: 10vw;
+.logoSenai{
+    height: auto;
+    width: 120px;
     display: flex;
     align-items: center;;
     cursor: pointer;
-}
-.logoSenai{
-    width: 7vw;
-    height: 4vh;
-    display: block;
+    margin-left: 50px;
+    
 }
 
+
 header a {
-    
      font-weight: bold;
      font-style: normal;
      color: var(--branco);
-  
+    margin-right: 20px;
 }
 
 
@@ -48,7 +45,6 @@ header a {
 
 #divLogin{
     width: 5vw;
-    background-color: blue;
     display: flex;
     justify-content: flex-end;
     margin-left: 30px;

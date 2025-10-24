@@ -54,5 +54,73 @@ header a {
     height: 5vh;
     border: none;
     border-radius: 5px;
-    /* margin-right: -60%;
+    margin-right: -60%;
+}
+
+#container{
+    /* background-color: rgb(99, 80, 80); */
+    background-image: url("../img/fundoazul.png");
+    background-image: o;
+    background-size: cover;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#caroussel{
+    background-color: rgb(183, 214, 9);
+    height: 70%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#caroussel-content{
+    width: 100%;
+    height: 100%;
+}
+.container-caroussel{
+    width:100%;
+    height: 100%;
+    transition: backgroud image 0.3s;
+}
+.material-symbols-outlined{
+    font-size: 70px;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    display: flex;
+    border-radius: 50%;
+    cursor: pointer;
+    
+}
+.img_livro_bd{
+    background-image: url("../img/img_livros/livro_BD.jpeg");
+    background-size:cover ;
+}
+.img_livro_Csharp{
+    background-image: url("../img/img_livros/livro_Csharp.jpeg");
+    background-size:cover ;
+}
+.img_livro_html_css{
+    background-image: url("../img/img_livros/livro_html_css.jpeg");
+    background-size:cover ;
+}
+.img_livro_js{
+    background-image: url("../img/img_livros/livro_js.jpeg");
+    background-size:cover ;
+}
+.img_livro_python{
+    background-image: url("../img/img_livros/livro_python.jpeg");
+    background-size:cover ;
+}
+.img_livro_scrum{
+    background-image: url("../img/img_livros/livro_scrum.jpeg");
+    background-size:cover ;
+}
+/* footer{
+    width: 100%;
+    height: 7vh;
+    
 } */

@@ -25,13 +25,22 @@ header{
     height: 50px;
     display: flex;
     justify-self:end;
+    justify-content:center;
+    align-items:center;
+    cursor: pointer;
+    background: var(--ciano);
+    color: var(--branco);
     border: none;
     border-radius: 5px;
+}
+label{
+    color: var(--branco);
+    font-size: 14px;
 }
 a{
     color: var(--branco);
     font-size: 14px;
 }
-#recuperar{
+#linkCadastro{
     color: var(--ciano);
 }

@@ -21,21 +21,25 @@
         <div id="caixinha">
             <div>
                 <p>
-                    <label for="email">Email: </label>
-                    <input type="email" placeholder="exemplo@email.com" required>
-               </p>
+                <fieldset>
+                    <legend>Email:</legend>
+                    <input type="email" placeholder="exemplo@email.com" id="email" required >
+                </fieldset>
+                </p>
                 <p>
-                    <label for="senha">Senha: </label>
-                    <input type="password" placeholder="Digite sua senha" required>
+                <fieldset>
+                    <legend>Senha:</legend>
+                    <input type="password" placeholder="Digite sua senha" id="senha" required>
+                </fieldset>
                 </p>
             </div>
-            <div id ="direcionavel">
+            <div id="direcionavel">
                 <label>Não tem uma conta?</label>
                 <a href="./cadastro.html" id="linkCadastro">Cadastre-se</a>
-                <a href="./recuperar.html" >Esqueci minha senha?</a>
+                <a href="./recuperar.html">Esqueci minha senha?</a>
             </div>
             <div>
-                <button type ="submit" id="btnLogin">Cadastrar</button>
+                <button type="submit" id="btnLogin">Cadastrar</button>
             </div>
         </div>
     </form>

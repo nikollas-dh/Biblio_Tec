@@ -6,7 +6,7 @@ const carousselContent = document.getElementById("caroussel-content");
 const listaLivros = ['img_livro_bd', 'img_livro_Csharp', 'img_livro_html_css',"img_livro_js", "img_livro_python" , "img_livro_scrum"];
    
 
-let currentIndex = 0; // contador para lista de colorClasses
+let currentIndex = 0; // contador para lista
 
 function updateCaroussel() {
     carousselContent.classList.remove(...listaLivros); //... spread sintax, descompõe o array em elementos individuais

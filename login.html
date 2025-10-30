@@ -20,29 +20,41 @@
     <form action="">
         <div id="caixinha">
             <div>
-                <p>
-                <fieldset>
-                    <legend>Email:</legend>
-                    <input type="email" placeholder="exemplo@email.com" id="email" required >
-                </fieldset>
+                <h1>
+                    Bem vindo ao Biblio Tec!
+                </h1>
+                <p id="texto">
+                    Onde o conhecimento e a tecnologia se encontram!
                 </p>
-                <p>
-                <fieldset>
-                    <legend>Senha:</legend>
-                    <input type="password" placeholder="Digite sua senha" id="senha" required>
-                </fieldset>
-                </p>
+
+                <div class="divEntrada">
+                    <fieldset>
+                        <legend>Email:</legend>
+                        <input type="email" class="entrada" placeholder="exemplo@email.com" id="email" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Senha:</legend>
+                        <input type="password" class="entrada" placeholder="Digite sua senha" id="senha" required>
+                    </fieldset>
+                </div>
             </div>
             <div id="direcionavel">
                 <label>Não tem uma conta?</label>
                 <a href="./cadastro.html" id="linkCadastro">Cadastre-se</a>
-                <a href="./recuperar.html">Esqueci minha senha?</a>
+                <a href="./recuperar.html" id="linkRecuperar">Esqueci minha senha?</a>
             </div>
             <div>
-                <button type="submit" id="btnLogin">Cadastrar</button>
+                <button type="submit" id="btnLogin">Acessar>
             </div>
         </div>
     </form>
+    <footer>
+
+        <div>
+            <img src="./img/icon/instagram.png" alt="">
+        </div>
+    </footer>
     <script src="js/login.js"></script>
 </body>
 

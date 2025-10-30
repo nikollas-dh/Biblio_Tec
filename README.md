@@ -1,7 +1,7 @@
 # Projeto Biblio Tec – Back-end com Express + Front-end com HTML/JS
 
 🔗 **Acesse o projeto online:**
-👉 Biblio Tec - Página Inicial
+
 https://nikollas-dh.github.io/Biblio_Tec/inicio.html
 
 ## 📌 Objetivo do Projeto:

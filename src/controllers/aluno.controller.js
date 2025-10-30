@@ -8,7 +8,7 @@ export async function criarAluno(req, res) {
   try {
     const { nome, email, senha } = req.body;
     if (!nome || !email || !senha)
-      return res.status(400).json({ erro: "Campos obrigatórios" });
+      return res.status(400).json({ erro: "Por favor preencha os campos obrigatórios" });
 
     console.log("📦 Dados recebidos:", { nome, email, senha });
 

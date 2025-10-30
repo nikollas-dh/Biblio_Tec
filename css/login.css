@@ -1,16 +1,12 @@
 @import url("./main.css");
+@import url("./style.css");
 
 
 body {
     background-color: var(--azul-escuro);
     place-items: center;   
 }
-
-header {
-
-}
-
-#caixinha {
+.caixa-login{
     margin-top: 5%;
     margin-bottom: 5%;
     width: 500px;
@@ -43,6 +39,7 @@ h1{
     color: var(--branco);
     border: none;
     border-radius: 5px;
+    
 }
 
 #btnLogin:hover {
@@ -50,7 +47,14 @@ h1{
     transform: scale(1.05);
     /* leve aumento ao passar */
 }
-
+#linkCadastro:hover{
+    background-color: rgb(1, 96, 96);
+    transform: scale(1.05);
+}
+#linkRecuperar:hover{
+    background-color: rgb(155, 155, 155);
+    transform: scale(1.05);
+}
 label {
     color: var(--branco);
     font-size: 14px;

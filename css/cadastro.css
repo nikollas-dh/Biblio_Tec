@@ -1,0 +1,18 @@
+@import url("./main.css");
+@import url("./style.css");
+
+body{
+    background-color: var(--azul-escuro);
+}
+.caixa-cadastro{
+     margin-top: 5%;
+    margin-bottom: 5%;
+    width: 500px;
+    height: 600px;
+    box-shadow: 0 0 10px black;
+    display: grid;
+    border-radius: 10px;
+    justify-content: center;
+    /* align-content: center; */
+    color: var(--branco);
+}

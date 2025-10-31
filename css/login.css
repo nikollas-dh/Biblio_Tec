@@ -9,8 +9,8 @@ body {
 .caixa-login{
     margin-top: 5%;
     margin-bottom: 5%;
-    width: 500px;
-    height: 600px;
+    width: 25vw;
+    height: 70vh;
     box-shadow: 0 0 10px black;
     display: grid;
     border-radius: 10px;
@@ -23,7 +23,7 @@ h1{
     text-align: center;
 }
 #texto{
-    margin-top: -20px;
+    margin-top: -1%;
     text-align: center;
     font-size: 14px;
 }

@@ -7,12 +7,27 @@ body{
 .caixa-cadastro{
      margin-top: 5%;
     margin-bottom: 5%;
-    width: 500px;
-    height: 600px;
+    width: 25vw;
+    height: 70vh;
     box-shadow: 0 0 10px black;
     display: grid;
     border-radius: 10px;
     justify-content: center;
     /* align-content: center; */
     color: var(--branco);
+}
+
+#btnCadastrar {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-self: end;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: var(--ciano);
+    color: var(--branco);
+    border: none;
+    border-radius: 5px;
+    
 }

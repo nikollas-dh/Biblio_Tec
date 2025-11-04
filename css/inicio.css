@@ -2,8 +2,8 @@
 
 .fundo-azul{
     background-image: url("../img/fundoazul.png");
-    background-image: url("../img/fundoazul.png");
-    background-image: o;
+    
+    
     background-size: cover;
     height: 60%;
     width: 100%;
@@ -12,7 +12,7 @@
 }
 .caixa-branca{
     background-color: var(--branco);
-    height: 30%;
+    height: 26%;
     width: 100%;
 }
 

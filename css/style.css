@@ -65,6 +65,7 @@ header a {
 
 
  footer{
+    width: 100%;
     background-color: var(--azul-escuro);
     height: 7vh;
     box-shadow: 0 0 10px black;

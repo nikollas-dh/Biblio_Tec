@@ -40,28 +40,8 @@ header a {
 
 
 
-#divPesquisa{
-    /* background-color:black; */
-    width: 40vw;
-    display: flex;
-    justify-content: center;
-}
 
-#divLogin{
-        /* background-color:blue; */
 
-    width: 5vw;
-    display: flex;
-    justify-content: flex-end;
-}
-
-#pesquisa{
-    width: 30vw;
-    height: 5vh;
-    border: none;
-    border-radius: 5px;
-    margin-right: -60%;
-}
 
 
  footer{

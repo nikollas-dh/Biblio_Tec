@@ -19,6 +19,7 @@ header{
     align-items: center;
     background-color: var(--azul-escuro);
 } 
+
 .logoSenai{
     background:red;
     height: auto;
@@ -27,9 +28,7 @@ header{
     align-items: center;;
     cursor: pointer;
     margin-left: 30%;
-    
 }
-
 
 header a {
      font-weight: bold;
@@ -37,12 +36,6 @@ header a {
      color: var(--branco);
      margin-right: 80%;
 } 
-
-
-
-
-
-
 
  footer{
     width: 100%;

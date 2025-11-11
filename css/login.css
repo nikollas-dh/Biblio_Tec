@@ -1,17 +1,15 @@
 @import url("./main.css");
 @import url("./style.css");
 
-
 body {
     background-color: var(--azul-escuro);
     place-items: center;   
 }
+
 .caixa-login{
-    margin-top: 5%;
-    margin-bottom: 27%;
-    /* width: 25vw; */
-    width:min-content 15vw ;
-    width: max-content 50vw;  
+    margin-top: 17%;
+    margin-bottom: 17%;
+    width: 110%;  
     height: 70vh;
     box-shadow: 0 0 10px black;
     display: grid;
@@ -85,6 +83,11 @@ a {
 }
 .divEntrada{
     margin-top: 90px;
+}
+.divLogo{
+    width:10px;
+    height:40px;
+    background:red;
 }
 fieldset {
     margin-top: 10px;

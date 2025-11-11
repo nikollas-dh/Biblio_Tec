@@ -4,16 +4,19 @@
 body{
     background-color: var(--azul-escuro);
 }
+main{
+    display:flex;
+    align-items:center;
+    
+}
 .caixa-cadastro{
-     margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 17%;
+    margin-bottom: 15%;
     width: 25vw;
     height: 70vh;
     box-shadow: 0 0 10px black;
-    display: grid;
+    display: flex;
     border-radius: 10px;
-    justify-content: center;
-    /* align-content: center; */
     color: var(--branco);
 }
 

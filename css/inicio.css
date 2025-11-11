@@ -1,44 +1,54 @@
 @import url("./style.css");
 
+
+
+header a {
+     font-weight: bold;
+     font-style: normal;
+     color: var(--branco);
+} 
 .fundo-azul{
     background-image: url("../img/fundoazul.png");
-    
-    
     background-size: cover;
     height: 60%;
     width: 100%;
     display: flex;
     align-items: center;
 }
-.caixa-branca{
+.caixa-branca-meio{
     background-color: var(--branco);
-    height: 26%;
+    height: 40%;
     width: 100%;
 }
-
+.caixa-branca{
+    background-color: var(--branco);
+    height: 25%;
+    width: 100%;
+}
 #divPesquisa{
-    /* background-color:black; */
-    width: 40vw;
+    background-color:black;
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    /* margin-right: -30%; */
 }
 
 #divLogin{
-        /* background-color:blue; */
-
-    width: 5vw;
+    background-color:blue;
+    width: 10%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+ 
 }
 
 
 
 #pesquisa{
-    width: 30vw;
+    
+    width: 40%;
     height: 5vh;
     border: none;
     border-radius: 5px;
-    margin-right: -60%;
 }
 
 

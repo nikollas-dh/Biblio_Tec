@@ -1,7 +1,5 @@
 @import url("./style.css");
 
-
-
 header a {
      font-weight: bold;
      font-style: normal;
@@ -13,20 +11,34 @@ header a {
     height: 60%;
     width: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    
 }
+.texto1{
+    color: var(--branco);
+    margin-left: 5%;
+}
+
 .caixa-branca-meio{
     background-color: var(--branco);
     height: 40%;
     width: 100%;
 }
+
+.texto2{
+    color: var(--branco);
+    margin-left: 5%;
+
+}
+
 .caixa-branca{
     background-color: var(--branco);
     height: 25%;
     width: 100%;
 }
+
 #divPesquisa{
-    background-color:black;
+    /* background-color:black; */
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -34,14 +46,12 @@ header a {
 }
 
 #divLogin{
-    background-color:blue;
+    /* background-color:blue; */
     width: 10%;
     display: flex;
     justify-content: center;
  
 }
-
-
 
 #pesquisa{
     

@@ -12,7 +12,7 @@ export async function criarUsuario (req, res){
       return res.status(400).json({ erro: "Campos obrigatórios" });
 
     await db.execute(
-      "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)",
+      `INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)`,
       [nome, email, senha]
     );
 
@@ -46,6 +46,38 @@ export async function obterUsuario (req, res){
   }
 };
 
+export async function login (req, res){
+  try {
+    const { email, senha } = req.body; 
+    const [usuario] = await db.execute(
+     `SELECT 
+        nome, 
+        email, 
+        perfil 
+      FROM usuarios WHERE email = ? AND senha = ?`, 
+
+      [
+        email, 
+        senha
+      ]
+    );
+
+    if (usuario.length === 0) {
+      return res.status(401).json({ erro: "Email ou senha inválidos." }); 
+    }
+
+    const dados_usuario = usuario[0]
+    return res.status(200).json({ 
+        mensagem: "Login efetuado.",
+        perfil: dados_usuario.perfil, // Chave 'perfil' com o valor 'Admin' ou 'Aluno'
+        usuario: dados_usuario        // Retorna todos os dados para o front-end
+    });
+
+  } catch (err) {
+    console.error("Erro no login:", err); 
+    res.status(500).json({ erro: "Erro interno do servidor." });
+  }
+};
 
 export async function atualizarUsuario (req, res){
   try {

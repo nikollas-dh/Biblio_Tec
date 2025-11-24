@@ -2,6 +2,58 @@ const prevBtn = document.getElementById("prev-btn");
 const nextBtn = document.getElementById("next-btn");
 const carousselContent = document.getElementById("caroussel-content");
 
+const listaLivros = [
+  'img_livro_bd', 
+  'img_livro_Csharp', 
+  'img_livro_html_css',
+  'img_livro_js',
+  'img_livro_python',
+  'img_livro_scrum'
+];
+
+let currentIndex = 0;
+
+function updateCaroussel() {
+    const elementos = carousselContent.querySelectorAll(".livro");
+
+    for (let i = 0; i < elementos.length; i++) {
+        const index = (currentIndex + i) % listaLivros.length;
+        elementos[i].className = "livro"; // limpa
+        elementos[i].classList.add(listaLivros[index]); // adiciona nova classe
+    }
+}
+
+nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % listaLivros.length;
+    updateCaroussel();
+});
+
+prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + listaLivros.length) % listaLivros.length;
+    updateCaroussel();
+});
+
+updateCaroussel();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+const carousselContent = document.getElementById("caroussel-content");
+
 
 const listaLivros = ['img_livro_bd', 'img_livro_Csharp', 'img_livro_html_css',"img_livro_js", "img_livro_python" , "img_livro_scrum"];
    
@@ -33,6 +85,6 @@ prevBtn.addEventListener("click", () => {
 
     updateCaroussel();
 });
-updateCaroussel();
+updateCaroussel();*/
 
 

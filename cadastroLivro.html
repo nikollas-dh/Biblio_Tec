@@ -1,21 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/cadastro.css">
-    <title>Cadastrar</title>
+    <title>Cadastro de livros</title>
 </head>
 
 <body>
@@ -28,47 +18,55 @@
     </header>
     <main>
 
-        <form id="form-cadastrar">
+        <form id="form-cadastrar-livro">
             <div class="caixa-cadastro">
                 <div>
-                     <br>
-                        <label for="nome">Título: </label>
-                        <input type="text" id="nome" required>
-                    </br>
-                    <br>
+                    <div>
+                        <label for="titulo">Título: </label>
+                        <input type="text" id="titulo" required>
+                    </div>
+
+                    <div>
                         <label for="autor">Autor: </label>
                         <input type="text" id="autor" required>
-                    </br>
-                    <br>
-                        <label for="genero">Genero: </label>
-                        <input type="text" id="genero" required>
-                    </br>
-                     <br>
-                        <label for="editora">Editora: </label>
-                        <input type="text" id="editora" required>
-                    </br>
-                    <br>
-                        <label for="data">Lançamento: </label>
-                        <input type="date" id="data" required>
-                    </br>
-                      <br>
-                        <label for="isbn">isbn: </label>
-                        <input type="text" id="isbn" required>
-                    </br>
-                      <br>
-                        <label for="idioma">idioma: </label>
-                        <input type="text" id="idioma" required>
-                    </br>
-                      <br>
-                        <label for="formato">formato: </label>
-                        <input type="text" id="formato" required>
-                    </br>
-                    <br>
-                        <label for="descricao">Descrição: </label>
-                        <input type="text" id="descricao" required>
-                    </br>
+                    </div>
 
-                    <input type="submit" value="Cadastrar">
+                    <div>
+                        <label for="genero">Genero: </label>
+                        <input type="text" id="genero">
+                    </div>
+
+                    <div>
+                        <label for="editora">Editora: </label>
+                        <input type="text" id="editora">
+                    </div>
+
+                    <div>
+                        <label for="ano_publicacao">Lançamento: </label>
+                        <input type="date" id="ano_publicacao">
+                    </div>
+
+                    <div>
+                        <label for="isbn">ISBN: </label>
+                        <input type="text" id="isbn">
+                    </div>
+
+                    <div>
+                        <label for="idioma">Idioma: </label>
+                        <input type="text" id="idioma">
+                    </div>
+
+                    <div>
+                        <label for="formato">Formato: </label>
+                        <input type="text" id="formato">
+                    </div>
+
+                    <div>
+                        <label for="descricao">Descrição: </label>
+                        <textarea id="descricao"></textarea>
+                    </div>
+
+                    <input type="submit" value="Cadastrar" id="btnCadastrar">
                 </div>
             </div>
 
@@ -79,8 +77,10 @@
     <footer>
 
     </footer>
-
-    <script type="module" src="./js/cadastro.js"></script>
+    <script>
+        console.log("HTML carregou");
+    </script>
+    <script type="module" src="./js/livro.js"></script>
 </body>
 
 </html>

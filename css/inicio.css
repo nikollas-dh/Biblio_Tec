@@ -37,12 +37,13 @@ header a {
     width: 100%;
 }
 
-#divPesquisa{
-    /* background-color:black; */
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    /* margin-right: -30%; */
+#divPesquisa input {
+    width: 90vw; /* Ocupa 90% da largura da tela no mobile */
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 1rem;
 }
 
 #divLogin{
@@ -52,17 +53,6 @@ header a {
     justify-content: center;
  
 }
-
-#pesquisa{
-    
-    width: 40%;
-    height: 5vh;
-    border: none;
-    border-radius: 5px;
-}
-
-
-
 
  #container{
      /*background-image: url("../img/fundoazul.png");*/
@@ -95,12 +85,21 @@ header a {
     transition: backgroud image 0.3s;
 }
 
+<<<<<<< HEAD
 .material-symbols-outlined{
     font-size: 60px;
     width: 95%;
     height: 10%;
     justify-content: center;
     display: flex;
+=======
+#prev-btn{
+    font-size: 40px;
+    width: 95%;
+    height: 10%;
+    display: flex;
+    border-radius: 1000%;
+>>>>>>> 9324a20087ab390e2a70f97d0875c578551f0cde
     cursor: pointer;
 }
 

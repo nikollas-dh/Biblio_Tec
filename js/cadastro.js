@@ -1,169 +1,114 @@
-const API = "http://localhost:3000/usuario"
+const API = "http://localhost:3000/usuario";
 
-const btnCadastrar = document.getElementById('btnCadastrar');
+// 1. Pegando referências dos elementos
 const inputNome = document.getElementById("nome");
 const inputCpf = document.getElementById("cpf");
 const inputCurso = document.getElementById("curso");
 const inputEmail = document.getElementById("email");
 const inputNovaSenha = document.getElementById("novaSenha");
 const inputConfirmarSenha = document.getElementById("confirmSenha");
-const formCadastrar = document.getElementById("form-cadastrar")
+const formCadastrar = document.getElementById("form-cadastrar");
+
+// Função para formatar o CPF (Ex: 000.000.000-00)
+function formatarCPF(cpf) {
+    cpf = cpf.replace(/\D/g, ""); // Remove tudo que não for dígito
+    cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2"); // Coloca ponto após o 3º dígito
+    cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2"); // Coloca ponto após o 6º dígito
+    cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2"); // Coloca hífen após o 9º dígito
+    return cpf;
+}
+
+// Evento para aplicar a formatação do CPF ao digitar
+inputCpf.addEventListener('input', (e) => {
+    e.target.value = formatarCPF(e.target.value);
+});
 
 
 async function salvar(e) {
-  e.preventDefault();
-  console.log("Salvando Usuario");
-  const nome = inputNome.value.trim();
-  const cpf = inputCpf.value.trim();
-  const curso = inputCurso.value.trim();
-  const email = inputEmail.value.trim();
-  const novaSenha = inputNovaSenha.value.trim();
-  const confirmarSenha = inputConfirmarSenha.value.trim();
+    e.preventDefault();
+    console.log("Tentando salvar usuário...");
 
-  if (!nome || !cpf) {
-    alert("Gentileza preecher os campos")
-    return;
-  }
-  if (novaSenha !== confirmarSenha) {
-    alert("As senhas não coincidem!")
-    return;
-  }
-  const senha = novaSenha;
-  const novoUsuario = {
-    nome, cpf, curso, email, senha
-  }
+    // Limpeza e obtenção dos valores
+    const nome = inputNome.value.trim();
+    const cpfFormatado = inputCpf.value.trim();
+    const curso = inputCurso.value.trim();
+    const email = inputEmail.value.trim();
+    const novaSenha = inputNovaSenha.value.trim();
+    const confirmarSenha = inputConfirmarSenha.value.trim();
+    
+    // Remove a formatação do CPF antes de enviar para o backend
+    const cpf = cpfFormatado.replace(/\D/g, ''); 
 
-  // console.log(Usuarios)
-
-  try {
-    const requisicao = await fetch(API, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(novoUsuario)
-    })
-
-    if (requisicao.status === 201) {
-      const dados = await requisicao.json();
-      console.log(dados)
-      alert("Usuario cadastrado com sucesso!")
-      window.location.href = "login.html";
-    } else {
-      console.log("Erro na requisição")
+    // 2. Validações Aprimoradas
+    
+    // Verifica se todos os campos obrigatórios estão preenchidos
+    if (!nome || !cpfFormatado || !curso || !email || !novaSenha || !confirmarSenha) {
+        alert("Por favor, preencha todos os campos obrigatórios.");
+        return;
     }
-  } catch (error) {
-    console.error(error)
-  }
+
+    // Validação de formato do CPF (deve ter 11 dígitos numéricos após a remoção dos pontos/hífen)
+    if (cpf.length !== 11) {
+        alert("O CPF deve conter 11 dígitos.");
+        return;
+    }
+
+    // Validação de senhas
+    if (novaSenha !== confirmarSenha) {
+        alert("As senhas não coincidem! Por favor, verifique.");
+        return;
+    }
+    
+    // Validação de tamanho da senha (já definida no HTML, mas bom reforçar)
+    if (novaSenha.length < 8) {
+        alert("A senha deve ter no mínimo 8 caracteres.");
+        return;
+    }
+
+    const senha = novaSenha;
+    const novoUsuario = {
+        nome, 
+        cpf, // Envia o CPF sem formatação
+        curso, 
+        email, 
+        senha
+    }
+
+    // Desabilita o botão para evitar múltiplos cliques
+    const btnCadastrar = document.getElementById('btnCadastrar');
+    btnCadastrar.disabled = true;
+    btnCadastrar.textContent = "Cadastrando...";
+
+
+    // 3. Requisição à API com tratamento de erro
+    try {
+        const requisicao = await fetch(API, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(novoUsuario)
+        });
+
+        if (requisicao.status === 201) {
+            const dados = await requisicao.json();
+            console.log("Usuário cadastrado:", dados);
+            alert("✅ Usuário cadastrado com sucesso!");
+            window.location.href = "login.html";
+        } else if (requisicao.status === 409) { // Exemplo de status para CPF/Email já cadastrado (depende do seu backend)
+             alert("⚠️ Este CPF ou E-mail já está cadastrado.");
+        } 
+        else {
+            console.error("Erro na requisição, Status:", requisicao.status);
+            alert(`❌ Erro ao cadastrar. Status: ${requisicao.status}`);
+        }
+    } catch (error) {
+        console.error("Erro ao conectar com a API:", error);
+        alert("❌ Erro de conexão com o servidor. Tente novamente mais tarde.");
+    } finally {
+        // Reabilita o botão após a tentativa
+        btnCadastrar.disabled = false;
+        btnCadastrar.textContent = "Cadastrar";
+    }
 }
 
-formCadastrar.addEventListener("submit", salvar)
-
-
-// const API = "http://localhost:3000/usuario"
-
-// const botao = document.getElementById('btnCadastrar');
-// const inputNome = document.getElementById("nome");
-// const inputCpf = document.getElementById("cpf");
-// const inputCurso = document.getElementById("curso");
-// const inputEmail = document.getElementById("email");
-// const inputNovaSenha = document.getElementById("novaSenha");
-// const inputConfirmarSenha = document.getElementById("confirmSenha");
-// const formCadastrar = document.getElementById("form-cadastrar");
-
-// function validarCPF(cpf) {
-//   cpf = cpf.replace(/\D/g, "");
-//   if (cpf.length !== 11) return false;
-//   if (/^(\d)\1+$/.test(cpf)) return false;
-
-//   let soma = 0;
-//   for (let i = 0; i < 9; i++) soma += cpf[i] * (10 - i);
-//   let digito1 = (soma * 10) % 11;
-//   if (digito1 === 10) digito1 = 0;
-//   if (digito1 != cpf[9]) return false;
-
-//   soma = 0;
-//   for (let i = 0; i < 10; i++) soma += cpf[i] * (11 - i);
-//   let digito2 = (soma * 10) % 11;
-//   if (digito2 === 10) digito2 = 0;
-
-//   return digito2 == cpf[10];
-// }
-
-// function validarEmail(email) {
-//   return /\S+@\S+\.\S+/.test(email);
-// }
-
-// function validarSenha(senha) {
-//   const regra = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/;
-//   return regra.test(senha);
-// }
-
-// async function salvar(e) {
-//   e.preventDefault();
-//   console.log("Salvando Usuário...");
-
-//   const nome = inputNome.value.trim();
-//   const cpf = inputCpf.value.trim();
-//   const curso = inputCurso.value.trim();
-//   const email = inputEmail.value.trim();
-//   const novaSenha = inputNovaSenha.value.trim();
-//   const confirmarSenha = inputConfirmarSenha.value.trim();
-
-//   if (!nome || !cpf || !email || !curso || !novaSenha || !confirmarSenha) {
-//     alert("Preencha todos os campos!");
-//     return;
-//   }
-
-//   if (/\d/.test(nome)) {
-//     alert("O nome não pode conter números!");
-//     return;
-//   }
-
-//   if (nome.length < 3) {
-//     alert("O nome deve ter pelo menos 3 caracteres!");
-//     return;
-//   }
-
-//   if (!validarCPF(cpf)) {
-//     alert("CPF inválido!");
-//     return;
-//   }
-
-//   if (!validarEmail(email)) {
-//     alert("E-mail inválido!");
-//     return;
-//   }
-
-//   if (!validarSenha(novaSenha)) {
-//     alert("A senha deve ter ao menos 8 caracteres, 1 número, 1 maiúscula e 1 símbolo!");
-//     return;
-//   }
-
-//   if (novaSenha !== confirmarSenha) {
-//     alert("As senhas não coincidem!");
-//     return;
-//   }
-
-//   const novoUsuario = { nome, cpf, curso, email, senha: novaSenha };
-
-//   try {
-//     const requisicao = await fetch(API, {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify(novoUsuario)
-//     });
-
-//     if (requisicao.status === 201) {
-//       alert("Usuário cadastrado com sucesso!");
-//       window.location.href = "login.html";
-//     } else {
-//       alert("Erro ao cadastrar usuário!");
-//     }
-//   } catch (error) {
-//     console.error(error);
-//     alert("Erro de conexão com o servidor!");
-//   }
-// }
-
-// formCadastrar.addEventListener("submit", salvar);
-
-
+// 4. Adiciona o event listener ao formulário
+formCadastrar.addEventListener("submit", salvar);

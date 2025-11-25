@@ -37,12 +37,13 @@ header a {
     width: 100%;
 }
 
-#divPesquisa{
-    /* background-color:black; */
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    /* margin-right: -30%; */
+#divPesquisa input {
+    width: 90vw; /* Ocupa 90% da largura da tela no mobile */
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 1rem;
 }
 
 #divLogin{
@@ -52,17 +53,6 @@ header a {
     justify-content: center;
  
 }
-
-#pesquisa{
-    
-    width: 40%;
-    height: 5vh;
-    border: none;
-    border-radius: 5px;
-}
-
-
-
 
  #container{
      /*background-image: url("../img/fundoazul.png");*/
@@ -95,33 +85,37 @@ header a {
     transition: backgroud image 0.3s;
 }
 
-/*.material-symbols-outlined{
-    font-size: 40px;
+<<<<<<< HEAD
+.material-symbols-outlined{
+    font-size: 60px;
     width: 95%;
     height: 10%;
     justify-content: center;
     display: flex;
-    border-radius: 1000%;
-    cursor: pointer;
-}*/
-
+=======
 #prev-btn{
     font-size: 40px;
     width: 95%;
     height: 10%;
     display: flex;
     border-radius: 1000%;
+>>>>>>> 9324a20087ab390e2a70f97d0875c578551f0cde
     cursor: pointer;
 }
 
-#next-btn{
-    font-size: 40px;
-    width: 95%;
-    height: 10%;
+
+#prev-btn{
     display: flex;
     border-radius: 1000%;
     cursor: pointer;
-    justify-content: end;
+    justify-content: flex-start;
+}
+
+#next-btn{
+    display: flex;
+    border-radius: 1000%;
+    cursor: pointer;
+    justify-content: flex-end;
 }
 
 
@@ -133,6 +127,7 @@ header a {
     width: 300px; /* defina o tamanho do container */
     height: 400px;
 }
+
 
 .img_livro_Csharp{
     background-image: url("../img/img_livros/livro_Csharp.jpeg");
@@ -181,4 +176,12 @@ header a {
   background-size: cover;
   background-position: center;
   border-radius: 8px;
+  cursor: pointer;
 }
+
+.livro:hover{
+    transform: scale(1.1);
+}
+
+
+

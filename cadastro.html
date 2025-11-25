@@ -12,55 +12,52 @@
     <header>
         <div id="divLogo">
             <a href="inicio.html">
-                <img class="logoSenai" src=./img/icon/SENAI_logo.png alt="LogoSenai">
+                <img class="logoSenai" src="./img/icon/SENAI_logo.png" alt="LogoSenai">
             </a>
         </div>
     </header>
     <main>
-
         <form id="form-cadastrar">
             <div class="caixa-cadastro">
-                <div>
-                    <br>
-                        <label for="txtNome">Nome: </label>
-                        <input type="text" id="nome" required>
-                    </br>
-                    <br>
-                        <label for="cpf">CPF: </label>
-                        <input type="text" id="cpf" required maxlength="14">
-                    </br>
-
-                    <br>
-                        <label for="curso">Curso: </label>
-                        <input type="text" id="curso" required>
-                    </br>
-
-                    <br>
-                        <label for="email">Email: </label>
-                        <input type="email" id="email" required>
-                    </br>
-                    <br>
-                        <label for="novaSenha">Nova senha </label>
-                        <input type="password" id="novaSenha" required minlength="8">
-                    </br>
-                    <br>
-                        <label for="confirmSenha">Confirmar senha </label>
-                        <input type="password" id="confirmSenha" required minlength="8">
-                    </br>
-                    <br>
-                        <button type="submit" id="btnCadastrar">Cadastrar</button>
-                </br>
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" required>
                 </div>
+
+                <div class="form-group">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" required maxlength="14">
+                </div>
+
+                <div class="form-group">
+                    <label for="curso">Curso:</label>
+                    <input type="text" id="curso" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="novaSenha">Nova senha:</label>
+                    <input type="password" id="novaSenha" required minlength="8">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmSenha">Confirmar senha:</label>
+                    <input type="password" id="confirmSenha" required minlength="8">
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" id="btnCadastrar">Cadastrar</button>
+                </div>
+
             </div>
-
-
         </form>
-
     </main>
     <footer>
-
-    </footer>
-
+        </footer>
     <script type="module" src="./js/cadastro.js"></script>
 </body>
 

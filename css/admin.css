@@ -1,134 +1,61 @@
 @import url("./style.css");
 
 header a {
-    font-weight: bold;
-    font-style: normal;
-    color: var(--branco);
-}
-header a:hover {
-    background-color: rgb(155, 155, 155);
-    transform: scale(1.05);
-}
-
-.fundo-azul {
+     font-weight: bold;
+     font-style: normal;
+     color: var(--branco);
+} 
+.fundo-azul{
     background-image: url("../img/fundoazul.png");
     background-size: cover;
     height: 60%;
     width: 100%;
     display: flex;
     flex-direction: column;
-
+    
 }
-
-.texto1 {
+.texto1{
     color: var(--branco);
     margin-left: 5%;
 }
 
-.caixa-branca-meio {
+.caixa-branca-meio{
     background-color: var(--branco);
-    height: 52%;
+    height: 40%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 7%;
 }
 
-#icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 10%;
-
-}
-
-.fundo_icon {
-    width: 10px;
-    height: 10px;
-    background-color: var(--branco);
-}
-
-.caixa-1, .caixa-2, .caixa-3, .caixa-4, .caixa-5, .caixa-6 {
-    width: 10%;
-    height: 80%;
-    background-color: var(--branco);
-    border-radius: 10px;
-    box-shadow: 0 0 5px black;
-    display: flex;
-    flex-direction: column;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 20px;
-    /* padding-bottom: 10px;   */
-    text-align: center; 
-    /* espaço para o ícone flutuante */
-    position: relative;
-    /* permite o ícone sair da caixa */
-    cursor: pointer;
-}
-
-.caixa-1 h4, 
-.caixa-2 h4,
-.caixa-3 h4,
-.caixa-4 h4,
-.caixa-5 h4,
-.caixa-6 h4 {
-    margin-bottom: 0px;   /* diminui o espaço abaixo do h4 */
-}
-
-.caixa-1 p,
-.caixa-2 p,
-.caixa-3 p,
-.caixa-4 p,
-.caixa-5 p,
-.caixa-6 p {
-    margin-top: 15px;        /* remove espaço acima do p */
-}
-.caixa-1:hover,
-.caixa-2:hover,
-.caixa-3:hover,
-.caixa-4:hover,
-.caixa-5:hover,
-.caixa-6:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 10px var(--azul-marinho);
-
-
-}
-
-
-.texto2 {
+.texto2{
     color: var(--branco);
     margin-left: 5%;
 
 }
 
-.caixa-branca {
+.caixa-branca{
     background-color: var(--branco);
-    height: 26%;
+    height: 25%;
     width: 100%;
 }
 
 #divPesquisa input {
-    width: 90vw;
-    max-width: 500px;
+    width: 90vw; /* Ocupa 90% da largura da tela no mobile */
+    max-width: 400px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 20px;
     font-size: 1rem;
 }
 
-#divLogin {
+#divLogin{
     /* background-color:blue; */
     width: 10%;
     display: flex;
     justify-content: center;
-
+ 
 }
 
-#container {
-    /*background-image: url("../img/fundoazul.png");*/
+ #container{
+     /*background-image: url("../img/fundoazul.png");*/
     background-size: cover;
     height: 47%;
     width: 100%;
@@ -137,56 +64,54 @@ header a:hover {
     align-items: center;
 }
 
-#caroussel {
+#caroussel{
     height: 198%;
     width: 100%;
     display: flex;
     align-items: center;
     margin-top: 6%
 }
-
-#caroussel-content {
+#caroussel-content{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
-    gap: 80px;
-    /* espaço entre os livros */
+    gap: 80px;       /* espaço entre os livros */
 }
 
-.container-caroussel {
-    width: 100%;
+.container-caroussel{
+    width:100%;
     height: 100%;
     transition: backgroud image 0.3s;
 }
 
-
-.material-symbols-outlined {
+<<<<<<< HEAD
+/* .material-symbols-outlined{
     font-size: 60px;
     width: 95%;
     height: 10%;
     justify-content: center;
     display: flex;
-}
-
-/* #prev-btn{
+=======
+#prev-btn{
     font-size: 40px;
     width: 95%;
     height: 10%;
     display: flex;
     border-radius: 1000%;
+>>>>>>> 9324a20087ab390e2a70f97d0875c578551f0cde
     cursor: pointer;
 } */
 
 
-#prev-btn {
+#prev-btn{
     display: flex;
     border-radius: 1000%;
     cursor: pointer;
     justify-content: flex-start;
 }
 
-#next-btn {
+#next-btn{
     display: flex;
     border-radius: 1000%;
     cursor: pointer;
@@ -194,70 +119,69 @@ header a:hover {
 }
 
 
-.img_livro_bd {
+.img_livro_bd{
     background-image: url("../img/img_livros/livro_BD.jpeg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 300px;
+    width: 300px; /* defina o tamanho do container */
     height: 400px;
 }
 
 
-.img_livro_Csharp {
+.img_livro_Csharp{
     background-image: url("../img/img_livros/livro_Csharp.jpeg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 300px;
+    width: 300px; /* defina o tamanho do container */
     height: 400px;
 }
-
-.img_livro_html_css {
+.img_livro_html_css{
     background-image: url("../img/img_livros/livro_html_css.jpeg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 300px;
+    width: 300px; /* defina o tamanho do container */
     height: 400px;
 }
-
-.img_livro_js {
+.img_livro_js{
     background-image: url("../img/img_livros/livro_js.jpeg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 300px;
+    width: 300px; /* defina o tamanho do container */
     height: 400px;
 }
-
-.img_livro_python {
+.img_livro_python{
     background-image: url("../img/img_livros/livro_python.jpeg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 300px;
+    width: 300px; /* defina o tamanho do container */
     height: 400px;
 }
-
-.img_livro_scrum {
+.img_livro_scrum{
     background-image: url("../img/img_livros/livro_scrum.jpeg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 300px;
+    width: 300px; /* defina o tamanho do container */
     height: 400px;
-}
+} 
 
 .livro {
-    width: 150px;
-    height: 220px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    cursor: pointer;
+  width: 150px;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.livro:hover {
+.livro:hover{
     transform: scale(1.1);
 }
+
+
+

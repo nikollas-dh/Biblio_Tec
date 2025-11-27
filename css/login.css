@@ -1,37 +1,66 @@
 @import url("./main.css");
 @import url("./style.css");
 
+/* ============================
+   ESTILOS GERAIS
+============================ */
 body {
     background-color: var(--azul-escuro);
-    place-items: center;   
+    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.caixa-login{
-    margin-top: 17%;
-    margin-bottom: 17%;
-    width: 110%;  
-    height: 70vh;
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#form-login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* ============================
+   CAIXA DO LOGIN
+============================ */
+.caixa-login {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    width: 90%;
+    max-width: 370px;
+    padding: 20px;
+    height: auto;
     box-shadow: 0 0 10px black;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     border-radius: 10px;
     justify-content: center;
-    /* align-content: center; */
     color: var(--branco);
+    gap: 25px;
 }
 
-h1{
+h1 {
     text-align: center;
 }
-#texto{
+
+#texto {
     margin-top: -1%;
     text-align: center;
     font-size: 14px;
 }
+
+/* ============================
+   BOTÃO LOGIN
+============================ */
 #btnLogin {
-    width: 100px;
+    width: 100%;
     height: 50px;
     display: flex;
-    justify-self: end;
+    justify-self: center;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -39,22 +68,16 @@ h1{
     color: var(--branco);
     border: none;
     border-radius: 5px;
-    
 }
 
 #btnLogin:hover {
     background-color: rgb(1, 96, 96);
     transform: scale(1.05);
-    /* leve aumento ao passar */
 }
-#linkCadastro:hover{
-    background-color: rgb(1, 96, 96);
-    transform: scale(1.05);
-}
-#linkRecuperar:hover{
-    background-color: rgb(155, 155, 155);
-    transform: scale(1.05);
-}
+
+/* ============================
+   LINKS E LABELS
+============================ */
 label {
     color: var(--branco);
     font-size: 14px;
@@ -69,8 +92,39 @@ a {
     color: var(--ciano);
 }
 
+#linkCadastro:hover {
+    background-color: rgb(1, 96, 96);
+    transform: scale(1.05);
+}
+
+#linkRecuperar:hover {
+    background-color: rgb(155, 155, 155);
+    transform: scale(1.05);
+}
+
+#direcionavel {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 #linkRecuperar {
-    margin-left: 40px;
+    margin-left: 0;
+}
+
+/* ============================
+   INPUTS
+============================ */
+.divEntrada {
+    margin-top: 40px;
+}
+
+fieldset {
+    margin-top: 10px;
+    color: var(--ciano);
+    border-radius: 10px;
+    height: 55px;
 }
 
 .entrada {
@@ -81,16 +135,73 @@ a {
     font-size: 20px;
     color: white;
 }
-.divEntrada{
-    margin-top: 90px;
+
+/* ============================
+   LOGO
+============================ */
+.divLogo {
+    width: 10px;
+    height: 40px;
+    background: red;
 }
-.divLogo{
-    width:10px;
-    height:40px;
-    background:red;
+
+/* ============================
+   RESPONSIVIDADE - PC
+============================ */
+@media (min-width: 900px) {
+
+    .caixa-login {
+        width: 40%;
+        max-width: 450px;
+        height: 500px;
+        padding-top: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    #btnLogin {
+        width: 150px;
+        height: 55px;
+        justify-self: end;
+    }
+
+    #direcionavel {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    #linkRecuperar {
+        margin-left: 20px;
+    }
 }
-fieldset {
-    margin-top: 10px;
-    color: var(--ciano);
-    border-radius: 10px;
+
+/* ============================
+   RESPONSIVIDADE - CELULAR PEQUENO
+============================ */
+@media (max-width: 400px) {
+
+    h1 {
+        font-size: 22px;
+    }
+
+    #texto {
+        font-size: 13px;
+    }
+
+    .caixa-login {
+        margin-top: 25%;
+        margin-bottom: 25%;
+        padding: 15px;
+    }
+
+    fieldset {
+        height: 48px;
+    }
+
+    .entrada {
+        font-size: 16px;
+    }
 }

@@ -1,41 +1,101 @@
 @import url('./main.css');
 
-html, body{
+/* ============================
+   GLOBAIS – CORRIGIDOS
+============================ */
+html, body {
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    width: 100vw;
-    height: 100vh;
-    place-items:center;
-   
+
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 
-header{
+/* ============================
+   HEADER
+============================ */
+header {
     width: 100%;
-    height: 7%;
-    box-shadow:0 0 10px black;
+    height: 55px;
+    padding: 0 15px;
+    box-shadow: 0 0 10px black;
     display: flex;
     justify-content: space-between;
-    align-content: center;
     align-items: center;
     background-color: var(--azul-escuro);
-} 
-
-.logoSenai{
-    height: auto;
-    width: 60%;
-    display: flex;
-    align-items: center;;
-    cursor: pointer;
-    margin-left: 10%; 
+    box-sizing: border-box;
 }
 
+/* 🔥 LOGO REDUZIDA */
+.logoSenai {
+    width: 90px;      /* antes 130px */
+    height: auto;
+    cursor: pointer;
+}
 
-
- footer{
+/* ============================
+   FOOTER COMPACTO
+============================ */
+footer {
     width: 100%;
     background-color: var(--azul-escuro);
-    height: 7%;
+    height: 50px;
     box-shadow: 0 0 10px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* ============================
+   AJUSTE PARA A TELA NÃO FICAR GIGANTE
+============================ */
+.caixa-login {
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+}
+
+/* ============================
+   RESPONSIVIDADE
+============================ */
+@media (max-width: 600px) {
+
+    header {
+        height: 48px;
+        padding: 0 10px;
+    }
+
+    /* 🔥 LOGO MENOR NO MOBILE */
+    .logoSenai {
+        width: 90px;   /* antes 110px */
+    }
+
+    footer {
+        height: 45px;
+    }
+
+    .caixa-login {
+        margin-top: 25px !important;
+        margin-bottom: 25px !important;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    header {
+        height: 60px;
+        padding: 0 40px;
+    }
+
+    /* 🔥 LOGO MENOR NO DESKTOP GRANDE */
+    .logoSenai {
+        width: 120px;   /* antes 150px */
+    }
+
+    footer {
+        height: 55px;
+    }
 }

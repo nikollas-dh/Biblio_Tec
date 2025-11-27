@@ -1,13 +1,11 @@
 @import url("./style.css");
 
-/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ================= HEADER AJUSTADO ================= */
 
 header {
     width: 100%;
@@ -50,7 +48,6 @@ header {
     font-size: 1rem;
 }
 
-/* Link Login */
 header a {
     font-weight: bold;
     color: var(--branco);
@@ -67,11 +64,10 @@ header a {
 }
 
 #divLogin a:hover {
-    background-color: rgb(155,155,155);
+    background-color: rgb(155, 155, 155);
     transform: scale(1.05);
 }
 
-/* ================= FUNDO AZUL ================= */
 
 .fundo-azul {
     background-image: url("../img/fundoazul.png");
@@ -84,14 +80,14 @@ header a {
     gap: 40px;
 }
 
-.texto1, .texto2 {
+.texto1,
+.texto2 {
     color: var(--branco);
     margin-left: 5%;
 }
 
-/* ================= GRID DAS 6 CAIXAS ================= */
 
-.caixa-branca-meio {
+.caixa_branca_1 {
     width: 100%;
     background-color: var(--branco);
     padding: 40px 20px;
@@ -100,8 +96,12 @@ header a {
     gap: 25px;
 }
 
-.caixa-1, .caixa-2, .caixa-3,
-.caixa-4, .caixa-5, .caixa-6 {
+.caixa-1,
+.caixa-2,
+.caixa-3,
+.caixa-4,
+.caixa-5,
+.caixa-6 {
     background-color: var(--branco);
     border-radius: 10px;
     box-shadow: 0 0 5px black;
@@ -111,8 +111,12 @@ header a {
     transition: 0.2s;
 }
 
-.caixa-1:hover, .caixa-2:hover, .caixa-3:hover,
-.caixa-4:hover, .caixa-5:hover, .caixa-6:hover {
+.caixa-1:hover,
+.caixa-2:hover,
+.caixa-3:hover,
+.caixa-4:hover,
+.caixa-5:hover,
+.caixa-6:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px var(--azul-marinho);
 }
@@ -122,9 +126,8 @@ header a {
     margin-bottom: 10px;
 }
 
-/* ================= CARROSSEL ================= */
 
-.caixa-branca {
+.caixa_branca_2 {
     background-color: var(--branco);
     padding: 40px 0;
 }
@@ -149,7 +152,6 @@ header a {
     cursor: pointer;
 }
 
-/* LIVROS — CLASSES INTACTAS */
 .img_livro_bd {
     background-image: url("../img/img_livros/livro_BD.jpeg");
     background-size: contain;
@@ -214,12 +216,120 @@ header a {
 }
 
 .livro:hover {
+    box-shadow: 0 0 20px var(--azul-marinho);
+
+    border-radius: 15px;
     transform: scale(1.1);
+
 }
 
 /* ================= RESPONSIVIDADE ================= */
 
-/* Tablets */
+/* ================= DESKTOP GRANDE PROPORCIONAL ================= */
+@media (min-width: 1200px) {
+
+    /* HEADER */
+    header {
+
+        padding: 15px 40px;
+        gap: 25px;
+    }
+
+    .logoSenai {
+        width: 120px;
+    }
+
+    #divPesquisa input {
+        max-width: 550px;
+        font-size: 1rem;
+    }
+
+    #divLogin a {
+        padding: 8px 20px;
+        font-size: 1rem;
+    }
+
+    .fundo-azul {
+        padding: 50px 0;
+        gap: 40px;
+    }
+
+    .texto1,
+    .texto2 {
+        margin-left: 5%;
+        font-size: 1.2rem;
+    }
+
+    .caixa_branca_1 {
+        width: 100%;
+        padding: 40px 30px;
+        gap: 25px;
+    }
+
+    .caixa_branca_2 {
+        width: 100%;
+        padding: 5px 0;
+        /* Diminuindo para 25px */
+    }
+
+    .caixa-1,
+    .caixa-2,
+    .caixa-3,
+    .caixa-4,
+    .caixa-5,
+    .caixa-6 {
+        width: 220px;
+        height: 230px;
+        padding: 25px 15px;
+    }
+
+    #icons {
+        font-size: 50px;
+        margin-bottom: 12px;
+    }
+
+    #caroussel-content {
+        gap: 25px;
+        padding: 15px;
+    }
+
+    .livro {
+        width: 170px;
+        height: 250px;
+    }
+
+    .img_livro_bd,
+    .img_livro_Csharp,
+    .img_livro_html_css,
+    .img_livro_js,
+    .img_livro_python,
+    .img_livro_scrum {
+        background-position: center;
+        width: 180px;
+        height: 270px;
+    }
+
+    .caixa-1 h4,
+    .caixa-2 h4,
+    .caixa-3 h4,
+    .caixa-4 h4,
+    .caixa-5 h4,
+    .caixa-6 h4 {
+        font-size: 1.1rem;
+    }
+
+    .caixa-1 p,
+    .caixa-2 p,
+    .caixa-3 p,
+    .caixa-4 p,
+    .caixa-5 p,
+    .caixa-6 p {
+        font-size: 0.95rem;
+    }
+}
+
+
+
 @media (max-width: 900px) {
 
     header {
@@ -232,7 +342,6 @@ header a {
     }
 }
 
-/* Mobile */
 @media (max-width: 600px) {
 
     .logoSenai {
@@ -243,7 +352,7 @@ header a {
         font-size: 35px;
     }
 
-    .caixa-branca-meio {
+    .caixa_branca_1 {
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     }
 
@@ -252,12 +361,11 @@ header a {
     }
 }
 
-/* CARROSSEL HORIZONTAL CORRETO */
 
 #caroussel-content.container-caroussel {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
+    justify-content: center;
+    gap: 70px;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
@@ -271,3 +379,7 @@ header a {
     scroll-snap-align: start;
 }
 
+.container-caroussel {
+    align-items: center;
+
+}

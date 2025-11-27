@@ -1,44 +1,80 @@
 @import url("./style.css");
 
 header a {
-     font-weight: bold;
-     font-style: normal;
-     color: var(--branco);
-} 
-.fundo-azul{
-    background-image: url("../img/fundoazul.png");
+    font-weight: bold;
+    font-style: normal;
+    color: var(--branco);
+}
+
+.fundo-azul {
+    /* background-image: url("../img/fundoazul.png"); */
+    background-color: var(--azul-escuro);
     background-size: cover;
     height: 60%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    
+
 }
-.texto1{
+
+.texto1 {
     color: var(--branco);
     margin-left: 5%;
 }
 
-.caixa-branca-meio{
+
+.caixa_branca_1 {
     background-color: var(--branco);
     height: 40%;
+    height: 52%;
     width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
-.texto2{
+.usuarios-1,
+.usuarios-2,
+.usuarios-3,
+.usuarios-4 {
+    background-color: var(--branco);
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+    width: 10vw;
+    height: 15vh;
+    padding: 25px 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}livros
+.livros-1,
+.livros-2,
+.livros-3,
+.livros-4 {
+    background-color: var(--branco);
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+    width: 10vw;
+    height: 15vh;
+    padding: 25px 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.texto2 {
     color: var(--branco);
     margin-left: 5%;
 
 }
 
-.caixa-branca{
+.caixa_branca_2 {
     background-color: var(--branco);
     height: 25%;
     width: 100%;
 }
 
 #divPesquisa input {
-    width: 90vw; /* Ocupa 90% da largura da tela no mobile */
+    width: 90vw;
     max-width: 400px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -46,72 +82,49 @@ header a {
     font-size: 1rem;
 }
 
-#divLogin{
-    /* background-color:blue; */
+#divLogin {
     width: 10%;
     display: flex;
     justify-content: center;
- 
+
 }
 
- #container{
-     /*background-image: url("../img/fundoazul.png");*/
-    background-size: cover;
-    height: 47%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#caroussel{
-    height: 198%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin-top: 6%
-}
-#caroussel-content{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 80px;       /* espaço entre os livros */
-}
-
-.container-caroussel{
-    width:100%;
-    height: 100%;
-    transition: backgroud image 0.3s;
-}
-
-<<<<<<< HEAD
-/* .material-symbols-outlined{
-    font-size: 60px;
-    width: 95%;
-    height: 10%;
-    justify-content: center;
-    display: flex;
-=======
-#prev-btn{
-    font-size: 40px;
-    width: 95%;
-    height: 10%;
-    display: flex;
-    border-radius: 1000%;
->>>>>>> 9324a20087ab390e2a70f97d0875c578551f0cde
-    cursor: pointer;
-} */
 
 
-#prev-btn{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#prev-btn {
     display: flex;
     border-radius: 1000%;
     cursor: pointer;
     justify-content: flex-start;
 }
 
-#next-btn{
+#next-btn {
     display: flex;
     border-radius: 1000%;
     cursor: pointer;
@@ -119,69 +132,76 @@ header a {
 }
 
 
-.img_livro_bd{
+.img_livro_bd {
     background-image: url("../img/img_livros/livro_BD.jpeg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 300px; /* defina o tamanho do container */
+    width: 300px;
+    /* defina o tamanho do container */
     height: 400px;
 }
 
 
-.img_livro_Csharp{
+.img_livro_Csharp {
     background-image: url("../img/img_livros/livro_Csharp.jpeg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 300px; /* defina o tamanho do container */
+    width: 300px;
+    /* defina o tamanho do container */
     height: 400px;
 }
-.img_livro_html_css{
+
+.img_livro_html_css {
     background-image: url("../img/img_livros/livro_html_css.jpeg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 300px; /* defina o tamanho do container */
+    width: 300px;
+    /* defina o tamanho do container */
     height: 400px;
 }
-.img_livro_js{
+
+.img_livro_js {
     background-image: url("../img/img_livros/livro_js.jpeg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 300px; /* defina o tamanho do container */
+    width: 300px;
+    /* defina o tamanho do container */
     height: 400px;
 }
-.img_livro_python{
+
+.img_livro_python {
     background-image: url("../img/img_livros/livro_python.jpeg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 300px; /* defina o tamanho do container */
+    width: 300px;
+    /* defina o tamanho do container */
     height: 400px;
 }
-.img_livro_scrum{
+
+.img_livro_scrum {
     background-image: url("../img/img_livros/livro_scrum.jpeg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 300px; /* defina o tamanho do container */
+    width: 300px;
+    /* defina o tamanho do container */
     height: 400px;
-} 
+}
 
 .livro {
-  width: 150px;
-  height: 220px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  cursor: pointer;
+    width: 150px;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-.livro:hover{
+.livro:hover {
     transform: scale(1.1);
 }
-
-
-

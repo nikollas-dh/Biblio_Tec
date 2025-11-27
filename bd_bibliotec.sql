@@ -114,6 +114,76 @@ INSERT IGNORE INTO `reservas` (`id`, `usuario_id`, `livro_id`, `data_retirada`, 
 	(2, 1, 2, '2025-11-12', '2025-11-20', 0, '2025-11-12 13:26:57'),
 	(3, 1, 3, '2025-11-12', '2025-11-20', 0, '2025-11-12 13:27:01');
 
+-- Copiando estrutura para tabela bd_bibliotec.tabela_curso
+CREATE TABLE IF NOT EXISTS `tabela_curso` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(150) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+
+-- Copiando dados para a tabela bd_bibliotec.tabela_curso: ~14 rows (aproximadamente)
+INSERT IGNORE INTO `tabela_curso` (`id`, `nome`) VALUES
+	(1, 'Engenharia de Fundição'),
+	(2, 'Engenharia de Soldagem'),
+	(3, 'Superior de Tecnologia em Processos Metalúrgicos'),
+	(4, 'Técnico em Metalurgia'),
+	(5, 'Técnico em Desenvolvimento de Sistemas'),
+	(6, 'Técnico em Administração'),
+	(7, 'Construtor de Moldes e Ferramentas para Fundição'),
+	(8, 'Projetista de Moldes e Ferramentas para Fundição'),
+	(9, 'Assistente Administrativo'),
+	(10, 'Auxiliar de Linha de Produção'),
+	(11, 'Eletricista de Manutenção Eletroeletrônica'),
+	(12, 'Instalador e Reparador de Equipamentos de Telecomunicações'),
+	(13, 'Mecânico de Manutenção'),
+	(14, 'Soldador');
+
+-- Copiando estrutura para tabela bd_bibliotec.tabela_turma
+CREATE TABLE IF NOT EXISTS `tabela_turma` (
+  `id` int(11) NOT NULL,
+  `turma` varchar(50) NOT NULL,
+  `curso_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `curso_id` (`curso_id`),
+  CONSTRAINT `tabela_turma_ibfk_1` FOREIGN KEY (`curso_id`) REFERENCES `tabela_curso` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+
+-- Copiando dados para a tabela bd_bibliotec.tabela_turma: ~33 rows (aproximadamente)
+INSERT IGNORE INTO `tabela_turma` (`id`, `turma`, `curso_id`) VALUES
+	(1, 'PEF-03-FUA', 1),
+	(2, 'PES-04-EJS', 2),
+	(3, 'CSTPME225N1', 3),
+	(4, 'CSTPME124N4', 3),
+	(5, '1NA', 4),
+	(6, '2DS', 5),
+	(7, '2NA', 4),
+	(8, 'ADM1A-SESI', 6),
+	(9, 'ADM2A-SESI', 6),
+	(10, 'ADM2B-SESI', 6),
+	(11, 'DS1A-SESI', 5),
+	(12, 'DS1B-SESI', 5),
+	(13, 'DS2A-SESI', 5),
+	(14, 'DS2B-SESI', 5),
+	(15, 'MT1A-SESI', 4),
+	(16, 'MT1B-SESI', 4),
+	(17, 'MT1-SEDUC', 4),
+	(18, 'MT2-SESI', 4),
+	(19, 'I1CMFF', 7),
+	(20, 'I1PMFF', 8),
+	(21, 'M1ADM', 9),
+	(22, 'M1ALP', 10),
+	(23, 'M1EME', 11),
+	(24, 'M2IRET', 12),
+	(25, 'M2MM', 13),
+	(26, 'M4MM', 13),
+	(27, 'T1ADM', 9),
+	(28, 'T1EME', 11),
+	(29, 'T1SOL', 14),
+	(30, 'T2ALP', 10),
+	(31, 'T2MM', 13),
+	(32, 'T3EME', 11),
+	(33, 'T4MM', 13);
+
 -- Copiando estrutura para tabela bd_bibliotec.usuarios
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -126,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `perfil` enum('Aluno','Admin') DEFAULT 'Aluno',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
 -- Copiando dados para a tabela bd_bibliotec.usuarios: ~5 rows (aproximadamente)
 INSERT IGNORE INTO `usuarios` (`id`, `nome`, `email`, `senha`, `data_nascimento`, `celular`, `curso`, `perfil`) VALUES
@@ -134,7 +204,8 @@ INSERT IGNORE INTO `usuarios` (`id`, `nome`, `email`, `senha`, `data_nascimento`
 	(2, 'Pedro Campos', 'pedro.campos@email.com', 'abcd', NULL, NULL, NULL, 'Aluno'),
 	(3, 'Pedro Gabriel', 'pedro.gabriel@email.com', 'senha123', NULL, NULL, NULL, 'Aluno'),
 	(4, 'Davi Guedes', 'davi.guedes@email.com', 'teste123', NULL, NULL, NULL, 'Aluno'),
-	(5, 'Matheus Lima', 'matheus.lima@email.com', '3210', NULL, NULL, NULL, 'Aluno');
+	(5, 'Matheus Lima', 'matheus.lima@email.com', '3210', NULL, NULL, NULL, 'Aluno'),
+	(17, 'Pedro Leitão', 'campos2007@icloud.com', 'Senai2025', NULL, NULL, NULL, 'Aluno');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

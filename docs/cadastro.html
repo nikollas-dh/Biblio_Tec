@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -16,9 +16,12 @@
             </a>
         </div>
     </header>
+
     <main>
         <form id="form-cadastrar">
             <div class="caixa-cadastro">
+                <h2 style="text-align: center; margin-bottom: 20px;">Crie sua conta!</h2>
+
                 <div class="form-group">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" required>
@@ -31,7 +34,15 @@
 
                 <div class="form-group">
                     <label for="curso">Curso:</label>
-                    <input type="text" id="curso" required>
+                    <select id="curso" required></select>
+                </div>
+
+                <!-- NOVO: TURMA -->
+                <div class="form-group">
+                    <label for="turma">Turma:</label>
+                    <select id="turma" required>
+                        <option value="" disabled selected>Selecione uma turma</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -56,8 +67,8 @@
             </div>
         </form>
     </main>
-    <footer>
-        </footer>
+
+    <footer></footer>
     <script type="module" src="../js/cadastro.js"></script>
 </body>
 

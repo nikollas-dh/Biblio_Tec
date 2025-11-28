@@ -31,8 +31,14 @@ header {
     width: 140px;
     object-fit: contain;
 }
+.logoBibliotec {
+    height: auto;
+    width: 80px;
+    object-fit: contain;
+}
 
 #divPesquisa {
+    position: relative;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -42,11 +48,29 @@ header {
     width: 100%;
     max-width: 500px;
     padding: 10px 15px;
+    padding-right: 40px;
+
     border-radius: 20px;
     border: none;
     outline: none;
     font-size: 1rem;
 }
+
+/* Ícone dentro do input */
+#icon-search {
+    position: absolute;
+    right: 10%;
+    /* Ajuste: centralizar independentemente da largura */
+    transform: translateX(100%);
+    
+    top: 50%;
+    transform: translateY(-50%);
+    
+    font-size: 25px;
+    color: #555;
+    pointer-events: none; /* Ícone não bloqueia o clique no input */
+}
+
 
 header a {
     font-weight: bold;
@@ -230,7 +254,7 @@ header a {
 
     /* HEADER */
     header {
-
+        height: 80px;
         padding: 15px 40px;
         gap: 25px;
     }
@@ -333,8 +357,10 @@ header a {
 @media (max-width: 900px) {
 
     header {
-        flex-direction: column;
         gap: 15px;
+    }
+     .logoBibliotec {
+        width: 60px;
     }
 
     #divPesquisa input {

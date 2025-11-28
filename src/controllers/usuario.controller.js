@@ -71,37 +71,39 @@ export async function obterUsuario(req, res) {
   }
 }
 
-// ============================
-//  Login
-// ============================
-export async function login(req, res) {
+export async function login (req, res){
   try {
-    const { email, senha } = req.body;
-
+    const { email, senha } = req.body; 
     const [usuario] = await db.execute(
-      `
-      SELECT u.id, u.nome, u.email, u.perfil,
-             c.nome AS curso,
-             t.turma AS turma
-      FROM usuarios u
-      LEFT JOIN tabela_curso c ON c.id = u.curso_id
-      LEFT JOIN tabela_turma t ON t.id = u.turma_id
-      WHERE email = ? AND senha = ?
-    `,
-      [email, senha]
+     `SELECT 
+        nome, 
+        email, 
+        perfil 
+      FROM usuarios WHERE email = ? AND senha = ?`, 
+
+      [
+        email, 
+        senha
+      ]
     );
 
-    if (usuario.length === 0)
-      return res.status(401).json({ erro: "Email ou senha inválidos." });
+    if (usuario.length === 0) {
+      return res.status(401).json({ erro: "Email ou senha inválidos." }); 
+    }
 
-    return res.status(200).json({
-      mensagem: "Login efetuado.",
-      usuario: usuario[0],
+    const dados_usuario = usuario[0]
+    return res.status(200).json({ 
+        mensagem: "Login efetuado.",
+        perfil: dados_usuario.perfil, // Chave 'perfil' com o valor 'Admin' ou 'Aluno'
+        usuario: dados_usuario        // Retorna todos os dados para o front-end
     });
+
   } catch (err) {
+    console.error("Erro no login:", err); 
     res.status(500).json({ erro: "Erro interno do servidor." });
   }
-}
+};
+
 
 // ============================
 //  Atualizar usuário

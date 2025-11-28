@@ -36,7 +36,8 @@ async function carregandoUsuario(e) {
       alert("Entrando...")
       window.location.href = "menu_admin.html";
     } else {
-      console.log("Usuário não existe")
+      console.log("Email ou senha inválidos")
+      alert("Email ou senha inválidos")
     }
   } catch (error) {
     console.error(error)

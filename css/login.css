@@ -10,15 +10,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;  /* altura mínima da tela */
+    margin: 0;
 }
 
 main {
     width: 100%;
     display: flex;
     justify-content: center;
+    flex: 1;
 }
 
 #form-login {
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;

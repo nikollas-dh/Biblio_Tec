@@ -1,7 +1,7 @@
 @import url('./main.css');
 
 /* ============================
-   GLOBAIS – CORRIGIDOS
+   GLOBAIS 
 ============================ */
 html, body {
     margin: 0;
@@ -14,9 +14,7 @@ html, body {
     overflow-x: hidden;
 }
 
-/* ============================
-   HEADER
-============================ */
+
 header {
     width: 100%;
     height: 55px;
@@ -29,16 +27,17 @@ header {
     box-sizing: border-box;
 }
 
-/* 🔥 LOGO REDUZIDA */
 .logoSenai {
-    width: 90px;      /* antes 130px */
+    width: 90px;     
     height: auto;
     cursor: pointer;
 }
+.logoBibliotec {
+    height: auto;
+    width: 80px;
+    object-fit: contain;
+}
 
-/* ============================
-   FOOTER COMPACTO
-============================ */
 footer {
     width: 100%;
     background-color: var(--azul-escuro);
@@ -58,9 +57,7 @@ footer {
     margin-bottom: 40px !important;
 }
 
-/* ============================
-   RESPONSIVIDADE
-============================ */
+
 @media (max-width: 600px) {
 
     header {
@@ -68,9 +65,9 @@ footer {
         padding: 0 10px;
     }
 
-    /* 🔥 LOGO MENOR NO MOBILE */
+   
     .logoSenai {
-        width: 90px;   /* antes 110px */
+        width: 90px;   
     }
 
     footer {
@@ -90,9 +87,9 @@ footer {
         padding: 0 40px;
     }
 
-    /* 🔥 LOGO MENOR NO DESKTOP GRANDE */
+    
     .logoSenai {
-        width: 120px;   /* antes 150px */
+        width: 120px;   
     }
 
     footer {

@@ -31,11 +31,7 @@ header {
     width: 140px;
     object-fit: contain;
 }
-.logoBibliotec {
-    height: auto;
-    width: 80px;
-    object-fit: contain;
-}
+
 
 #divPesquisa {
     position: relative;

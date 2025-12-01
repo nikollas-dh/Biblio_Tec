@@ -12,6 +12,4 @@ router.get("/", listarReservas);
 router.post("/", criarReserva);
 router.delete("/:id", excluirReserva);
 
-
-
 export default router;

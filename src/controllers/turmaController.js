@@ -6,7 +6,17 @@ export async function getTurmas(req, res) {
 
     try {
         const [rows] = await db.query(
-            "SELECT * FROM tabela_turma WHERE curso_id = ? ORDER BY turma",
+            `
+            SELECT 
+                t.id,
+                t.turma,
+                t.curso_id,
+                c.nome AS nome_curso
+            FROM tabela_turma t
+            INNER JOIN tabela_curso c ON c.id = t.curso_id
+            WHERE t.curso_id = ?
+            ORDER BY t.turma
+            `,
             [curso_id]
         );
 

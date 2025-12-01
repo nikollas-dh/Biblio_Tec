@@ -1,5 +1,7 @@
 @import url("./style.css");
 
+
+
 header a {
     font-weight: bold;
     font-style: normal;
@@ -7,10 +9,9 @@ header a {
 }
 
 .fundo-azul {
-    /* background-image: url("../img/fundoazul.png"); */
     background-color: var(--azul-escuro);
     background-size: cover;
-    height: 60%;
+    height: 87.9%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -23,20 +24,25 @@ header a {
 }
 
 
-.caixa_branca_1 {
-    background-color: var(--branco);
-    height: 40%;
-    height: 52%;
-    width: 100%;
+.funcoes {
+    margin-top: 100px;
+    box-shadow: 0 0 10px black;
+    background-color: var(--azul-escuro); 
+    height: 30%;
+    margin-left: 100px;
+    width: 90%;
     display: flex;
-    justify-content: space-around;
+    border-radius: 10px;
+    justify-content: center; 
+    align-items: center;
+    gap: 60px;
 }
 
 .usuarios-1,
 .usuarios-2,
 .usuarios-3,
 .usuarios-4 {
-    background-color: var(--branco);
+    background-color: var(--branco-gelo);
     border-radius: 10px;
     box-shadow: 0 0 5px black;
     width: 10vw;
@@ -45,12 +51,26 @@ header a {
     text-align: center;
     cursor: pointer;
     transition: 0.2s;
-}livros
+}
+.usuarios-1:hover,
+.usuarios-2:hover,
+.usuarios-3:hover,
+.usuarios-4:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--azul-marinho);
+}
+.livros-1:hover,
+.livros-2:hover,
+.livros-3:hover,
+.livros-4:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--azul-marinho);
+}
 .livros-1,
 .livros-2,
 .livros-3,
 .livros-4 {
-    background-color: var(--branco);
+    background-color: var(--branco-gelo);
     border-radius: 10px;
     box-shadow: 0 0 5px black;
     width: 10vw;
@@ -67,141 +87,21 @@ header a {
 
 }
 
-.caixa_branca_2 {
-    background-color: var(--branco);
-    height: 25%;
-    width: 100%;
-}
+@media (max-width: 600px) {
 
-#divPesquisa input {
-    width: 90vw;
-    max-width: 400px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    font-size: 1rem;
-}
+    .logoBiblitec {
+        width: 70px;
+    }
 
-#divLogin {
-    width: 10%;
-    display: flex;
-    justify-content: center;
+    #icons {
+        font-size: 35px;
+    }
 
-}
+    .funcoes {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#prev-btn {
-    display: flex;
-    border-radius: 1000%;
-    cursor: pointer;
-    justify-content: flex-start;
-}
-
-#next-btn {
-    display: flex;
-    border-radius: 1000%;
-    cursor: pointer;
-    justify-content: flex-end;
-}
-
-
-.img_livro_bd {
-    background-image: url("../img/img_livros/livro_BD.jpeg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    /* defina o tamanho do container */
-    height: 400px;
-}
-
-
-.img_livro_Csharp {
-    background-image: url("../img/img_livros/livro_Csharp.jpeg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    /* defina o tamanho do container */
-    height: 400px;
-}
-
-.img_livro_html_css {
-    background-image: url("../img/img_livros/livro_html_css.jpeg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    /* defina o tamanho do container */
-    height: 400px;
-}
-
-.img_livro_js {
-    background-image: url("../img/img_livros/livro_js.jpeg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    /* defina o tamanho do container */
-    height: 400px;
-}
-
-.img_livro_python {
-    background-image: url("../img/img_livros/livro_python.jpeg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    /* defina o tamanho do container */
-    height: 400px;
-}
-
-.img_livro_scrum {
-    background-image: url("../img/img_livros/livro_scrum.jpeg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    /* defina o tamanho do container */
-    height: 400px;
-}
-
-.livro {
-    width: 150px;
-    height: 220px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.livro:hover {
-    transform: scale(1.1);
+    .material-symbols-outlined {
+        font-size: 35px;
+    }
 }

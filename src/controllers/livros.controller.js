@@ -3,13 +3,13 @@ import {db} from "../config/db.js";
 
 export async function criarLivros (req, res){
   try {
-    const { titulo, autor, genero, editora, ano_publicacao, isbn, idioma, formato, descricao } = req.body;
+    const { titulo, autor, genero, editora, ano_publicacao, isbn, idioma, formato, sinopse } = req.body;
     if (!titulo || !autor || !genero)
       return res.status(400).json({ erro: "Campos obrigatórios" });
 
     await db.execute(
-      "INSERT INTO livros (titulo, autor, genero, editora, ano_publicacao, isbn, idioma, formato, descricao) VALUES (?, ?,?,?,?,?,?,?,?)",
-      [titulo, autor, genero, editora, ano_publicacao, isbn, idioma, formato, descricao]
+      "INSERT INTO livros (titulo, autor, genero, editora, ano_publicacao, isbn, idioma, formato, sinopse) VALUES (?, ?,?,?,?,?,?,?,?)",
+      [titulo, autor, genero, editora || null, ano_publicacao || null, isbn || null, idioma || null, formato || null, sinopse || null]
     );
 
     res.status(201).json({ mensagem: "Livro criado com sucesso!" });

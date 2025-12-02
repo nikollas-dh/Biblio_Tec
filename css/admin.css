@@ -1,7 +1,5 @@
-/* Importação e Variáveis (Se aplicável) */
 @import url("./style.css"); 
 
-/* --- ESTILOS GERAIS/BASE --- */
 
 header a {
     font-weight: bold;
@@ -12,11 +10,11 @@ header a {
 .fundo-azul {
     background-color: var(--azul-escuro);
     background-size: cover;
-    min-height: 87.9vh; /* Usamos min-height para garantir que o fundo cubra a tela e possa crescer */
+    min-height: 87.9vh; 
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding-bottom: 50px; /* Adiciona espaço no final da seção */
+    padding-bottom: 50px; 
 }
 
 .texto1 {
@@ -27,26 +25,25 @@ header a {
 .texto2 {
     color: var(--branco);
     margin-left: 5%;
-    margin-top: 50px; /* Adicionado um margin-top para separar do bloco .funcoes */
+    margin-top: 50px; 
 }
 
-/* --- ESTILOS DO CONTAINER DE FUNÇÕES (PC PADRÃO E PC GRANDE) --- */
 
 .funcoes {
     margin-top: 100px;
     box-shadow: 0 0 10px black;
     background-color: var(--azul-escuro); 
-    width: 90%; /* Largura padrão de 90% */
-    max-width: 1200px; /* Limite a largura máxima em telas muito grandes */
-    height: auto; /* Altura se ajusta ao conteúdo */
-    margin: 100px auto 0 auto; /* Centraliza horizontalmente e mantém o margin-top */
+    width: 90%; 
+    max-width: 1200px; 
+    height: auto; 
+    margin: 100px auto 0 auto; 
     display: flex;
-    flex-wrap: wrap; /* Essencial para responsividade: permite que os itens quebrem a linha */
+    flex-wrap: wrap; 
     border-radius: 10px;
     justify-content: center; 
     align-items: center;
-    gap: 20px; /* Espaço entre os itens */
-    padding: 20px; /* Preenchimento interno do container */
+    gap: 20px; 
+    padding: 20px; 
 }
 
 /* --- ESTILOS DOS ITENS (4 COLUNAS POR PADRÃO) --- */
@@ -62,9 +59,8 @@ header a {
     background-color: var(--branco-gelo);
     border-radius: 10px;
     box-shadow: 0 0 5px black;
-    /* Divide o espaço em 4 colunas, subtraindo o gap */
     width: calc(25% - 20px); 
-    min-width: 180px; /* Garante que o item tenha um tamanho mínimo */
+    min-width: 180px; 
     height: 15vh;
     padding: 25px 15px;
     text-align: center;
@@ -72,7 +68,6 @@ header a {
     transition: 0.2s;
 }
 
-/* Efeitos Hover */
 .usuarios-1:hover,
 .usuarios-2:hover,
 .usuarios-3:hover,
@@ -86,19 +81,18 @@ header a {
 }
 
 
-/* --- MEDIA QUERIES PARA RESPONSIVIDADE --- */
+
 
 /* 🖥️ PC GRANDE (Telas muito grandes) */
 @media (min-width: 1201px) {
     .funcoes {
-        max-width: 1400px; /* Aumenta a largura máxima para monitores ultra-largos */
+        max-width: 1400px; 
     }
 }
 
 
 /* 💻 TABLET / PC INTERMEDIÁRIO (Máximo de 900px) - 3 COLUNAS */
 @media (max-width: 900px) {
-    /* Faz os itens ocuparem 1/3 da linha */
     .usuarios-1,
     .usuarios-2,
     .usuarios-3,
@@ -107,21 +101,17 @@ header a {
     .livros-2,
     .livros-3,
     .livros-4 {
-        /* Divide o espaço em 3 colunas, subtraindo o gap */
         width: calc(33.33% - 20px);
         min-width: 150px; 
     }
 }
 
 
-/* 📱 MOBILE (Máximo de 600px) - 2 COLUNAS */
 
    /* 📱 MOBILE (Máximo de 600px) - 2 COLUNAS */
 @media (max-width: 600px) {
 
-    /* ... Outros ajustes ... */
 
-    /* Garante que os itens ocupem metade da largura para ter 2 colunas */
     .usuarios-1,
     .usuarios-2,
     .usuarios-3,
@@ -130,19 +120,16 @@ header a {
     .livros-2,
     .livros-3,
     .livros-4 {
-        /* ESSENCIAL: 50% menos o gap garante 2 itens por linha */
         width: calc(50% - 10px); 
         min-width: 120px; 
         height: auto; 
         padding: 15px 10px; 
     }
     
-    /* Reduz o gap entre os itens para Mobile */
     .funcoes {
         gap: 10px; 
         padding: 10px;
         margin-top: 50px;
     }
 
-    /* ... Outros ajustes ... */
 }

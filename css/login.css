@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;  
+    min-height: 100vh;
     margin: 0;
 }
 
@@ -50,9 +50,30 @@ h1 {
     text-align: center;
 }
 
-#divBtnLogin{
 
-    
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-container .entrada {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    user-select: none;
+    color: #666;
+    font-size: 24px;
+    transition: color 0.2s;
+}
+
+.password-toggle:hover {
+    color: var(--ciano);
 }
 
 #texto {
@@ -123,11 +144,17 @@ a {
 }
 
 fieldset {
-    margin-top: 10px;
     color: var(--ciano);
     border-radius: 10px;
     height: 55px;
+    border: 1px solid white; /* Adicione uma borda para visualização */
+    margin-top: 3%;
 }
+
+#senha {
+    margin-top: 1%;
+}
+
 
 .entrada {
     background-color: var(--azul-escuro);
@@ -136,14 +163,12 @@ fieldset {
     height: 100%;
     font-size: 20px;
     color: white;
+    
+    outline: none; /* Remove borda de foco padrão */
 }
 
 
-.divLogo {
-    width: 10px;
-    height: 40px;
-    background: red;
-}
+
 
 /* ============================
    RESPONSIVIDADE - PC
@@ -165,7 +190,7 @@ fieldset {
         width: 150px;
         height: 60px;
         justify-self: end;
-        margin-top: 10% ;
+        margin-top: 10%;
     }
 
     #direcionavel {

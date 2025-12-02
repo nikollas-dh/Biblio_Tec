@@ -13,7 +13,7 @@
     <header>
         <div id="divLogo">
             <a href="inicio.html">
-            <img class="logoBibliotec" src="../img/icon/logo_bibliotec.png" alt="LogoBibliotec">
+                <img class="logoBibliotec" src="../img/icon/logo_bibliotec.png" alt="LogoBibliotec">
             </a>
         </div>
     </header>
@@ -36,7 +36,14 @@
 
                         <fieldset>
                             <legend>Senha:</legend>
-                            <input type="password" class="entrada" placeholder="Digite sua senha" id="senha" required>
+                            <div class="input-container">
+                                <input type="password" class="entrada" placeholder="Digite sua senha" id="senha"
+                                    autocomplete="off" required>
+
+                                <span class="material-symbols-outlined password-toggle" id="togglePassword">
+                                    visibility_off
+                                </span>
+                            </div>
                         </fieldset>
                     </div>
                 </div>
@@ -51,16 +58,45 @@
             </div>
     </main>
     </form>
-     <footer>
-        <div id="divLogo">
-            <a href="inicio.html">
-                <img class="logoSenai" src=../img/icon/SENAI_logo.png alt="LogoSenai">
-            </a>
-            </div>
+    <footer>
+
         <div>
+            <img src="../img/icon/facebook.png" alt="">
+            <img src="../img/icon/linkedin.png" alt="">
             <img src="../img/icon/instagram.png" alt="">
-        </div> 
+        </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const senhaInput = document.getElementById('senha');
+            const togglePassword = document.getElementById('togglePassword');
+
+            if (togglePassword && senhaInput) {
+                // AJUSTE DE ESTADO INICIAL:
+                // O campo começa como type="text" (pela mudança no HTML), então
+                // o ícone inicial deve ser 'visibility' (olho aberto).
+                // E o primeiro clique deve mudar para 'password'.
+
+                // 1. Defina o ícone inicial para 'visibility' (olho aberto)
+                togglePassword.textContent = 'visibility';
+
+                togglePassword.addEventListener('click', function (e) {
+                    const currentType = senhaInput.getAttribute('type');
+
+                    // Se for 'text' (visível), muda para 'password' (oculto)
+                    if (currentType === 'text') {
+                        senhaInput.setAttribute('type', 'password');
+                        this.textContent = 'visibility_off'; // Olho fechado
+
+                    } else {
+                        // Se for 'password' (oculto), muda para 'text' (visível)
+                        senhaInput.setAttribute('type', 'text');
+                        this.textContent = 'visibility'; // Olho aberto
+                    }
+                });
+            }
+        });
+    </script>
     <script src="../js/login.js"></script>
 </body>
 

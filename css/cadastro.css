@@ -25,7 +25,30 @@ main {
     color: var(--branco);
 }
 
-/* ----- INPUTS / SELECT / LABEL ----- */
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-container .entrada {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    user-select: none;
+    color: #666;
+    font-size: 24px;
+    transition: color 0.2s;
+}
+
+.password-toggle:hover {
+    color: var(--ciano);
+}
 .form-group {
     margin-bottom: 15px;
     display: flex;

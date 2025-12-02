@@ -1,9 +1,12 @@
 import express from "express";
-import { getCursos } from "../controllers/cursoController.js";
+import { listarCursos, obterCursos } from "../controllers/cursoController.js";
 
 const router = express.Router();
 
-// Rota para buscar todos os cursos
-router.get("/", getCursos);
+// GET /api/curso
+router.get("/", listarCursos);
+
+// GET /api/curso/:id
+router.get("/:id", obterCursos);
 
 export default router;

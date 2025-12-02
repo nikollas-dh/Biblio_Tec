@@ -1,4 +1,4 @@
-@import url("./style.css"); 
+@import url("./style.css");
 
 
 header a {
@@ -10,11 +10,19 @@ header a {
 .fundo-azul {
     background-color: var(--azul-escuro);
     background-size: cover;
-    min-height: 87.9vh; 
+    min-height: 87.9vh;
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding-bottom: 50px; 
+    padding-bottom: 50px;
+}
+
+.fundo-azul a {
+    display: flex;
+    flex-grow: 1;
+    text-decoration: none;
+    color: inherit;
+    flex-shrink: 0;
 }
 
 .texto1 {
@@ -25,43 +33,43 @@ header a {
 .texto2 {
     color: var(--branco);
     margin-left: 5%;
-    margin-top: 50px; 
+    margin-top: 50px;
 }
 
 
 .funcoes {
     margin-top: 100px;
     box-shadow: 0 0 10px black;
-    background-color: var(--azul-escuro); 
-    width: 90%; 
-    max-width: 1200px; 
-    height: auto; 
-    margin: 100px auto 0 auto; 
+    background-color: var(--azul-escuro);
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    margin: 100px auto 0 auto;
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     border-radius: 10px;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    gap: 20px; 
-    padding: 20px; 
+    gap: 20px;
+    padding: 20px;
 }
-
-/* --- ESTILOS DOS ITENS (4 COLUNAS POR PADRÃO) --- */
 
 .usuarios-1,
 .usuarios-2,
 .usuarios-3,
-.usuarios-4,
 .livros-1,
 .livros-2,
-.livros-3,
-.livros-4 {
+.livros-3 {
     background-color: var(--branco-gelo);
     border-radius: 10px;
     box-shadow: 0 0 5px black;
-    width: calc(25% - 20px); 
-    min-width: 180px; 
-    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-width: 180px;
     padding: 25px 15px;
     text-align: center;
     cursor: pointer;
@@ -71,65 +79,59 @@ header a {
 .usuarios-1:hover,
 .usuarios-2:hover,
 .usuarios-3:hover,
-.usuarios-4:hover,
 .livros-1:hover,
 .livros-2:hover,
-.livros-3:hover,
-.livros-4:hover {
+.livros-3:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px var(--azul-marinho);
 }
 
 
 
-
 /* 🖥️ PC GRANDE (Telas muito grandes) */
 @media (min-width: 1201px) {
     .funcoes {
-        max-width: 1400px; 
+        max-width: 1400px;
     }
 }
 
 
 /* 💻 TABLET / PC INTERMEDIÁRIO (Máximo de 900px) - 3 COLUNAS */
 @media (max-width: 900px) {
+    .fundo-azul a {
+        width: calc(33.33% - 20px);
+    }
+
     .usuarios-1,
     .usuarios-2,
     .usuarios-3,
-    .usuarios-4,
     .livros-1,
     .livros-2,
-    .livros-3,
-    .livros-4 {
-        width: calc(33.33% - 20px);
-        min-width: 150px; 
+    .livros-3 {
+        min-width: 150px;
     }
 }
 
 
 
-   /* 📱 MOBILE (Máximo de 600px) - 2 COLUNAS */
+/* 📱 MOBILE (Máximo de 600px) - 2 COLUNAS */
 @media (max-width: 600px) {
-
-
+    .fundo-azul a {
+        width: calc(50% - 10px);
+    }
     .usuarios-1,
     .usuarios-2,
     .usuarios-3,
-    .usuarios-4,
     .livros-1,
     .livros-2,
-    .livros-3,
-    .livros-4 {
-        width: calc(50% - 10px); 
-        min-width: 120px; 
-        height: auto; 
-        padding: 15px 10px; 
+    .livros-3 {
+        min-width: 120px;
+        height: auto;
+        padding: 15px 10px;
     }
-    
     .funcoes {
-        gap: 10px; 
+        gap: 10px;
         padding: 10px;
         margin-top: 50px;
     }
-
 }

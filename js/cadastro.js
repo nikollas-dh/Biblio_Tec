@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:3000/api"; 
+const API_BASE = "http://localhost:3000/api";
 
 // CORREÇÃO: Usando a base /api e nomes no singular
 const API = `${API_BASE}/usuario`; // Para cadastro POST
@@ -8,8 +8,8 @@ const API_TURMAS = `${API_BASE}/turma`; // Para listar turmas (GET /api/turma/:c
 // --------------- PEGANDO ELEMENTOS ---------------
 const inputNome = document.getElementById("nome");
 const inputCpf = document.getElementById("cpf");
-const selectCurso = document.getElementById("curso"); 
-const selectTurma = document.getElementById("turma"); 
+const selectCurso = document.getElementById("curso");
+const selectTurma = document.getElementById("turma");
 const inputEmail = document.getElementById("email");
 const inputNovaSenha = document.getElementById("novaSenha");
 const inputConfirmarSenha = document.getElementById("confirmSenha");
@@ -32,13 +32,13 @@ inputCpf.addEventListener("input", (e) => {
 async function carregarCursos() {
     try {
         const resposta = await fetch(API_CURSOS); // Chamando http://localhost:3000/api/curso
-        
+
         if (!resposta.ok) {
             throw new Error(`Erro HTTP! Status: ${resposta.status}`);
         }
 
         const cursos = await resposta.json();
-        
+
         selectCurso.innerHTML = '<option value="" disabled selected>Selecione seu curso</option>';
         cursos.forEach((curso) => {
             const option = document.createElement("option");
@@ -49,7 +49,7 @@ async function carregarCursos() {
 
     } catch (error) {
         console.error("Erro ao buscar cursos:", error);
-        alert("Erro ao carregar cursos."); 
+        alert("Erro ao carregar cursos.");
     }
 }
 
@@ -68,7 +68,7 @@ async function carregarTurmas(cursoID) {
         }
 
         const turmas = await resposta.json();
-        
+
         selectTurma.innerHTML = '<option value="" disabled selected>Selecione sua turma</option>';
         turmas.forEach((turma) => {
             const option = document.createElement("option");
@@ -80,7 +80,7 @@ async function carregarTurmas(cursoID) {
 
     } catch (error) {
         console.error("Erro ao buscar turmas:", error);
-        alert("Erro ao carregar turmas."); 
+        alert("Erro ao carregar turmas.");
         selectTurma.innerHTML = '<option value="" disabled selected>Erro ao carregar</option>';
     }
 }
@@ -100,7 +100,7 @@ formCadastrar.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const nome = inputNome.value.trim();
-    const cpf = inputCpf.value.replace(/\D/g, ""); 
+    const cpf = inputCpf.value.replace(/\D/g, "");
     const curso = selectCurso.value;
     const turma = selectTurma.value;
     const email = inputEmail.value.trim();
@@ -157,6 +157,7 @@ formCadastrar.addEventListener("submit", async (e) => {
         }
 
     } catch (error) {
+        res.send(500).json({ erro: "Erro ao cadastrar usuário." });
         console.error("Erro na rede ao tentar cadastrar:", error);
         alert("Erro de conexão com o servidor. Tente novamente.");
     } finally {
@@ -169,32 +170,64 @@ formCadastrar.addEventListener("submit", async (e) => {
 document.addEventListener("DOMContentLoaded", carregarCursos);
 
 // --------------- TOGGLE VISIBILIDADE SENHA ---------------
-        document.addEventListener('DOMContentLoaded', () => {
-            const senhaInput = document.getElementById('senha');
-            const togglePassword = document.getElementById('togglePassword');
+document.addEventListener('DOMContentLoaded', () => {
+    const senhaInput = document.getElementById('confirmSenha');
+    const togglePassword = document.getElementById('togglePassword');
 
-            if (togglePassword && senhaInput) {
-                // AJUSTE DE ESTADO INICIAL:
-                // O campo começa como type="text" (pela mudança no HTML), então
-                // o ícone inicial deve ser 'visibility' (olho aberto).
-                // E o primeiro clique deve mudar para 'password'.
+    if (togglePassword && senhaInput) {
+        // AJUSTE DE ESTADO INICIAL:
+        // O campo começa como type="text" (pela mudança no HTML), então
+        // o ícone inicial deve ser 'visibility' (olho aberto).
+        // E o primeiro clique deve mudar para 'password'.
 
-                // 1. Defina o ícone inicial para 'visibility' (olho aberto)
-                togglePassword.textContent = 'visibility';
+        // 1. Defina o ícone inicial para 'visibility' (olho aberto)
+        togglePassword.textContent = 'visibility';
 
-                togglePassword.addEventListener('click', function (e) {
-                    const currentType = senhaInput.getAttribute('type');
+        togglePassword.addEventListener('click', function (e) {
+            const currentType = senhaInput.getAttribute('type');
 
-                    // Se for 'text' (visível), muda para 'password' (oculto)
-                    if (currentType === 'text') {
-                        senhaInput.setAttribute('type', 'password');
-                        this.textContent = 'visibility_off'; // Olho fechado
+            // Se for 'text' (visível), muda para 'password' (oculto)
+            if (currentType === 'text') {
+                senhaInput.setAttribute('type', 'password');
+                this.textContent = 'visibility_off'; // Olho fechado
 
-                    } else {
-                        // Se for 'password' (oculto), muda para 'text' (visível)
-                        senhaInput.setAttribute('type', 'text');
-                        this.textContent = 'visibility'; // Olho aberto
-                    }
-                });
+            } else {
+                // Se for 'password' (oculto), muda para 'text' (visível)
+                senhaInput.setAttribute('type', 'text');
+                this.textContent = 'visibility'; // Olho aberto
             }
         });
+    }
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const senhaInput = document.getElementById('novaSenha');
+    const togglePassword = document.getElementById('iconNovaSenha');
+
+    if (togglePassword && senhaInput) {
+        // AJUSTE DE ESTADO INICIAL:
+        // O campo começa como type="text" (pela mudança no HTML), então
+        // o ícone inicial deve ser 'visibility' (olho aberto).
+        // E o primeiro clique deve mudar para 'password'.
+
+        // 1. Defina o ícone inicial para 'visibility' (olho aberto)
+        togglePassword.textContent = 'visibility';
+
+        togglePassword.addEventListener('click', function (e) {
+            const currentType = senhaInput.getAttribute('type');
+
+            // Se for 'text' (visível), muda para 'password' (oculto)
+            if (currentType === 'text') {
+                senhaInput.setAttribute('type', 'password');
+                this.textContent = 'visibility_off'; // Olho fechado
+
+            } else {
+                // Se for 'password' (oculto), muda para 'text' (visível)
+                senhaInput.setAttribute('type', 'text');
+                this.textContent = 'visibility'; // Olho aberto
+            }
+        });
+    }
+});

@@ -7,6 +7,13 @@ body {
     margin: 0;
 }
 
+/* Remove o olho PADRÂO de mostrar/ocultar senha*/
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none !important;
+}
+
+
 main {
     display: flex;
     justify-content: center;

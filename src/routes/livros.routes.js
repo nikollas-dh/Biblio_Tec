@@ -9,7 +9,6 @@ import { listarLivros,
 
 const router = express.Router();
 
-// /livros / //
 router.get("/", listarLivros);
 router.post("/", criarLivros);
 router.get("/:id", buscarLivro);

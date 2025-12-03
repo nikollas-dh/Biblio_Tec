@@ -70,7 +70,6 @@ main {
     font-size: 15px;
 }
 
-/* ----- BOTÃO ----- */
 .button-group {
     margin-top: auto;
     display: flex;
@@ -95,9 +94,7 @@ main {
     background-color: #00cccc;
 }
 
-/* ==========================================
-         🔥 RESPONSIVIDADE PARA CELULAR
-   ========================================== */
+
 @media (max-width: 768px) {
 
     main {
@@ -105,7 +102,7 @@ main {
     }
 
     .caixa-cadastro {
-        width: 90vw;      /* ocupa quase toda a tela */
+        width: 90vw;     
         min-width: unset;
         border-radius: 25px;
         padding: 25px;
@@ -113,7 +110,7 @@ main {
 
     .form-group input,
     .form-group select {
-        font-size: 16px;  /* aumenta para facilitar digitação */
+        font-size: 16px;  
         padding: 12px;
     }
 
@@ -129,7 +126,7 @@ main {
     }
 }
 
-@media (max-width: 480px) { /* celulares menores */
+@media (max-width: 480px) { 
     h2 {
         font-size: 20px;
     }

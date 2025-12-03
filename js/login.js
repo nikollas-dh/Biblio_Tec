@@ -1,4 +1,4 @@
-const API = "http://localhost:3000/usuario/login"
+const API = "http://localhost:3000/api/usuario/login"
 
 
 const bntLogin = document.getElementById('bntLogin');

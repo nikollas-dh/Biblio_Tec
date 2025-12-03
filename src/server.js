@@ -12,14 +12,14 @@ import cursoRoutes from "./routes/curso.routes.js";
 import recuperarRoutes from "./routes/recuperar.routes.js"; 
 
 const app = express();
-app.use(cors()); // CORS está ativado
+app.use(cors()); 
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   res.send("🚀 API rodando com sucesso!");
 });
 
-// Todas as rotas agora começam com /api
+
 app.use("/api/usuario", usuarioRoutes);
 app.use("/api/livros", livrosRoutes);
 app.use("/api/avaliacoes", avaliacoesRoutes);

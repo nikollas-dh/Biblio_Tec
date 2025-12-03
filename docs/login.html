@@ -72,26 +72,18 @@
             const togglePassword = document.getElementById('togglePassword');
 
             if (togglePassword && senhaInput) {
-                // AJUSTE DE ESTADO INICIAL:
-                // O campo começa como type="text" (pela mudança no HTML), então
-                // o ícone inicial deve ser 'visibility' (olho aberto).
-                // E o primeiro clique deve mudar para 'password'.
-
-                // 1. Defina o ícone inicial para 'visibility' (olho aberto)
                 togglePassword.textContent = 'visibility';
 
                 togglePassword.addEventListener('click', function (e) {
                     const currentType = senhaInput.getAttribute('type');
 
-                    // Se for 'text' (visível), muda para 'password' (oculto)
                     if (currentType === 'text') {
                         senhaInput.setAttribute('type', 'password');
-                        this.textContent = 'visibility_off'; // Olho fechado
+                        this.textContent = 'visibility_off'; 
 
                     } else {
-                        // Se for 'password' (oculto), muda para 'text' (visível)
                         senhaInput.setAttribute('type', 'text');
-                        this.textContent = 'visibility'; // Olho aberto
+                        this.textContent = 'visibility'; 
                     }
                 });
             }

@@ -1,8 +1,6 @@
 import { db } from "../config/db.js";
 
-// 1. Função para LISTAR todas as turmas de um curso (espera curso_id)
 export const listarTurmas = async (req, res) => {
-    // O nome 'curso_id' deve corresponder ao parâmetro definido na rota
     const { curso_id } = req.params; 
 
     try {
@@ -28,7 +26,6 @@ export const listarTurmas = async (req, res) => {
     }
 };
 
-// 2. Função para OBTER uma única turma por ID (espera id da turma)
 export const obterTurma = async (req, res) => {
     const { id } = req.params; 
 

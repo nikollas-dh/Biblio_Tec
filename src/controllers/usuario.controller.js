@@ -1,8 +1,6 @@
 import { db } from "../config/db.js";
 
-// ============================
-//  Criar usuário
-// ============================
+
 export async function criarUsuario(req, res) {
   try {
     const { nome, email, senha, curso_id, turma_id, perfil } = req.body;
@@ -23,18 +21,14 @@ export async function criarUsuario(req, res) {
   }
 }
 
-// ============================
-//  Listar usuários
-// ============================
+
 export async function listarUsuarios(req, res) {
   try {
     const [rows] = await db.execute(`
       SELECT u.id, u.nome, u.email, u.perfil,
-             c.nome AS curso,
-             t.turma AS turma
+             c.nome AS curso
       FROM usuarios u
-      LEFT JOIN tabela_curso c ON c.id = u.curso_id
-      LEFT JOIN tabela_turma t ON t.id = u.turma_id
+      LEFT JOIN tabela_curso c ON c.id = u.curso
     `);
 
     res.json(rows);
@@ -43,9 +37,7 @@ export async function listarUsuarios(req, res) {
   }
 }
 
-// ============================
-//  Obter usuário por ID
-// ============================
+
 export async function obterUsuario(req, res) {
   try {
     const [rows] = await db.execute(
@@ -94,8 +86,8 @@ export async function login (req, res){
     const dados_usuario = usuario[0]
     return res.status(200).json({ 
         mensagem: "Login efetuado.",
-        perfil: dados_usuario.perfil, // Chave 'perfil' com o valor 'Admin' ou 'Aluno'
-        usuario: dados_usuario        // Retorna todos os dados para o front-end
+        perfil: dados_usuario.perfil, 
+        usuario: dados_usuario        
     });
 
   } catch (err) {
@@ -105,9 +97,7 @@ export async function login (req, res){
 };
 
 
-// ============================
-//  Atualizar usuário
-// ============================
+
 export async function atualizarUsuario(req, res) {
   try {
     const { nome, email, senha, curso_id, turma_id, perfil } = req.body;
@@ -136,9 +126,7 @@ export async function atualizarUsuario(req, res) {
   }
 }
 
-// ============================
-//  Deletar usuário
-// ============================
+
 export async function deletarUsuario(req, res) {
   try {
     await db.execute("DELETE FROM usuarios WHERE id = ?", [req.params.id]);

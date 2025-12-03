@@ -14,7 +14,7 @@ async function DadosDoBanco() {
 
         const dados = await response.json();
         console.log('Dados recebidos:', dados);
-        return dados; // retorna os dados para serem usados depois
+        return dados; 
 
     } catch (error) {
         console.error('Erro ao buscar dados:', error);
@@ -46,7 +46,6 @@ async function carregarLivros() {
     })
 
 
-    //busca os livros
     const livros = document.querySelectorAll('.cardLivro');
 
     campoPesquisa.addEventListener('input', () => {
@@ -57,9 +56,9 @@ async function carregarLivros() {
             
 
             if (titulo.includes(termo)) {
-                livro.style.display = 'flex'; // mostra
+                livro.style.display = 'flex'; 
             } else {
-                livro.style.display = 'none'; // esconde
+                livro.style.display = 'none'; 
             }
         });
     });

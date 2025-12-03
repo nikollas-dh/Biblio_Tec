@@ -115,6 +115,7 @@ header a {
     
     .fundo-azul a {
         width: calc(33.333% - 20px);
+        
     }
     
     .usuarios-1, 
@@ -123,11 +124,11 @@ header a {
     .livros-1, 
     .livros-2, 
     .livros-3 {
-        max-width: 220px; 
+        max-width: 220px;
+        margin-left: 60px;
     }
 }
 
-/* 💻 TABLET / PC INTERMEDIÁRIO (Máximo de 900px) - 3 COLUNAS */
 @media (max-width: 900px) {
     .fundo-azul a {
         width: calc(33.33% - 20px);

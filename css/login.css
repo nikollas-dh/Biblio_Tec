@@ -1,10 +1,6 @@
 @import url("./main.css");
 @import url("./style.css");
 
-/* ============================
-   ESTILOS GERAIS
-============================ */
-
 body {
     background-color: var(--azul-escuro);
     place-items: center;
@@ -148,7 +144,7 @@ fieldset {
     color: var(--ciano);
     border-radius: 10px;
     height: 55px;
-    border: 1px solid white; /* Adicione uma borda para visualização */
+    border: 1px solid white; 
     margin-top: 3%;
 }
 
@@ -156,7 +152,6 @@ fieldset {
     margin-top: 1%;
 }
 
-/* Remove o olho PADRÂO de mostrar/ ocultar senha*/
 input[type="password"]::-ms-reveal,
 input[type="password"]::-ms-clear {
     display: none !important;
@@ -172,7 +167,7 @@ input[type="password"]::-ms-clear {
     font-size: 20px;
     color: white;
     
-    outline: none; /* Remove borda de foco padrão */
+    outline: none; 
 }
 
 

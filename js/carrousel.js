@@ -18,8 +18,8 @@ function updateCaroussel() {
 
     for (let i = 0; i < elementos.length; i++) {
         const index = (currentIndex + i) % listaLivros.length;
-        elementos[i].className = "livro"; // limpa
-        elementos[i].classList.add(listaLivros[index]); // adiciona nova classe
+        elementos[i].className = "livro"; 
+        elementos[i].classList.add(listaLivros[index]); 
     }
 }
 

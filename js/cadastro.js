@@ -5,7 +5,6 @@ const API = `${API_BASE}/usuario`; // Para cadastro POST
 const API_CURSOS = `${API_BASE}/curso`; // Para listar cursos (GET /api/curso)
 const API_TURMAS = `${API_BASE}/turma`; // Para listar turmas (GET /api/turma/:curso_id)
 
-// --------------- PEGANDO ELEMENTOS ---------------
 const inputNome = document.getElementById("nome");
 const inputCpf = document.getElementById("cpf");
 const selectCurso = document.getElementById("curso");
@@ -15,7 +14,6 @@ const inputNovaSenha = document.getElementById("novaSenha");
 const inputConfirmarSenha = document.getElementById("confirmSenha");
 const formCadastrar = document.getElementById("form-cadastrar");
 
-// --------------- FORMATAR CPF ---------------
 function formatarCPF(cpf) {
     cpf = cpf.replace(/\D/g, "");
     cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
@@ -28,11 +26,9 @@ inputCpf.addEventListener("input", (e) => {
     e.target.value = formatarCPF(e.target.value);
 });
 
-// --------------- CARREGAR CURSOS ---------------
 async function carregarCursos() {
     try {
-        const resposta = await fetch(API_CURSOS); // Chamando http://localhost:3000/api/curso
-
+        const resposta = await fetch(API_CURSOS); 
         if (!resposta.ok) {
             throw new Error(`Erro HTTP! Status: ${resposta.status}`);
         }
@@ -53,13 +49,12 @@ async function carregarCursos() {
     }
 }
 
-// --------------- CARREGAR TURMAS ---------------
 async function carregarTurmas(cursoID) {
     selectTurma.disabled = true;
     selectTurma.innerHTML = '<option value="" disabled selected>Carregando...</option>';
 
     try {
-        const url = `${API_TURMAS}/${cursoID}`; // Ex: http://localhost:3000/api/turma/1
+        const url = `${API_TURMAS}/${cursoID}`; 
 
         const resposta = await fetch(url);
 
@@ -85,7 +80,6 @@ async function carregarTurmas(cursoID) {
     }
 }
 
-// --------------- EVENT LISTENERS ---------------
 selectCurso.addEventListener("change", () => {
     const cursoID = selectCurso.value;
     if (cursoID) {
@@ -166,35 +160,26 @@ formCadastrar.addEventListener("submit", async (e) => {
     }
 });
 
-// Inicialização
 document.addEventListener("DOMContentLoaded", carregarCursos);
 
-// --------------- TOGGLE VISIBILIDADE SENHA ---------------
 document.addEventListener('DOMContentLoaded', () => {
     const senhaInput = document.getElementById('confirmSenha');
     const togglePassword = document.getElementById('togglePassword');
 
     if (togglePassword && senhaInput) {
-        // AJUSTE DE ESTADO INICIAL:
-        // O campo começa como type="text" (pela mudança no HTML), então
-        // o ícone inicial deve ser 'visibility' (olho aberto).
-        // E o primeiro clique deve mudar para 'password'.
-
-        // 1. Defina o ícone inicial para 'visibility' (olho aberto)
+       
         togglePassword.textContent = 'visibility';
 
         togglePassword.addEventListener('click', function (e) {
             const currentType = senhaInput.getAttribute('type');
 
-            // Se for 'text' (visível), muda para 'password' (oculto)
             if (currentType === 'text') {
                 senhaInput.setAttribute('type', 'password');
-                this.textContent = 'visibility_off'; // Olho fechado
+                this.textContent = 'visibility_off'; 
 
             } else {
-                // Se for 'password' (oculto), muda para 'text' (visível)
                 senhaInput.setAttribute('type', 'text');
-                this.textContent = 'visibility'; // Olho aberto
+                this.textContent = 'visibility';
             }
         });
     }
@@ -207,26 +192,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const togglePassword = document.getElementById('iconNovaSenha');
 
     if (togglePassword && senhaInput) {
-        // AJUSTE DE ESTADO INICIAL:
-        // O campo começa como type="text" (pela mudança no HTML), então
-        // o ícone inicial deve ser 'visibility' (olho aberto).
-        // E o primeiro clique deve mudar para 'password'.
-
-        // 1. Defina o ícone inicial para 'visibility' (olho aberto)
         togglePassword.textContent = 'visibility';
 
         togglePassword.addEventListener('click', function (e) {
             const currentType = senhaInput.getAttribute('type');
 
-            // Se for 'text' (visível), muda para 'password' (oculto)
+            
             if (currentType === 'text') {
                 senhaInput.setAttribute('type', 'password');
-                this.textContent = 'visibility_off'; // Olho fechado
+                this.textContent = 'visibility_off'; 
 
             } else {
-                // Se for 'password' (oculto), muda para 'text' (visível)
                 senhaInput.setAttribute('type', 'text');
-                this.textContent = 'visibility'; // Olho aberto
+                this.textContent = 'visibility';
             }
         });
     }

@@ -1,10 +1,8 @@
 import {db} from "../config/db.js";
 
-//retorna todas as reservas cadastradas (com dados do usuário e livro)
 export async function listarReservas(req, res) {
     try {       
         try {
-            // Query SQL para listar todas as reservas com informações relacionadas
             const query = `
                 SELECT 
                     r.id,
@@ -26,7 +24,6 @@ export async function listarReservas(req, res) {
             
             const [reservas] = await db.execute(query);
             
-            // Retornar sucesso com a lista de reservas
             return res.status(200).json({
                 sucesso: true,
                 mensagem: 'Reservas listadas com sucesso',
@@ -35,7 +32,6 @@ export async function listarReservas(req, res) {
             });
             
         } finally {
-            // Liberar a conexão
             db.release();
         }
         
@@ -49,13 +45,10 @@ export async function listarReservas(req, res) {
     }
 }
 
-//insere uma nova reserva no banco
 export async function criarReserva(req, res) {
     try {
-        // Extrair dados do corpo da requisição
         const { usuario_id, livro_id, data_retirada, data_devolucao } = req.body;
         
-        // Validação dos campos obrigatórios
         if (!usuario_id || !livro_id || !data_retirada || !data_devolucao) {
             return res.status(400).json({
                 sucesso: false,
@@ -63,7 +56,6 @@ export async function criarReserva(req, res) {
             });
         }
         
-        // Validar se a data de devolução é posterior à data de retirada
         if (new Date(data_devolucao) <= new Date(data_retirada)) {
             return res.status(400).json({
                 sucesso: false,
@@ -72,7 +64,6 @@ export async function criarReserva(req, res) {
         }
                 
         try {
-            // Verificar se o usuário existe
             const [usuarios] = await db.execute(
                 'SELECT id FROM usuarios WHERE id = ?',
                 [usuario_id]
@@ -85,7 +76,6 @@ export async function criarReserva(req, res) {
                 });
             }
             
-            // Verificar se o livro existe
             const [livros] = await db.execute(
                 'SELECT id FROM livros WHERE id = ?',
                 [livro_id]
@@ -98,7 +88,6 @@ export async function criarReserva(req, res) {
                 });
             }
             
-            // Verificar se já existe uma reserva ativa para este livro no período solicitado
             const [reservasConflitantes] = await db.execute(
                 `SELECT id FROM reservas 
                  WHERE livro_id = ? 
@@ -122,7 +111,6 @@ export async function criarReserva(req, res) {
                 });
             }
             
-            // Inserir a nova reserva
             const query = `
                 INSERT INTO reservas 
                 (usuario_id, livro_id, data_retirada, data_devolucao, confirmado_email, criado_em) 
@@ -136,7 +124,6 @@ export async function criarReserva(req, res) {
                 data_devolucao
             ]);
             
-            // Buscar a reserva criada com informações completas
             const [reservaCriada] = await db.execute(
                 `SELECT 
                     r.id,
@@ -177,7 +164,6 @@ export async function criarReserva(req, res) {
     }
 }
 
-//exclui uma reserva pelo ID
 export async function excluirReserva (req, res){
     try {
     await db.execute("DELETE FROM reservas WHERE id = ?", [req.params.id]);

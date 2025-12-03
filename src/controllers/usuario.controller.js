@@ -24,14 +24,20 @@ export async function criarUsuario(req, res) {
 
 export async function listarUsuarios(req, res) {
   try {
-    const [rows] = await db.execute(`
-      SELECT u.id, u.nome, u.email, u.perfil,
-             c.nome AS curso
+    const [dados_usuario] = await db.execute(`
+      SELECT 
+        u.id, 
+        u.nome, 
+        u.email, 
+        u.perfil,
+        u.data_nascimento,  
+        u.celular,     
+        c.nome AS curso
       FROM usuarios u
       LEFT JOIN tabela_curso c ON c.id = u.curso
     `);
 
-    res.json(rows);
+    res.json(dados_usuario);
   } catch (err) {
     res.status(500).json({ erro: err.message });
   }

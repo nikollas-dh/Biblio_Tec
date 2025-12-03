@@ -1,4 +1,4 @@
-import { fetchAPI } from './api.js'; 
+const API = "http://localhost:3000/api/recuperar/solicitar";
 
 const formRecuperar = document.getElementById('form-cadastrar');
 const emailInput = document.getElementById('email');
@@ -20,11 +20,8 @@ formRecuperar.addEventListener('submit', async (event) => {
         });
 
         if (response.ok) {
-            
             alert("Se um usuário com este e-mail for encontrado, um código de recuperação foi enviado.");
-            
-          
-            
+            window.location.href = "recuperar.html";
         } else {
             alert("Ocorreu um erro ao solicitar a recuperação. Tente novamente mais tarde.");
         }

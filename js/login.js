@@ -34,7 +34,7 @@ async function carregandoUsuario(e) {
       const dados = await requisicao.json();
       console.log(dados)
       alert("Entrando...")
-
+      window.location.href = "menu_admin.html"
     } else {
       console.log("Email ou senha inválidos")
       alert("Email ou senha inválidos")

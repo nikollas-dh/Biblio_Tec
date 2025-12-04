@@ -151,7 +151,6 @@ formCadastrar.addEventListener("submit", async (e) => {
         }
 
     } catch (error) {
-        res.send(500).json({ erro: "Erro ao cadastrar usuário." });
         console.error("Erro na rede ao tentar cadastrar:", error);
         alert("Erro de conexão com o servidor. Tente novamente.");
     } finally {

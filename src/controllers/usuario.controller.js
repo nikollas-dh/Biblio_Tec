@@ -3,16 +3,16 @@ import { db } from "../config/db.js";
 
 export async function criarUsuario(req, res) {
   try {
-    const { nome, email, senha, curso_id, turma_id, perfil } = req.body;
+    const { nome, email, senha, curso, perfil } = req.body;
 
     if (!nome || !email || !senha)
       return res.status(400).json({ erro: "Campos obrigatórios" });
 
     await db.execute(
       `INSERT INTO usuarios 
-        (nome, email, senha, curso_id, turma_id, perfil) 
-       VALUES (?, ?, ?, ?, ?, ?)`,
-      [nome, email, senha, curso_id || null, turma_id || null, perfil || "Aluno"]
+        (nome, email, senha, curso, perfil) 
+       VALUES (?, ?, ?, ?, ?)`,
+      [nome, email, senha, curso || null, perfil || "Aluno"]
     );
 
     res.status(201).json({ mensagem: "Usuário criado com sucesso!" });

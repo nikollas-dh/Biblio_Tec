@@ -19,13 +19,29 @@ export async function criarLivros (req, res){
 };
 
 
-export async function listarLivros (req, res){
-  try {
-    const [rows] = await db.execute("SELECT * FROM livros");
-    res.json(rows);
-  } catch (err) {
-    res.status(500).json({ erro: err.message });
+export async function listarLivros(req, res) {
+  console.log(req.query)
+
+  const titulo = req.query.titulo
+   const genero = req.query.genero
+
+  if (!titulo || !genero) {
+    try {
+      const [rows] = await db.execute("SELECT * FROM livros");
+      res.json(rows);
+    } catch (err) {
+      res.status(500).json({ erro: err.message });
+    }
+  } else {
+    try {
+      const [rows] = await db.execute(`SELECT * FROM livros WHERE TITULO LIKE "%${titulo}%" OR genero LIKE  "%${genero}%"`);
+      res.json(rows);
+    } catch (err) {
+      res.status(500).json({ erro: err.message });
+    }
   }
+
+
 };
 
 

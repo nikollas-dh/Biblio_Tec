@@ -29,7 +29,7 @@ async function carregarTabela() {
                 <td>${u.celular || 'N/A'}</td>
                 <td>${u.curso || 'N/A'}</td>
                 <td>${u.perfil || 'N/A'} </td>
-                <td>u
+                <td>
                     <button class="btnEditar">
                         <a href="editar.html?id=${u.id}">Editar</a>
                     </button> 

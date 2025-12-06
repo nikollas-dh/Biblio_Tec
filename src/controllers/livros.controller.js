@@ -3,13 +3,13 @@ import {db} from "../config/db.js";
 
 export async function criarLivros (req, res){
   try {
-    const { titulo, autor, genero, editora, ano_publicacao, isbn, idioma, formato, sinopse } = req.body;
-    if (!titulo || !autor || !genero)
+    const { titulo, autor, genero, editora, ano_publicacao, isbn, idioma, formato, caminho_capa, sinopse } = req.body;
+    if (!titulo || !autor || !genero || !caminho_capa)
       return res.status(400).json({ erro: "Campos obrigatórios" });
 
     await db.execute(
-      "INSERT INTO livros (titulo, autor, genero, editora, ano_publicacao, isbn, idioma, formato, sinopse) VALUES (?, ?,?,?,?,?,?,?,?)",
-      [titulo, autor, genero, editora || null, ano_publicacao || null, isbn || null, idioma || null, formato || null, sinopse || null]
+      "INSERT INTO livros (titulo, autor, genero, editora, ano_publicacao, isbn, idioma, formato,caminho_capa, sinopse) VALUES (?, ?,?,?,?,?,?,?,?,?)",
+      [titulo, autor, genero, editora || null, ano_publicacao || null, isbn || null, idioma || null, formato || null,caminho_capa, sinopse || null]
     );
 
     res.status(201).json({ mensagem: "Livro criado com sucesso!" });
@@ -27,15 +27,15 @@ export async function listarLivros(req, res) {
 
   if (!titulo || !genero) {
     try {
-      const [rows] = await db.execute("SELECT * FROM livros");
-      res.json(rows);
+      const [livros] = await db.execute("SELECT * FROM livros");
+      res.json(livros);
     } catch (err) {
       res.status(500).json({ erro: err.message });
     }
   } else {
     try {
-      const [rows] = await db.execute(`SELECT * FROM livros WHERE TITULO LIKE "%${titulo}%" OR genero LIKE  "%${genero}%"`);
-      res.json(rows);
+      const [livros] = await db.execute(`SELECT * FROM livros WHERE TITULO LIKE "%${titulo}%" OR genero LIKE  "%${genero}%"`);
+      res.json(livros);
     } catch (err) {
       res.status(500).json({ erro: err.message });
     }

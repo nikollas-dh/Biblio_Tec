@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const inputIsbn = document.getElementById("isbn");
     const inputIdioma = document.getElementById("idioma");
     const inputFormato = document.getElementById("formato");
+    const inputCapa = document.getElementById("caminho_capa");
     const inputsinopse = document.getElementById("sinopse");
     const formCadastrarLivro = document.getElementById("form-cadastrar-livro")
     console.log("formCadastrarLivro =", formCadastrarLivro);
@@ -27,15 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const isbn = inputIsbn.value.trim();
         const idioma = inputIdioma.value.trim();
         const formato = inputFormato.value.trim();
+        const caminho_capa = inputCapa.value.trim();
         const sinopse = inputsinopse.value.trim();
 
-        if (!titulo || !autor|| !genero) {
+        if (!titulo || !autor|| !genero || !caminho_capa) {
             alert("Gentileza preecher os campos")
             return;
         }
 
         const novoLivro = {
-            titulo, autor, genero, editora, ano_publicacao, isbn, idioma, formato, sinopse
+            titulo, autor, genero, editora, ano_publicacao, isbn, idioma, formato, caminho_capa, sinopse
         }
 
         try {

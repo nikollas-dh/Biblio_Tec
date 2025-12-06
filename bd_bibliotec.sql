@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           11.8.2-MariaDB - mariadb.org binary distribution
+-- Versão do servidor:           12.0.2-MariaDB - mariadb.org binary distribution
 -- OS do Servidor:               Win64
--- HeidiSQL Versão:              12.10.0.7000
+-- HeidiSQL Versão:              12.11.0.7065
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -34,17 +34,7 @@ CREATE TABLE IF NOT EXISTS `avaliacoes` (
   CONSTRAINT `avaliacoes_ibfk_2` FOREIGN KEY (`livro_id`) REFERENCES `livros` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
--- Copiando dados para a tabela bd_bibliotec.avaliacoes: ~9 rows (aproximadamente)
-INSERT IGNORE INTO `avaliacoes` (`id`, `usuario_id`, `livro_id`, `nota`, `comentario`, `data_avaliacao`) VALUES
-	(1, 1, 1, 5.0, 'História envolvente e personagens cativantes.', '2025-11-04 11:45:00'),
-	(2, 2, 1, 4.5, 'Ótima leitura, final surpreendente.', '2025-11-04 11:45:00'),
-	(3, 3, 2, 4.0, 'Excelente abordagem sobre tecnologia e negócios.', '2025-11-04 11:45:00'),
-	(4, 1, 4, 5.0, 'Leitura obrigatória para todo desenvolvedor.', '2025-11-04 11:45:00'),
-	(5, 2, 3, 3.5, 'Ideia interessante, mas um pouco confusa em alguns trechos.', '2025-11-04 11:45:00'),
-	(6, 3, 5, 4.8, 'Um clássico atemporal, narrativa impecável.', '2025-11-04 11:45:00'),
-	(7, 1, 6, 8.0, NULL, '2025-11-05 11:53:29'),
-	(8, 2, 6, 7.0, 'muito bacaninha', '2025-11-05 11:56:17'),
-	(9, 3, 6, 7.0, 'muito bacaninha lagal', '2025-11-05 12:40:04');
+-- Copiando dados para a tabela bd_bibliotec.avaliacoes: ~0 rows (aproximadamente)
 
 -- Copiando estrutura para tabela bd_bibliotec.favoritos
 CREATE TABLE IF NOT EXISTS `favoritos` (
@@ -59,11 +49,7 @@ CREATE TABLE IF NOT EXISTS `favoritos` (
   CONSTRAINT `favoritos_ibfk_2` FOREIGN KEY (`livro_id`) REFERENCES `livros` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
--- Copiando dados para a tabela bd_bibliotec.favoritos: ~3 rows (aproximadamente)
-INSERT IGNORE INTO `favoritos` (`id`, `usuario_id`, `livro_id`, `data_favoritado`) VALUES
-	(1, 2, 5, '2025-11-12 13:56:19'),
-	(2, 3, 5, '2025-11-12 13:57:09'),
-	(3, 1, 5, '2025-11-12 13:57:45');
+-- Copiando dados para a tabela bd_bibliotec.favoritos: ~0 rows (aproximadamente)
 
 -- Copiando estrutura para tabela bd_bibliotec.livros
 CREATE TABLE IF NOT EXISTS `livros` (
@@ -72,26 +58,23 @@ CREATE TABLE IF NOT EXISTS `livros` (
   `autor` varchar(100) NOT NULL,
   `genero` varchar(100) DEFAULT NULL,
   `editora` varchar(100) DEFAULT NULL,
-  `ano_publicacao` smallint(6) DEFAULT NULL,
+  `ano_publicacao` date DEFAULT NULL,
   `isbn` varchar(20) DEFAULT NULL,
   `idioma` varchar(50) DEFAULT 'Português',
   `formato` enum('Físico','E-book','Audiobook') DEFAULT 'Físico',
-  `caminho_capa` varchar(255) DEFAULT NULL,
+  `caminho_capa` varchar(2000) DEFAULT NULL,
   `sinopse` text DEFAULT NULL,
   `ativo` tinyint(1) DEFAULT 1,
   `criado_em` timestamp NULL DEFAULT current_timestamp(),
   `atualizado_em` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
--- Copiando dados para a tabela bd_bibliotec.livros: ~6 rows (aproximadamente)
+-- Copiando dados para a tabela bd_bibliotec.livros: ~3 rows (aproximadamente)
 INSERT IGNORE INTO `livros` (`id`, `titulo`, `autor`, `genero`, `editora`, `ano_publicacao`, `isbn`, `idioma`, `formato`, `caminho_capa`, `sinopse`, `ativo`, `criado_em`, `atualizado_em`) VALUES
-	(1, 'Filhas da Lua', 'Carolina França', 'Fantasia / Romance', 'Pandorga', 2018, '9788568263952', 'Português', 'Físico', 'capas/filhasdalua.jpg', 'Trilogia sobre jovens com poderes lunares e uma antiga profecia.', 1, '2025-11-04 11:44:47', '2025-11-04 11:44:47'),
-	(2, 'TI para Negócios', 'Edson Perin', 'Tecnologia / Gestão', 'M. Books', 2010, '9788578271541', 'Português', 'E-book', 'capas/tiparanegocios.jpg', 'Mostra como a TI pode impulsionar resultados empresariais.', 1, '2025-11-04 11:44:47', '2025-11-04 11:44:47'),
-	(3, 'Mestres do Tempo', 'R. V. Campbell', 'Ficção Científica', 'Arqueiro', 2017, '9788580417432', 'Português', 'Físico', 'capas/mestresdotempo.jpg', 'Explora viagens no tempo e dilemas morais sobre alterar o passado.', 1, '2025-11-04 11:44:47', '2025-11-04 11:44:47'),
-	(4, 'O Código Limpo', 'Robert C. Martin', 'Tecnologia / Programação', 'Alta Books', 2009, '9788576082675', 'Português', 'Físico', 'capas/codigolimpo.jpg', 'Guia essencial sobre boas práticas e padrões de código limpo.', 1, '2025-11-04 11:44:47', '2025-11-04 11:44:47'),
-	(5, 'Dom Casmurro', 'Machado de Assis', 'Romance Clássico', 'Principis', 1899, '9788580574463', 'Português', 'Físico', 'capas/domcasmurro.jpg', 'Um dos maiores clássicos da literatura brasileira, explorando ciúme e ambiguidade.', 1, '2025-11-04 11:44:47', '2025-11-04 11:44:47'),
-	(6, 'O Hobit ', 'Tolkien', NULL, NULL, NULL, NULL, 'Português', 'Físico', NULL, NULL, 1, '2025-11-05 11:19:22', '2025-11-05 11:19:22');
+	(1, 'APRENDA C# - Edição 2025: Domine o Desenvolvimento Escalável com Programação Moderna. Dos Fundamentos às Aplicações Práticas: 1', 'Diego Rodrigues', 'Tecnologia', 'Studio21 Smart Tech  Content', '2025-05-02', NULL, 'Português', 'Físico', 'https://m.media-amazon.com/images/I/51+rSFDkBXL._SY466_.jpg', 'Este livro é ideal para desenvolvedores e estudantes que desejam dominar C# com foco prático e aplicações reais. Você aprenderá a desenvolver soluções robustas, escaláveis e multiplataforma usando C# e .NET, desde a configuração do ambiente até integrações avançadas com APIs, bancos de dados e dispositivos IoT. Explore conceitos essenciais como programação orientada a objetos, LINQ, programação assíncrona e desenvolvimento web e mobile.', 1, '2025-12-06 00:14:29', '2025-12-06 00:19:00'),
+	(2, 'Dom Casmurro', 'Machado de Assis', 'Romance', NULL, '2019-05-02', NULL, 'Português', 'Físico', 'https://m.media-amazon.com/images/I/61x1ZHomWUL._SY466_.jpg', 'm Dom Casmurro, o narrador Bento Santiago retoma a infância que passou na Rua de Matacavalos e conta a história do amor e das desventuras que viveu com Capitu, uma das personagens mais enigmáticas e intrigantes da literatura brasileira. Nas páginas deste romance, encontra-se a versão de um homem perturbado pelo ciúme, que revela aos poucos sua psicologia complexa e enreda o leitor em sua narrativa ambígua acerca do acontecimento ou não do adultério da mulher com olhos de ressaca, uma das maiores polêmicas da literatura brasileira.', 1, '2025-12-06 01:05:48', '2025-12-06 01:06:32'),
+	(3, 'Diário de um Banana 1', 'Jeff Kinney', 'Comédia', NULL, '2008-05-19', NULL, 'Português', 'Físico', 'https://m.media-amazon.com/images/I/71fWaI5myqL._SY466_.jpg', 'Não é fácil ser criança. E ninguém sabe disso melhor do que Greg Heffley, que se vê mergulhado no mundo do ensino fundamental, onde fracotes são obrigados a dividir os corredores com garotos mais altos, mais malvados e que já se barbeiam. Em Diário de um Banana, o autor e ilustrados Jeff Kinney nos apresenta um herói improvável. Como Greg diz em seu diário. Só não espere que seja todo Querido Diário isso, Querido Diário aquilo. Para nossa sorte, o que Greg Heffley diz que fará e o que ele realmente faz são duas coisas bem diferentes.', 1, '2025-12-06 01:26:16', '2025-12-06 01:26:16');
 
 -- Copiando estrutura para tabela bd_bibliotec.reservas
 CREATE TABLE IF NOT EXISTS `reservas` (
@@ -109,10 +92,7 @@ CREATE TABLE IF NOT EXISTS `reservas` (
   CONSTRAINT `reservas_ibfk_2` FOREIGN KEY (`livro_id`) REFERENCES `livros` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
--- Copiando dados para a tabela bd_bibliotec.reservas: ~2 rows (aproximadamente)
-INSERT IGNORE INTO `reservas` (`id`, `usuario_id`, `livro_id`, `data_retirada`, `data_devolucao`, `confirmado_email`, `criado_em`) VALUES
-	(2, 1, 2, '2025-11-12', '2025-11-20', 0, '2025-11-12 13:26:57'),
-	(3, 1, 3, '2025-11-12', '2025-11-20', 0, '2025-11-12 13:27:01');
+-- Copiando dados para a tabela bd_bibliotec.reservas: ~0 rows (aproximadamente)
 
 -- Copiando estrutura para tabela bd_bibliotec.tabela_curso
 CREATE TABLE IF NOT EXISTS `tabela_curso` (
@@ -198,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
--- Copiando dados para a tabela bd_bibliotec.usuarios: ~5 rows (aproximadamente)
+-- Copiando dados para a tabela bd_bibliotec.usuarios: ~6 rows (aproximadamente)
 INSERT IGNORE INTO `usuarios` (`id`, `nome`, `email`, `senha`, `data_nascimento`, `celular`, `curso`, `perfil`) VALUES
 	(1, 'Vitor Lima', 'vitor.lima@email.com', '1234', NULL, NULL, NULL, 'Admin'),
 	(2, 'Pedro Campos', 'pedro.campos@email.com', 'abcd', NULL, NULL, NULL, 'Aluno'),

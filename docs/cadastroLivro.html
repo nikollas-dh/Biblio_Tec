@@ -12,7 +12,7 @@
     <header>
         <div id="divLogo">
             <a href="menu_admin.html">
-            <img class="logoBibliotec" src="../img/icon/logo_bibliotec.png" alt="LogoBibliotec">
+                <img class="logoBibliotec" src="../img/icon/logo_bibliotec.png" alt="LogoBibliotec">
             </a>
         </div>
     </header>
@@ -33,7 +33,15 @@
 
                     <div>
                         <label for="genero">Genero: </label>
-                        <input type="text" id="genero">
+                        <select id="genero" required>
+                            <option value="" disabled selected>Selecione um genero</option>
+                            <option value="Ação">Ação</option>
+                            <option value="Aventura">Aventura</option>
+                            <option value="Comédia">Comédia</option>
+                            <option value="Gestão">Gestão</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Tecnologia">Tecnologia</option>
+                        </select>
                     </div>
 
                     <div>
@@ -53,14 +61,27 @@
 
                     <div>
                         <label for="idioma">Idioma: </label>
-                        <input type="text" id="idioma">
+                        <select id="idioma" required>
+                            <option value="" disabled selected>Selecione um idioma</option>
+                            <option value="Português">Português</option>
+                            <option value="Inglês">Inglês</option>
+                            <option value="Espanhol">Espanhol</option>
+                        </select>
                     </div>
 
                     <div>
                         <label for="formato">Formato: </label>
-                        <input type="text" id="formato">
+                        <select id="formato" required>
+                            <option value="" disabled selected>Selecione um formato</option>
+                            <option value="Físico">Físico</option>
+                            <option value="E-book">E-book</option>
+                        </select>
                     </div>
 
+                    <div>
+                        <label for="caminho_capa">Link da imagem: </label>
+                        <input type="text" id="caminho_capa" required></input>
+                    </div>
                     <div>
                         <label for="sinopse">Descrição: </label>
                         <textarea id="sinopse"></textarea>

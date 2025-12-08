@@ -18,7 +18,7 @@ function formatarDataParaTabela(dataUTC) {
 
 async function carregarTabela() {
     const tbody = document.getElementById("tbody");
-    const numColunas = 8;
+    const numColunas = 11;
     tbody.innerHTML = `<tr><td colspan='${numColunas}'>Carregando livros...</td></tr>`;
 
     try {

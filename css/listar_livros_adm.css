@@ -1,42 +1,105 @@
 @import url("./main.css");
 
-body{
+body {
     background-color: var(--azul-escuro);
     color: var(--branco);
 }
 
-.capa-livro{
+h2 {
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.capa-livro {
     width: 100%;
 }
 
-td{
-    overflow: hidden;
-    width: 100px;
-    height: 10px;
-    align-items: center;
-    text-align: center;
+th {
+    color: var(--branco);
+    background-color: var(--azul-escuro);
+    padding: 12px 10px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--branco);
 }
+
+td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#tabela-livros tbody tr:nth-child(even) {
+    background-color: var(--branco);
+}
+
+#tabela-livros tbody tr:hover {
+    background-color: rgb(219, 229, 248);
+}
+
+/* --- Coluna do TÍTULO  --- */
+#tabela-livros tbody tr td:nth-child(3) {
+    max-width: 250px;
+    width: 250px;
+    text-align: left;
+}
+
+/* --- Coluna de Capa --- */
+#tabela-livros tbody tr td:nth-child(2) {
+    white-space: normal;
+    width: 70px;
+}
+
 table {
     width: 100%;
-    border-collapse: separate; 
+    border-collapse: separate;
     border-spacing: 0;
     color: black;
 }
 
 .tabela-wrapper {
-    border-radius: 70px; 
-    overflow: hidden; 
-    border: 1px solid var(--branco); 
+    border-radius: 15px;
+    border: 1px solid var(--branco);
     background-color: var(--branco-gelo);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow-x: auto;
 }
-/* thead {
-    color: black;
-    background-color: var(--branco-gelo); 
-    border: 1px solid var(--branco); 
+
+.btnEditar,
+.btnExcluir {
+    display: inline-block;
+    padding: 8px 10px;
+    margin: 2px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, opacity 0.3s;
 }
-thead tr:first-child th:first-child {
-    border-top-left-radius: 70px;
+
+.btnEditar {
+    background-color: var(--azul-escuro);
 }
-thead tr:first-child th:last-child {
-    border-top-right-radius: 70px;
-} */
+
+.btnExcluir {
+    background-color: var(--ciano);
+    color: var(--branco);
+}
+
+.btnEditar a {
+    text-decoration: none;
+    color: var(--branco);
+}
+
+.btnEditar:hover {
+    background-color: #003366;
+}
+
+.btnExcluir:hover {
+    opacity: 0.8;
+}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/lista_usuarios.css">
+    <link rel="stylesheet" href="../css/listar_livros_adm.css">
     <title>Livros</title>
 </head>
 
@@ -14,28 +14,27 @@
     </header>
     <h2>Lista de livros:</h2>
 
-    <table border="1" cellpadding="6" cellspacing="0">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>TÍTULO</th>
-                <th>AUTOR</th>
-                <th>GÊNERO</th>
-                <th>EDITORA</th>
-                <th>DATA LANÇAMENTO</th>
-                <th>ISBN</th>
-                <th>FORMATO</th>
-                <th>IDIOMA</th>
-                <th>CAMINHO CAPA</th>
-                <th>CAPA</th>
-                <th>AÇÕES</th>
-            </tr>
-        </thead>
-        <tbody id="tbody">
-        </tbody>
-    </table>
-
-    <script src="../js/lista_livro.js"></script>
+    <div class="tabela-wrapper">
+        <table id="tabela-livros" cellpadding="6" cellspacing="0"> 
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>CAPA</th>
+                    <th>TÍTULO</th>
+                    <th>AUTOR</th>
+                    <th>GÊNERO</th>
+                    <th>EDITORA</th>
+                    <th>DATA LANÇAMENTO</th>
+                    <th>ISBN</th>
+                    <th>FORMATO</th>
+                    <th>IDIOMA</th>
+                    <th>AÇÕES</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div> <script src="../js/lista_livro.js"></script>
 </body>
 
 </html>

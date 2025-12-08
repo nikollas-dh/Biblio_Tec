@@ -39,6 +39,12 @@ async function carregarTabela() {
         tbody.innerHTML = livros.map(l =>
             `<tr>
                 <td>${l.id || 'N/A'}</td>
+                 <td> 
+                    ${l.caminho_capa 
+                        ? `<img src="${l.caminho_capa}" alt="Capa do livro: ${l.titulo}" class="capa-livro">` 
+                        : 'Sem Capa'
+                    }
+                </td>
                 <td>${l.titulo || 'N/A'}</td>
                 <td>${l.autor || 'N/A'}</td>
                 <td>${l.genero || 'N/A'}</td>  
@@ -47,13 +53,7 @@ async function carregarTabela() {
                 <td>${l.isbn || 'N/A'} </td>
                 <td>${l.formato || 'N/A'} </td>
                 <td>${l.idioma || 'N/A'} </td>
-                <td>${l.caminho_capa || 'N/A'} </td>
-                <td> 
-                    ${l.caminho_capa 
-                        ? `<img src="${l.caminho_capa}" alt="Capa do livro: ${l.titulo}" class="capa-livro">` 
-                        : 'Sem Capa'
-                    }
-                </td>
+               
                 
                 <td> 
                     <button class="btnEditar">

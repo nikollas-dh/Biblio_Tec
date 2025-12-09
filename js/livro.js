@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function salvar(e) {
         e.preventDefault();
-        console.log("Salvando Usuario");
+        console.log("Salvando Livro");
         const titulo = inputTitulo.value.trim();
         const autor = inputAutor.value.trim();
         const genero = inputGenero.value.trim();

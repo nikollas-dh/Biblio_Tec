@@ -61,10 +61,10 @@ export async function buscarLivro (req, res){
 
 export async function atualizarLivro (req, res){
   try {
-    const { titulo, autor } = req.body;
+    const { titulo, autor, genero, editora, ano_publicacao, isbn , idioma, formato, caminho_capa, sinopse } = req.body;
     await db.execute(
       "UPDATE livros SET titulo = ?, autor = ? WHERE id = ?",
-      [titulo, autor, req.params.id]
+      [titulo, autor, genero, editora, ano_publicacao, isbn , idioma, formato, caminho_capa, sinopse, req.params.id]
     );
     res.json({ mensagem: "Livro atualizado com sucesso!" });
   } catch (err) {

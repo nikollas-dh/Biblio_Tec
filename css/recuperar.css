@@ -11,10 +11,16 @@ main {
     justify-content: center;
     align-items: center;
     min-height: 90vh;
+    /* Ajustado para centralizar verticalmente o formulário */
+}
+
+/* Estilo para ocultar o formulário na transição JS (adicionado anteriormente) */
+.form-hidden {
+    display: none !important;
 }
 
 .caixa-cadastro {
-    width: 25vw;
+    width: 90%;
     min-width: 40vh;
     box-shadow: 0 0 10px black;
     display: flex;
@@ -34,6 +40,27 @@ main {
     width: 100%;
     padding-right: 40px;
 }
+
+.link-login {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: var(--branco); /* Garante que o texto base seja branco */
+}
+
+.link-login a {
+    color: var(--ciano); /* Destaca o link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.link-login a:hover {
+    color: #00cccc;
+    text-decoration: underline;
+}
+/* ------------------------------------------- */
+
 
 .password-toggle {
     position: absolute;
@@ -76,7 +103,9 @@ main {
     padding-top: 20px;
 }
 
-#btnCadastrar {
+/* Renomeado para um nome mais genérico, mas mantendo a funcionalidade visual */
+#btnCadastrar,
+#btnRedefinir {
     width: 150px;
     height: 50px;
     cursor: pointer;
@@ -89,15 +118,20 @@ main {
     transition: background-color 0.3s;
 }
 
-#btnCadastrar:hover {
+#btnCadastrar:hover,
+#btnRedefinir:hover {
     background-color: #00cccc;
 }
 
 
+/* =========================================== */
+/* RESPONSIVIDADE */
+/* =========================================== */
 @media (max-width: 768px) {
 
     main {
         padding: 20px;
+        /* Garante que o formulário não toque as bordas */
     }
 
     .caixa-cadastro {
@@ -109,15 +143,18 @@ main {
 
     .form-group input,
     .form-group select {
-        font-size: 16px;  
+        font-size: 16px;   
         padding: 12px;
     }
 
     h2 {
         font-size: 22px;
     }
+    
+    /* Regra de link removida, agora tratada por .link-login a */
 
-    #btnCadastrar {
+    #btnCadastrar,
+    #btnRedefinir {
         width: 100%;
         height: 55px;
         font-size: 18px;
@@ -144,7 +181,8 @@ main {
         padding: 10px;
     }
 
-    #btnCadastrar {
+    #btnCadastrar,
+    #btnRedefinir {
         height: 50px;
         font-size: 16px;
     }

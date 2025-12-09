@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/cadastro.css">
-    <title>Cadastrar</title>
+    <link rel="stylesheet" href="../css/recuperar.css"> 
+    <title>Recuperar Senha</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+.form-hidden {
+    display: none !important;
+}
+    </style>
 </head>
 
 <body>
@@ -16,51 +21,75 @@
             </a>
         </div>
     </header>
+<main>
+    <form id="form-solicitar">
+        <div class="caixa-cadastro">
+            <h2 style="text-align: center; margin-bottom: 20px;">Redefina sua senha!</h2>
 
-    <main>
-        <form id="form-cadastrar">
-            <div class="caixa-cadastro">
-                <h2 style="text-align: center; margin-bottom: 20px;">Recupere sua senha!</h2>
-                
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="novaSenha"> Nova Senha:</label>
-                    <div class="input-container">
-                        <input type="password" class="entrada" placeholder="Digite sua senha" id="novaSenha"
-                            autocomplete="off" required>
-
-                        <span class="material-symbols-outlined password-toggle" id="togglePassword">
-                            visibility_off
-                        </span>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="senha">Senha:</label>
-                    <div class="input-container">
-                        <input type="password" class="entrada" placeholder="Digite sua senha" id="senha"
-                            autocomplete="off" required>
-
-                        <span class="material-symbols-outlined password-toggle" id="togglePassword">
-                            visibility_off
-                        </span>
-                    </div>
-                </div>
-
-                <div class="button-group">
-                    <button type="submit" id="btnCadastrar">Avançar</button>
-                </div>
-
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Seu email de cadastro" required>
             </div>
-        </form>
-    </main>
 
-    <footer></footer>
-    <script type="module" src="../js/recuperar.js"></script>
+            <div class="button-group">
+                    <button type="submit" id="btnCadastrar">Avançar</button>
+            </div>
+            
+            <p class="link-login">
+                Lembrou da senha? <a href="login.html">Fazer Login</a>
+            </p>
+        </div>
+    </form>
+
+
+    <form id="form-recuperar-senha" class="form-hidden">
+        <div class="caixa-cadastro">
+            <h2 style="text-align: center; margin-bottom: 20px;">Redefina sua Senha</h2>
+            <p style="text-align: center; margin-bottom: 15px; color: gray; font-size: 0.9em;">
+                Insira seu e-mail e sua nova senha.
+            </p>
+            
+            <div class="form-group">
+                <label for="email-redefinicao">Email:</label>
+                <input type="email" id="email-redefinicao" placeholder="Seu email de cadastro" required>
+            </div>
+
+            <div class="form-group">
+                <label for="codigo-recuperacao">Código (Oculto):</label>
+                <input type="text" id="codigo-recuperacao" placeholder="O código que você recebeu por email">
+            </div>
+
+            <div class="form-group">
+                <label for="novaSenha">Nova Senha:</label>
+                <div class="input-container">
+                    <input type="password" class="entrada" placeholder="Crie uma nova senha" id="novaSenha" autocomplete="off" required>
+
+                    <span class="material-symbols-outlined password-toggle">
+                        visibility_off
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmaSenha">Confirme a Nova Senha:</label>
+                <div class="input-container">
+                    <input type="password" class="entrada" placeholder="Confirme sua nova senha" id="confirmaSenha" autocomplete="off" required>
+
+                    <span class="material-symbols-outlined password-toggle">
+                        visibility_off
+                    </span>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" id="btnRedefinir">Redefinir Senha</button> 
+            </div>
+        </div>
+    </form>
+
+</main>
+<footer></footer>
+<script type="module" src="../js/recuperar.js"></script>
 </body>
 
 </html>

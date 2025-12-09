@@ -19,7 +19,7 @@ async function carregandoUsuario(e) {
     alert("Gentileza preecher os campos email e senha!")
     return;
   }
- 
+
   const Usuario = {
     email, senha
   }
@@ -29,12 +29,17 @@ async function carregandoUsuario(e) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(Usuario)
     })
-
     if (requisicao.status === 200) {
       const dados = await requisicao.json();
       console.log(dados)
+      const perfil = dados.perfil
+
       alert("Entrando...")
-      window.location.href = "menu_admin.html"
+      if (dados.perfil === "Admin") {
+        window.location.href = "menu_admin.html"
+      } else {
+        window.location.href = "principal.html"
+      }
     } else {
       console.log("Email ou senha inválidos")
       alert("Email ou senha inválidos")

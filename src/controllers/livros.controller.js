@@ -61,14 +61,39 @@ export async function buscarLivro (req, res){
 
 export async function atualizarLivro (req, res){
   try {
-    const { titulo, autor, genero, editora, ano_publicacao, isbn , idioma, formato, caminho_capa, sinopse } = req.body;
-    await db.execute(
-      "UPDATE livros SET titulo = ?, autor = ? WHERE id = ?",
-      [titulo, autor, genero, editora, ano_publicacao, isbn , idioma, formato, caminho_capa, sinopse, req.params.id]
-    );
+    const { 
+      titulo, autor, genero, editora, ano_publicacao, isbn, 
+      idioma, formato, caminho_capa, sinopse 
+    } = req.body;
+    
+    const livro = `
+      UPDATE livros SET 
+        titulo = ?, 
+        autor = ?, 
+        genero = ?, 
+        editora = ?, 
+        ano_publicacao = ?, 
+        isbn = ?, 
+        idioma = ?, 
+        formato = ?, 
+        caminho_capa = ?, 
+        sinopse = ? 
+      WHERE 
+        id = ?
+    `;
+
+    const valores = [
+      titulo, autor, genero, editora, ano_publicacao, isbn, 
+      idioma, formato, caminho_capa, sinopse, 
+      req.params.id
+    ];
+
+    await db.execute(livro, valores);
+    
     res.json({ mensagem: "Livro atualizado com sucesso!" });
   } catch (err) {
-    res.status(500).json({ erro: err.message });
+    console.error("Erro no MariaDB/MySQL durante a atualização:", err.message);
+    res.status(500).json({ erro: "Erro interno do servidor. Verifique os logs." });
   }
 };
 

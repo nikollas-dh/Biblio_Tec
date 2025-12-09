@@ -15,13 +15,19 @@ async function carregarLivro() {
     }
     const resposta = await fetch(`${API}/${id}`)
     const LIVRO = await resposta.json()
-    console.log(LIVRO) 
-    document.getElementById("titulo").value = LIVRO.titulo; 
-    document.getElementById("autor").value = LIVRO.autor;   
-    document.getElementById("genero").value = LIVRO.genero; 
+    console.log(LIVRO)
+
+    const capaImg = document.getElementById("capa-livro-img");
+    if (capaImg && LIVRO.caminho_capa) {
+        capaImg.src = LIVRO.caminho_capa;
+    }
+    document.getElementById("caminho_capa").value = LIVRO.caminho_capa;
+    document.getElementById("titulo").value = LIVRO.titulo;
+    document.getElementById("autor").value = LIVRO.autor;
+    document.getElementById("genero").value = LIVRO.genero;
     document.getElementById("editora").value = LIVRO.editora;
-document.getElementById("ano_publicacao").value = LIVRO.ano_publicacao.split('T')[0];    document.getElementById("isbn").value = LIVRO.isbn;     
-    document.getElementById("idioma").value = LIVRO.idioma; 
+    document.getElementById("ano_publicacao").value = LIVRO.ano_publicacao.split('T')[0]; document.getElementById("isbn").value = LIVRO.isbn;
+    document.getElementById("idioma").value = LIVRO.idioma;
     document.getElementById("formato").value = LIVRO.formato;
     document.getElementById("caminho_capa").value = LIVRO.caminho_capa;
     document.getElementById("sinopse").value = LIVRO.sinopse;
@@ -40,23 +46,23 @@ async function Atualizar(e) {
     const caminho_capa = document.getElementById("caminho_capa").value.trim();;
     const sinopse = document.getElementById("sinopse").value.trim();
 
-    const alunoEditado = {
-        titulo, autor, genero, editora, ano_publicacao, isbn, idioma,formato,caminho_capa,sinopse
+    const livroEditado = {
+        titulo, autor, genero, editora, ano_publicacao, isbn, idioma, formato, caminho_capa, sinopse
     };
 
-    console.log(alunoEditado)
+    console.log(livroEditado)
     if (!titulo && !autor) {
         alert("Gentileza preecher os campos")
         return
     }
-    const novoAluno = {
-        titulo, autor, genero, editora, ano_publicacao, isbn, idioma,formato,caminho_capa,sinopse
+    const novoLivro = {
+        titulo, autor, genero, editora, ano_publicacao, isbn, idioma, formato, caminho_capa, sinopse
     }
     try {
         const requisicao = await fetch(`${API}/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
-            body: novoAluno ? JSON.stringify(alunoEditado) : undefined
+            body: novoLivro ? JSON.stringify(livroEditado) : undefined
         })
         if (requisicao.status === 200) {
             console.log(requisicao.json())

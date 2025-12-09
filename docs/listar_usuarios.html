@@ -4,33 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/lista_usuarios.css">
-    <title>Usuários</title>
+    <link rel="stylesheet" href="../css/listar_livros_adm.css">
+    <title>Livros</title>
 </head>
 
 <body>
-    <header>   
-        <div><a href="./menu_admin.html">Voltar</a></div> 
+    <header>
+        <div><a href="./menu_admin.html">Voltar</a></div>
     </header>
-    <h2>Lista de usuários:</h2>
+    <h2>Lista de livros:</h2>
 
-    <table border="1" cellpadding="6" cellspacing="0">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NOME</th>
-                <th>EMAIL</th>
-                <th>DATA NASCIMENTO</th>
-                <th>CELULAR</th>
-                <th>CURSO</th>
-                <th>PERFIL</th>
-                <th>AÇÕES</th>
-            </tr>
-        </thead>
-        <tbody id="tbody">
-        </tbody>
-    </table>
-    
+    <div class="tabela-wrapper">
+        <table id="tabela-livros">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOME</th>
+                    <th>EMAIL</th>
+                    <th>NASCIMENTO</th>
+                    <th>CELULAR</th>
+                    <th>CURSO</th>
+                    <th>PERFIL</th>
+                    <th>AÇÕES</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <!-- <footer>
+
+    </footer> -->
     <script src="../js/lista_usuarios.js"></script>
 </body>
 

@@ -57,7 +57,7 @@ async function carregarTabela() {
                 
                 <td> 
                     <button class="btnEditar">
-                        <a href="editar.html?id=${l.id}">Editar</a>
+                        <a href="editar_livro.html?id=${l.id}">Editar</a>
                     </button> 
                     <button class="btnExcluir" onclick="excluirUsuario(${l.id})">Excluir</button>
                 </td>

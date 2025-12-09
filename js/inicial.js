@@ -1,4 +1,4 @@
-const API = "http://localhost:3000/livros"
+const API = "http://localhost:3000/api/livros"
 
 const campoPesquisa = document.querySelector('.inputCampo');
 const exibirLivros = document.querySelector('.exibirLivros');

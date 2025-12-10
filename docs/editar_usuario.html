@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../img/icon/logo_bibliotec.png">
+
+
+    <title>Editar</title>
+</head>
+
+<body>
+    <header>
+        <a href="menu_admin.html">Voltar ao início</a>
+    </header>
+    <h2>Editar Usuário</h2>
+    <form id="form-editar-usuario">
+        <div>
+            <label>ID*:
+                <input type="number" placeholder="Ex: 1" name="" id="id" required>
+            </label>
+        </div>
+        <div>
+            <label for="">Nome*:
+                <input type="text" id="nome" placeholder="" required>
+            </label>
+        </div>
+        <div>
+            <label for="">Email*:
+                <input type="text" id="email" placeholder="" required>
+            </label>
+        </div>
+
+        <div>
+            <label for="">Nascimento:
+                <input type="date" id="nascimnto">
+            </label>
+        </div>
+        <div>
+            <label for="">Celular:
+                <input type="text" id="celular" placeholder="">
+            </label>
+        </div>
+        <div>
+            <label for="curso">Curso: </label>
+            <select id="formato">
+                <option value="" disabled selected>Selecione um formato</option>
+                <option value="Físico">Físico</option>
+                <option value="E-book">E-book</option>
+            </select>
+        </div>
+        <div>
+            <label for="perfil">Perfil: </label>
+            <select id="perfil">
+                <option value="" disabled selected>Selecione um perfil</option>
+                <option value="Admin">Admin</option>
+                <option value="Aluno">Aluno</option>
+            </select>
+        </div>
+
+
+
+        <button type="submit">Atualizar</button>
+
+    </form>
+
+    <script src="../js/editar_usuario.js"></script>
+</body>
+
+</html>

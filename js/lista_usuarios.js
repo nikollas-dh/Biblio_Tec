@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api/usuario';
+const API = 'http://localhost:3000/api/usuario';
 
 async function carregarTabela() {
     const tbody = document.getElementById("tbody");
@@ -6,7 +6,7 @@ async function carregarTabela() {
     tbody.innerHTML = `<tr><td colspan='${numColunas}'>Carregando usuários...</td></tr>`;
 
     try {
-        const resposta = await fetch(API_URL);
+        const resposta = await fetch(API);
 
         if (!resposta.ok) {
             throw new Error(`Erro na rede: Status ${resposta.status}`);
@@ -31,7 +31,7 @@ async function carregarTabela() {
                 <td>${u.perfil || 'N/A'} </td>
                 <td>
                     <button class="btnEditar">
-                        <a href="editar.html?id=${u.id}">Editar</a>
+                        <a href="editar_usuario.html?id=${u.id}">Editar</a>
                     </button> 
                     <button class="btnExcluir" onclick="excluirUsuario(${u.id})">Excluir</button>
                 </td>
@@ -43,5 +43,27 @@ async function carregarTabela() {
         tbody.innerHTML = `<tr><td colspan='${numColunas}'>Erro ao carregar dados: ${error.message}</td></tr>`;
     }
 }
+async function excluirUsuario(id) {
+    const confirmarExclusao = confirm(`Deseja realmente excluir o usuário de ID ${id}?`);
+    if (!confirmarExclusao) {
+        return
+    }
+    
+    try {
+        const resposta = await fetch(`${API}/${id}`, {
+            method: "DELETE",
 
+        })
+        if (resposta.status === 200) {
+            console.log(resposta.json())
+            alert("Usuário excluído com sucesso!")
+            carregarTabela();
+
+        } else {
+            console.log("Erro na requisição")
+        }
+    } catch (error) {
+        console.error(error)
+    }
+}
 carregarTabela();

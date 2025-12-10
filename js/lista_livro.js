@@ -1,16 +1,16 @@
-const API_URL = 'http://localhost:3000/api/livros';
+const API = 'http://localhost:3000/api/livros';
 
 
 function formatarDataParaTabela(dataUTC) {
     if (!dataUTC) {
         return 'N/A';
     }
-        const dataObjeto = new Date(dataUTC);
-        return dataObjeto.toLocaleDateString('pt-BR', {
+    const dataObjeto = new Date(dataUTC);
+    return dataObjeto.toLocaleDateString('pt-BR', {
         year: 'numeric',
         month: '2-digit',
         day: '2-digit',
-        timeZone: 'America/Sao_Paulo' 
+        timeZone: 'America/Sao_Paulo'
     });
 }
 
@@ -22,7 +22,7 @@ async function carregarTabela() {
     tbody.innerHTML = `<tr><td colspan='${numColunas}'>Carregando livros...</td></tr>`;
 
     try {
-        const resposta = await fetch(API_URL);
+        const resposta = await fetch(API);
 
         if (!resposta.ok) {
             throw new Error(`Erro na rede: Status ${resposta.status}`);
@@ -40,10 +40,10 @@ async function carregarTabela() {
             `<tr>
                 <td>${l.id || 'N/A'}</td>
                  <td> 
-                    ${l.caminho_capa 
-                        ? `<img src="${l.caminho_capa}" alt="Capa do livro: ${l.titulo}" class="capa-livro">` 
-                        : 'Sem Capa'
-                    }
+                    ${l.caminho_capa
+                ? `<img src="${l.caminho_capa}" alt="Capa do livro: ${l.titulo}" class="capa-livro">`
+                : 'Sem Capa'
+            }
                 </td>
                 <td>${l.titulo || 'N/A'}</td>
                 <td>${l.autor || 'N/A'}</td>
@@ -59,11 +59,11 @@ async function carregarTabela() {
                     <button class="btnEditar">
                         <a href="editar_livro.html?id=${l.id}">Editar</a>
                     </button> 
-                    <button class="btnExcluir" onclick="excluirUsuario(${l.id})">Excluir</button>
+                    <button class="btnExcluir" onclick="excluirLivro(${l.id})">Excluir</button>
                 </td>
 
 
-            </tr>`
+            </tr>`     
         ).join("");
 
     } catch (error) {
@@ -71,5 +71,27 @@ async function carregarTabela() {
         tbody.innerHTML = `<tr><td colspan='${numColunas}'>Erro ao carregar dados: ${error.message}</td></tr>`;
     }
 }
+async function excluirLivro(id) {
+    const confirmarExclusao = confirm(`Deseja realmente excluir o livro de ID ${id}?`);
+    if (!confirmarExclusao) {
+        return
+    }
+    
+    try {
+        const resposta = await fetch(`${API}/${id}`, {
+            method: "DELETE",
 
+        })
+        if (resposta.status === 200) {
+            console.log(resposta.json())
+            alert("Livro excluído com sucesso!")
+            carregarTabela();
+
+        } else {
+            console.log("Erro na requisição")
+        }
+    } catch (error) {
+        console.error(error)
+    }
+}
 carregarTabela();

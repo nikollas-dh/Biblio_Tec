@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
 
 header {
@@ -24,12 +24,6 @@ header {
 #divLogo {
     display: flex;
     align-items: center;
-}
-
-.logoSenai {
-    height: auto;
-    width: 140px;
-    object-fit: contain;
 }
 
 
@@ -55,15 +49,15 @@ header {
 #icon-search {
     position: absolute;
     right: 10%;
-   
+
     transform: translateX(100%);
-    
+
     top: 50%;
     transform: translateY(-50%);
-    
+
     font-size: 25px;
     color: #555;
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 
@@ -158,13 +152,42 @@ header a {
 }
 
 #caroussel {
-    width: 100%;
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 20px;
-    overflow: hidden;
-    padding: 0 10px;
+    width: 90%;
+    margin: 0 auto;
 }
+
+#prev-btn,
+#next-btn {
+    position: absolute;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    transition: all 0.2s ease-in-out;
+    color: var(--azul-marinho, #004d99);
+    font-size: 30px;
+}
+
+
+#prev-btn {
+    left: -55px;
+}
+
+#next-btn {
+    right: -55px;
+}
+
+#prev-btn:hover,
+#next-btn:hover {
+    background-color: var(--azul-marinho, #004d99);
+    color: var(--branco, white);
+    transform: scale(1.1);
+}
+
 
 .material-symbols-outlined {
     font-size: 50px;
@@ -174,55 +197,37 @@ header a {
 .img_livro_bd {
     background-image: url("../img/img_livros/livro_BD.jpeg");
     background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    height: 400px;
+
 }
 
 .img_livro_Csharp {
     background-image: url("../img/img_livros/livro_Csharp.jpeg");
     background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    height: 400px;
+
 }
 
 .img_livro_html_css {
     background-image: url("../img/img_livros/livro_html_css.jpeg");
     background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    height: 400px;
+
 }
 
 .img_livro_js {
     background-image: url("../img/img_livros/livro_js.jpeg");
     background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    height: 400px;
+
 }
 
 .img_livro_python {
     background-image: url("../img/img_livros/livro_python.jpeg");
     background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    height: 400px;
+
 }
 
 .img_livro_scrum {
     background-image: url("../img/img_livros/livro_scrum.jpeg");
     background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    height: 400px;
+
 }
 
 .livro {
@@ -245,16 +250,12 @@ header a {
 
 @media (min-width: 1200px) {
 
-    /* HEADER */
     header {
-        height: 80px;
+        height: 10vh;
         padding: 15px 40px;
         gap: 25px;
     }
 
-    .logoSenai {
-        width: 120px;
-    }
 
     #divPesquisa input {
         max-width: 550px;
@@ -351,7 +352,8 @@ header a {
     header {
         gap: 15px;
     }
-     .logoBibliotec {
+
+    .logoBibliotec {
         width: 60px;
     }
 
@@ -362,9 +364,7 @@ header a {
 
 @media (max-width: 600px) {
 
-    .logoSenai {
-        width: 90px;
-    }
+
 
     #icons {
         font-size: 35px;

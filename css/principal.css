@@ -56,28 +56,13 @@ header {
     font-size: 1rem;
 }
 
-/* CORREÇÃO AQUI: Posicionamento do ícone de pesquisa */
 #icon-search {
     position: absolute;
-    
-    /* 1. Posicionamento Horizontal (padrão Desktop)
-       O input tem max-width: 500px e está centralizado em #divPesquisa.
-       Para ancorar o ícone na direita do input, precisamos calcular a distância 
-       da borda direita do container até a borda direita do input + o espaçamento desejado (15px).
-       50% (metade do container) - 250px (metade do max-width do input) + 15px (espaçamento)
-    */
     right: calc(50% - 250px + 15px);
-    
-    /* 2. Centraliza Verticalmente (FIXO)
-       A propriedade transform só pode ser declarada uma vez; a segunda declaração 
-       estava sobrescrevendo a primeira.
-    */
     top: 50%;
     transform: translateY(-50%); 
-    
     font-size: 25px;
     color: #555;
-    /* Permite clicar no que estiver abaixo do ícone, pois o ícone não é interativo */
     pointer-events: none; 
 }
 
@@ -166,96 +151,7 @@ header a {
     padding: 40px 0;
 }
 
-#container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
 
-#caroussel {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    overflow: hidden;
-    padding: 0 10px;
-}
-
-.material-symbols-outlined {
-    font-size: 50px;
-    cursor: pointer;
-}
-
-.img_livro_bd {
-    background-image: url("../img/img_livros/livro_BD.jpeg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    height: 400px;
-}
-
-.img_livro_Csharp {
-    background-image: url("../img/img_livros/livro_Csharp.jpeg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    height: 400px;
-}
-
-.img_livro_html_css {
-    background-image: url("../img/img_livros/livro_html_css.jpeg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    height: 400px;
-}
-
-.img_livro_js {
-    background-image: url("../img/img_livros/livro_js.jpeg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    height: 400px;
-}
-
-.img_livro_python {
-    background-image: url("../img/img_livros/livro_python.jpeg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    height: 400px;
-}
-
-.img_livro_scrum {
-    background-image: url("../img/img_livros/livro_scrum.jpeg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 300px;
-    height: 400px;
-}
-
-.livro {
-    width: 150px;
-    height: 220px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.livro:hover {
-    box-shadow: 0 0 20px var(--azul-marinho);
-
-    border-radius: 15px;
-    transform: scale(1.1);
-
-}
 
 
 @media (min-width: 1200px) {
@@ -267,16 +163,11 @@ header a {
         gap: 25px;
     }
 
-    .logoSenai {
-        width: 120px;
-    }
-
     #divPesquisa input {
         max-width: 550px;
         font-size: 1rem;
     }
     
-    /* REAJUSTE DO CALC() PARA NOVA LARGURA DE INPUT (550px) */
     #icon-search {
         right: calc(50% - 275px + 15px);
     }
@@ -400,24 +291,3 @@ header a {
 }
 
 
-#caroussel-content.container-caroussel {
-    display: flex;
-    justify-content: center;
-    gap: 70px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    padding: 10px;
-    width: 100%;
-    white-space: nowrap;
-}
-
-#caroussel-content .livro {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-}
-
-.container-caroussel {
-    align-items: center;
-
-}

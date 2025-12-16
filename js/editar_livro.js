@@ -66,8 +66,8 @@ async function Atualizar(e) {
         })
         if (requisicao.status === 200) {
             console.log(requisicao.json())
-            alert("Aluno atualizado com sucesso")
-            window.location.href = "menu.html";
+            alert("Livro atualizado com sucesso")
+            window.location.href = "menu_admin.html";
         } else {
             console.log("Erro na requisição", requisicao.status)
         }

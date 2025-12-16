@@ -1,6 +1,7 @@
 @import url('./main.css');
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
@@ -27,7 +28,9 @@ header {
     z-index: 1000;
 }
 
-section, main, nav {
+section,
+main,
+nav {
     position: relative;
     z-index: 1;
 }
@@ -39,10 +42,11 @@ header a {
 
 
 .logoSenai {
-    width: 90px;     
+    width: 90px;
     height: auto;
     cursor: pointer;
 }
+
 .logoBibliotec {
     height: auto;
     width: 65px;
@@ -52,15 +56,13 @@ header a {
 footer {
     width: 100%;
     height: 55px;
-
     background-color: var(--azul-escuro);
-    box-shadow: 0 -4px 18px rgba(0,0,0,0.45);
-
+    box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.45);
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-right: 2%;
     align-items: center;
     box-sizing: border-box;
-
     position: relative;
     z-index: 1000;
 }
@@ -80,9 +82,9 @@ footer {
         padding: 0 10px;
     }
 
-   
+
     .logoSenai {
-        width: 90px;   
+        width: 90px;
     }
 
     footer {
@@ -102,9 +104,9 @@ footer {
         padding: 0 40px;
     }
 
-    
+
     .logoSenai {
-        width: 120px;   
+        width: 120px;
     }
 
     footer {
@@ -204,12 +206,13 @@ footer {
     background-position: center;
     border-radius: 8px;
     cursor: pointer;
-    transition: 
+    transition:
         transform 0.4s ease,
         box-shadow 0.4s ease,
         background-image 0.4s ease,
-        opacity 0.4s ease;   /* 👈 Fade suave na troca */
-    
+        opacity 0.4s ease;
+    /* 👈 Fade suave na troca */
+
 }
 
 .livro:hover {
@@ -224,8 +227,15 @@ footer {
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0; transform: scale(0.95); }
-    100% { opacity: 1; transform: scale(1); }
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 

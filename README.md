@@ -28,7 +28,7 @@ O projeto está sendo desenvolvido por uma **equipe de programadores**, onde cad
 Essa abordagem facilita o **controle de versão**, o **trabalho em equipe** e o **gerenciamento de funcionalidades*" de forma organizada.
 
 
-## 📚 Funcionalidades Implementadas:
+## 📚 Funcionalidades (em desenvolvimento):
 
 
 - **Login de Usuário**: autenticação segura para acesso ao sistema.

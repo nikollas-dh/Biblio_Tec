@@ -1,0 +1,130 @@
+/* @import url("./main.css"); */
+@import url(./cores.css);
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: var(--branco);
+    min-height: 100vh;
+    line-height: 1.5;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.img_gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.layer-blur {
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    box-shadow: 0 0 700px 15px white;
+    rotate: -30deg;
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.logoBibliotec {
+    height: auto;
+    width: 65px;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-left: -5%;
+}
+
+nav a {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    transition: color 0.2 ease;
+    text-decoration: none;
+    color: inherit;
+}
+nav a:hover{
+    color: gray;
+}
+.btnLogin{
+    background-color: var(--branco);
+    color: black;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+.btnLogin:hover{
+    background-color: gray;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(90vh - 6rem);
+}
+.content{
+    max-width: 40.rem;
+    margin-left: 10%;
+    z-index: 999;
+}
+.tag-box{
+    position: relative;
+    width: 18rem;
+    height: 2.5rem;
+    border-radius: 50px;
+    background: linear-gradient(to right, var(--azul-escuro), var(--azul-marinho),var(--ciano));
+    background-size: 200%;
+    animation: animationGradient 2.5s linear infinite;
+    /* box-shadow: 0 0 0 15px rgba(255, 255,255, 0.3); */
+}
+@keyframes animationGradient{
+    to{
+        background-position:200%;
+    }
+}
+.tag-box .tag{
+    position: absolute;
+    inset: 3px 3px 3px 3px;
+    background-color: black;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+.tag-box:hover{
+    color: var(--ciano);
+}

@@ -196,7 +196,10 @@ main {
     background-color: gray;
     transform: scale(1.03);
 }
-.animacao3d{
+/* .animacao3d{
+    width: auto;
+    height: 40vh;
     position: absolute;
     top: 0;
-}
+    right: -5%;
+} */

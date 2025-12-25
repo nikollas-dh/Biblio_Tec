@@ -75,6 +75,8 @@ nav a {
 
 nav a:hover {
     color: gray;
+    transform: scale(1.02);
+    text-shadow: white;
 }
 
 .btnLogin {
@@ -89,9 +91,8 @@ nav a:hover {
 }
 
 .btnLogin:hover {
-    background-color: gray;
-    transform: scale(1.01);
-
+    transform: scale(1.02);
+    box-shadow: 0 0 40px 0 rgba(255, 255, 255, 0.3);
 }
 
 .btnLogin a {
@@ -109,6 +110,7 @@ main {
 .content {
     max-width: 40.rem;
     margin-left: 10%;
+    margin-bottom: 5%;
     z-index: 999;
 }
 
@@ -121,6 +123,7 @@ main {
     background-size: 200%;
     animation: animationGradient 2.5s linear infinite;
     box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+    cursor: pointer;
 }
 
 @keyframes animationGradient {
@@ -142,6 +145,8 @@ main {
 
 .tag-box:hover {
     color: var(--ciano);
+    transform: scale(1.02);
+    box-shadow: 0 0 40px 0 rgba(255, 255, 255, 0.3);
 }
 
 .content h1 {
@@ -179,7 +184,8 @@ main {
 
 .btnCriarConta:hover {
     background-color: #1a1a1a;
-    transform: scale(1.03);
+    transform: scale(1.02);
+    box-shadow: 0 0 40px 0 rgba(255, 255, 255, 0.3);
 }
 
 .btnAcessar {
@@ -190,12 +196,17 @@ main {
     border-radius: 50px;
     font-size: 1.2rem;
     transition: background-color 0.2s ease;
+        z-index: 1000;
+
 }
 
 .btnAcessar:hover {
     background-color: gray;
-    transform: scale(1.03);
+    transform: scale(1.02);
+    box-shadow: 0 0 40px 0 rgba(255, 255, 255, 0.3);
+    z-index: 1000;
 }
+
 /* .animacao3d{
     width: auto;
     height: 40vh;

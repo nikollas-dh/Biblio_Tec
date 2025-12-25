@@ -2,7 +2,7 @@
 
 🔗 **Acesse o projeto online:**
 
-https://nikollas-dh.github.io/Biblio_Tec/docs/inicio.html
+https://nikollas-dh.github.io/Biblio_Tec/docs/index.html
 
 ## 📌 Objetivo do Projeto:
 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cadastro2.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="../img/gradient.png" alt="gradient" class="img_gradient">
+    <header>
+        <img src="../img/icon/logo_bibliotec.png" alt="logo_bibliotec" class="logoBibliotec">
+    </header>
+    <main>
+        <form id="form-cadastrar">
+            <div class="caixa-cadastro">
+                <h2>Crie sua conta</h2>
+                <div class="divNome">
+                    <fieldset>
+                        <legend>Nome</legend>
+                        <input type="text" class="entrada">
+                    </fieldset>
+                    <fieldset>
+                        <legend>CPF</legend>
+                        <input type="text" class="entrada">
+                    </fieldset>
+                </div>
+                <div class="divContato">
+                    <fieldset>
+                        <legend>Email</legend>
+                        <input type="telefone" class="entrada">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Telefone</legend>
+                        <input type="email" class="entrada">
+                    </fieldset>
+                </div>
+                <div class="divCurso">
+                    <label for="curso">Curso:</label>
+                    <select name="curso" id="curso">
+                        <option value="" disabled selected>Selecione uma curso:</option>
+                    </select>
+                    <label for="turma">Turma:</label>
+                    <select id="turma" required>
+                        <option value="" disabled selected>Selecione uma turma</option>
+                    </select>
+                </div>
+                <div class="divSenha">
+                    <fieldset>
+                        <legend>Nova senha</legend>
+                        <input type="password" class="entrada">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Confirmar senha</legend>
+                        <input type="password" class="entrada">
+                    </fieldset>
+                </div>
+
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

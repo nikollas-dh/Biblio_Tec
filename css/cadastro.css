@@ -1,17 +1,18 @@
 @import url("./main.css");
 
 body {
-    background-color: var(--azul-escuro);
+    background-color: black;
     min-height: 100vh;
     margin: 0;
 }
 
-/* Remove o olho PADRÂO de mostrar/ocultar senha*/
-input[type="password"]::-ms-reveal,
-input[type="password"]::-ms-clear {
-    display: none !important;
+.img_gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: -1;
 }
-
 
 main {
     display: flex;
@@ -21,9 +22,8 @@ main {
 }
 
 .caixa-cadastro {
-    width: 25vw;
-    min-width: 40vh;
-    box-shadow: 0 0 10px black;
+    width: 30vw;
+    border: 1px solid white;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -55,6 +55,13 @@ main {
 .password-toggle:hover {
     color: var(--ciano);
 }
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none !important;
+}
+
+
 .form-group {
     margin-bottom: 15px;
     display: flex;
@@ -111,7 +118,8 @@ main {
     }
 
     .caixa-cadastro {
-        width: 90vw;      /* ocupa quase toda a tela */
+        width: 90vw;
+        /* ocupa quase toda a tela */
         min-width: unset;
         border-radius: 25px;
         padding: 25px;
@@ -119,7 +127,8 @@ main {
 
     .form-group input,
     .form-group select {
-        font-size: 16px;  /* aumenta para facilitar digitação */
+        font-size: 16px;
+        /* aumenta para facilitar digitação */
         padding: 12px;
     }
 
@@ -135,7 +144,9 @@ main {
     }
 }
 
-@media (max-width: 480px) { /* celulares menores */
+@media (max-width: 480px) {
+
+    /* celulares menores */
     h2 {
         font-size: 20px;
     }

@@ -11,7 +11,10 @@ body {
 }
 
 header {
-    background: transparent;
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    margin: auto;
 }
 
 main {
@@ -42,7 +45,7 @@ main {
     background: linear-gradient(to right, var(--azul-escuro), var(--azul-marinho), var(--ciano));
     background-size: 200%;
     animation: animationGradient 2.5s linear infinite;
-    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+    /* box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3); */
     cursor: pointer;
     border-radius: 80px;
     display: flex;
@@ -63,13 +66,17 @@ main {
     height: 79vh;
     background-color: black;
     padding: 20px;
-    box-shadow: 0 0 10px rgb(141, 141, 141);
+    /* box-shadow: 0 0 10px rgb(141, 141, 141); */
     display: flex;
     flex-direction: column;
     border-radius: 80px;
     justify-content: center;
     color: var(--branco);
     gap: 25px;
+}
+
+.caixa-login:hover {
+    box-shadow: 0 0 30px rgb(141, 141, 141);
 }
 
 h1 {
@@ -148,6 +155,7 @@ input[type="password"]::-ms-clear {
     margin-top: -1%;
     text-align: center;
     font-size: 14px;
+    color: rgb(147, 147, 147);
 }
 
 
@@ -159,9 +167,11 @@ input[type="password"]::-ms-clear {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background: var(--ciano);
-    color: var(--branco);
-    border: none;
+    /* background: var(--ciano); */
+    background: transparent;
+    /* color: var(--branco); */
+    color: var(--ciano);
+    border: 1px solid var(--ciano);
     border-radius: 30px;
     margin-top: 40px;
     font-size: 16px;
@@ -169,7 +179,7 @@ input[type="password"]::-ms-clear {
 }
 
 #btnLogin:hover {
-    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px 0 var(--ciano);
     transform: scale(1.01);
 }
 

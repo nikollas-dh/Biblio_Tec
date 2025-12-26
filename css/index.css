@@ -172,9 +172,9 @@ main {
 }
 
 .btnCriarConta {
-    color: var(--azul-marinho);
+    color: var(--ciano);
     text-decoration: none;
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--ciano);
     padding: 0.7rem 1.2rem;
     border-radius: 50px;
     font-size: 1.2rem;
@@ -183,9 +183,8 @@ main {
 }
 
 .btnCriarConta:hover {
-    background-color: #1a1a1a;
     transform: scale(1.02);
-    box-shadow: 0 0 40px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px 0 aqua;
 }
 
 .btnAcessar {
@@ -196,14 +195,13 @@ main {
     border-radius: 50px;
     font-size: 1.2rem;
     transition: background-color 0.2s ease;
-        z-index: 1000;
+    z-index: 1000;
 
 }
 
 .btnAcessar:hover {
-    background-color: gray;
     transform: scale(1.02);
-    box-shadow: 0 0 40px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 30px 0 rgba(255, 255, 255, 0.3);
     z-index: 1000;
 }
 

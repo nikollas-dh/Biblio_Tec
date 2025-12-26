@@ -37,14 +37,14 @@ main {
 }
 
 .neon {
-    width: 43vw;
-    height: 70vh;
+    width: 38vw;
+    height: 86vh;
     background: linear-gradient(to right, var(--azul-escuro), var(--azul-marinho), var(--ciano));
     background-size: 200%;
     animation: animationGradient 2.5s linear infinite;
     box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,122 +59,39 @@ main {
 .caixa-login {
     margin-top: 0%;
     margin-bottom: 0%;
-    width: 40vw;
+    width: 35vw;
+    height: 79vh;
     background-color: black;
-
     padding: 20px;
-    height: auto;
     box-shadow: 0 0 10px rgb(141, 141, 141);
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: 80px;
     justify-content: center;
     color: var(--branco);
     gap: 25px;
 }
 
 h1 {
-    /* margin-top: -20%; */
+    margin-top: -10%;
     text-align: center;
 }
-
-
-.input-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.input-container .entrada {
-    width: 100%;
-    padding-right: 40px;
-}
-
-.password-toggle {
-    position: absolute;
-    right: 10px;
-    cursor: pointer;
-    user-select: none;
-    color: #666;
-    font-size: 24px;
-    transition: color 0.2s;
-}
-
-.password-toggle:hover {
-    color: var(--ciano);
-}
-
-#texto {
-    margin-top: -1%;
-    text-align: center;
-    font-size: 14px;
-}
-
-
-#btnLogin {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-self: center;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background: var(--ciano);
-    color: var(--branco);
-    border: none;
-    border-radius: 5px;
-}
-
-#btnLogin:hover {
-    background-color: rgb(1, 96, 96);
-    transform: scale(1.05);
-}
-
-
-label {
-    color: var(--branco);
-    font-size: 14px;
-}
-
-a {
-    color: var(--branco);
-    font-size: 14px;
-}
-
-#linkCadastro {
-    color: var(--ciano);
-}
-
-#linkCadastro:hover {
-    background-color: rgb(1, 96, 96);
-    transform: scale(1.05);
-}
-
-#linkRecuperar:hover {
-    background-color: rgb(155, 155, 155);
-    transform: scale(1.05);
-}
-
-#direcionavel {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-#linkRecuperar {
-    margin-left: 0;
-}
-
 
 .divEntrada {
     margin-top: 40px;
+    width: 27vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 fieldset {
     color: var(--ciano);
-    border-radius: 10px;
-    height: 55px;
+    border-radius: 30px;
+    height: 7vh;
+    width: 100%;
     border: 1px solid white;
     margin-top: 3%;
 }
@@ -191,6 +108,7 @@ input[type="password"]::-ms-clear {
 
 
 .entrada {
+    top: 20px;
     background-color: transparent;
     border: none;
     width: 100%;
@@ -199,6 +117,106 @@ input[type="password"]::-ms-clear {
     color: white;
     outline: none;
 }
+
+.senha-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.senha-container .entrada {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    user-select: none;
+    color: #666;
+    font-size: 24px;
+    transition: color 0.2s;
+
+}
+
+.password-toggle:hover {
+    color: var(--ciano);
+}
+
+#texto {
+    margin-top: -1%;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+#btnLogin {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: var(--ciano);
+    color: var(--branco);
+    border: none;
+    border-radius: 30px;
+    margin-top: 40px;
+    font-size: 16px;
+    /* font-weight: bold; */
+}
+
+#btnLogin:hover {
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+    transform: scale(1.01);
+}
+
+.direcionavel {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    width: 60vh;
+    margin-left: 40px;
+}
+
+label {
+    color: var(--branco);
+    font-size: 14px;
+}
+
+a {
+    font-size: 14px;
+}
+
+#linkCadastro {
+    color: var(--ciano);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#linkCadastro:hover {
+    background-color: rgb(1, 96, 96);
+    transform: scale(1.05);
+}
+
+#linkRecuperar:hover {
+    background-color: rgb(155, 155, 155);
+    transform: scale(1.05);
+}
+
+
+
+#linkRecuperar {
+    color: var(--branco);
+    font-weight: bold;
+    text-decoration: none;
+
+}
+
+
 
 
 footer {

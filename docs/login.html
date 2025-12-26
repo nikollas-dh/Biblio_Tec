@@ -40,7 +40,7 @@
 
                             <fieldset>
                                 <legend>Senha:</legend>
-                                <div class="input-container">
+                                <div class="senha-container">
                                     <input type="password" class="entrada" placeholder="Digite sua senha" id="senha"
                                         autocomplete="off" required>
 
@@ -51,10 +51,14 @@
                             </fieldset>
                         </div>
                     </div>
-                    <div id="direcionavel">
-                        <label>Não tem uma conta?</label>
-                        <a href="./cadastro.html" id="linkCadastro">Cadastre-se</a>
-                        <a href="./recuperar.html" id="linkRecuperar">Esqueci minha senha?</a>
+                    <div class="direcionavel">
+                        <div class="divCadastro">
+                            <label>Não tem uma conta?</label>
+                            <a href="./cadastro.html" id="linkCadastro">Cadastre-se</a>
+                        </div>
+                        <div class="divEsqueceuSenha">
+                            <a href="./recuperar.html" id="linkRecuperar">Esqueci minha senha?</a>
+                        </div>
                     </div>
                     <div class="divBtnLogin">
                         <button type="submit" id="btnLogin">Acessar</button>

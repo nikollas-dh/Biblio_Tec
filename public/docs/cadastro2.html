@@ -17,7 +17,7 @@
         <form id="form-cadastrar">
             <div class="caixa-cadastro">
                 <h2>Crie sua conta</h2>
-                <div class="divNome">
+                <div class="divFormulario">
                     <fieldset>
                         <legend>Nome</legend>
                         <input type="text" class="entrada">
@@ -27,7 +27,7 @@
                         <input type="text" class="entrada">
                     </fieldset>
                 </div>
-                <div class="divContato">
+                <div class="divFormulario">
                     <fieldset>
                         <legend>Email</legend>
                         <input type="telefone" class="entrada">
@@ -37,17 +37,17 @@
                         <input type="email" class="entrada">
                     </fieldset>
                 </div>
-                <div class="divCurso">
-                    <label for="curso">Curso:</label>
+                <div class="divFormulario">
+                    <!-- <label for="curso">Curso:</label> -->
                     <select name="curso" id="curso">
                         <option value="" disabled selected>Selecione uma curso:</option>
                     </select>
-                    <label for="turma">Turma:</label>
+                    <!-- <label for="turma">Turma:</label> -->
                     <select id="turma" required>
                         <option value="" disabled selected>Selecione uma turma</option>
                     </select>
                 </div>
-                <div class="divSenha">
+                <div class="divFormulario">
                     <fieldset>
                         <legend>Nova senha</legend>
                         <input type="password" class="entrada">
@@ -57,7 +57,11 @@
                         <input type="password" class="entrada">
                     </fieldset>
                 </div>
-
+                <div class="divFormulario">
+                    <div class="divBtn">
+                        <button type="submit" class="btnCadastrar">Cadastrar</button>
+                    </div>
+                </div>
             </div>
         </form>
     </main>

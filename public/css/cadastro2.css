@@ -47,14 +47,45 @@ fieldset{
     display: flex;
     flex-direction: column;
     justify-content: center; 
-    align-items: center;
-    border: 1px solid white;
+    box-shadow: 0 0 30px var(--ciano);
     border-radius: 30px; 
 }
 h2{
     text-align: center;
 }
-.divNome, .divContato, .divSenha, .divCurso{
+.divFormulario{    
+    /* background-color: beige; */
     display: flex;
+    color: var(--ciano);
+    justify-content: center;
+    align-items: center;
     gap: 20px;
+}
+select{
+    width: 40%;
+    height: 80%;
+    border: 1px solid var(--branco);
+    border-radius: 30px;
+    background: transparent;
+    color: var(--ciano);
+    display: flex;
+    justify-content: center;
+    
+}
+option{
+    background-color: var(--azul-escuro);
+}
+label,select{
+    margin-top: 5%;
+
+}
+.btnCadastrar{
+    width: 10vw;
+    height: 5vh;
+    border-radius: 30px;
+    background: transparent;
+    color: var(--ciano);
+    margin-top: 10px;
+    margin-bottom: 30px;
+    
 }

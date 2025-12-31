@@ -9,7 +9,7 @@ body {
     background-color: black;
     color: var(--branco);
     min-height: 100vh;
-}
+    }
 .img_gradient {
     position: absolute;
     top: 0;
@@ -17,11 +17,16 @@ body {
     opacity: 0.5;
     z-index: -1;
 }
-header{
+header {
     width: 100%;
-    height: 7vh;
+    height: 10vh;
+    display: flex;
+    justify-content: flex-start;
+    margin: auto;
 }
 main{
+    width: 100vw;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,6 +45,9 @@ fieldset{
     background: transparent;
     width: 100%;
     border: none;
+    outline: none;
+    color: var(--branco);
+    padding-right: 45px; /* Espaço para o ícone não sobrepor o texto */
 }
 .caixa-cadastro{
     width: 35vw;
@@ -47,18 +55,23 @@ fieldset{
     display: flex;
     flex-direction: column;
     justify-content: center; 
-    box-shadow: 0 0 30px var(--ciano);
-    border-radius: 30px; 
+    box-shadow: 0 0 30px rgb(55, 55, 55);
+    border-radius: 30px;
+    cursor: pointer;
+}
+.caixa-cadastro:hover{
+        box-shadow: 0 0 30px var(--ciano);
+
 }
 h2{
     text-align: center;
 }
 .divFormulario{    
-    /* background-color: beige; */
     display: flex;
     color: var(--ciano);
     justify-content: center;
     align-items: center;
+    /* background-color: brown; */
     gap: 20px;
 }
 select{
@@ -68,24 +81,56 @@ select{
     border-radius: 30px;
     background: transparent;
     color: var(--ciano);
-    display: flex;
-    justify-content: center;
     
+    text-align: center;
+    text-align-last: center;
 }
+
 option{
     background-color: var(--azul-escuro);
 }
 label,select{
     margin-top: 5%;
+    margin-bottom: 1%;
 
 }
+.password-toggle {
+    /* position: absolute; */
+    right: 10px;
+    cursor: pointer;
+    user-select: none;
+    color: #666;
+    font-size: 24px;
+    transition: color 0.2s;
+    margin-right: 1%;
+}
+.divSenha{
+    width: 100%; 
+    height: 80%;
+    display: flex;
+    align-items: center;
+}
+.password-toggle:hover {
+    color: var(--ciano);
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none !important;
+}
+
+
 .btnCadastrar{
     width: 10vw;
     height: 5vh;
+    border: 1px solid var(--ciano);
     border-radius: 30px;
     background: transparent;
     color: var(--ciano);
-    margin-top: 10px;
-    margin-bottom: 30px;
-    
+    margin-top: 20px;    
+    cursor: pointer;
 }
+.btnCadastrar:hover{
+    box-shadow: 0 0 20px 0 var(--ciano);
+}
+

@@ -11,7 +11,9 @@
 <body>
     <img src="../img/gradient.png" alt="gradient" class="img_gradient">
     <header>
-        <img src="../img/icon/logo_bibliotec.png" alt="logo_bibliotec" class="logoBibliotec">
+        <a href="./login.html">
+            <img src="../img/icon/logo_bibliotec.png" alt="logo_bibliotec" class="logoBibliotec">
+        </a>
     </header>
     <main>
         <form id="form-cadastrar">
@@ -20,29 +22,26 @@
                 <div class="divFormulario">
                     <fieldset>
                         <legend>Nome</legend>
-                        <input type="text" class="entrada">
+                        <input type="text" class="entrada" id="nome">
                     </fieldset>
                     <fieldset>
                         <legend>CPF</legend>
-                        <input type="text" class="entrada">
+                        <input type="text" class="entrada" id="cpf">
                     </fieldset>
                 </div>
                 <div class="divFormulario">
                     <fieldset>
                         <legend>Email</legend>
-                        <input type="telefone" class="entrada">
+                        <input type="email" class="entrada" id="email">
                     </fieldset>
                     <fieldset>
                         <legend>Telefone</legend>
-                        <input type="email" class="entrada">
+                        <input type="text" class="entrada" id="telefone">
                     </fieldset>
                 </div>
                 <div class="divFormulario">
-                    <!-- <label for="curso">Curso:</label> -->
-                    <select name="curso" id="curso">
-                        <option value="" disabled selected>Selecione uma curso:</option>
+                    <select id="curso" required>
                     </select>
-                    <!-- <label for="turma">Turma:</label> -->
                     <select id="turma" required>
                         <option value="" disabled selected>Selecione uma turma</option>
                     </select>
@@ -50,21 +49,32 @@
                 <div class="divFormulario">
                     <fieldset>
                         <legend>Nova senha</legend>
-                        <input type="password" class="entrada">
+                        <div class="divSenha">
+                            <input type="password" class="entrada" id="novaSenha" autocomplete="off" required>
+                            <span class="material-symbols-outlined password-toggle" id="iconNovaSenha">
+                                visibility_off
+                            </span>
+                        </div>
                     </fieldset>
                     <fieldset>
                         <legend>Confirmar senha</legend>
-                        <input type="password" class="entrada">
+                        <div class="divSenha">
+                            <input type="password" class="entrada" id="confirmSenha" autocomplete="off" required>
+                            <span class="material-symbols-outlined password-toggle" id="iconConfirmSenha">
+                                visibility_off
+                            </span>
+                        </div>
                     </fieldset>
                 </div>
                 <div class="divFormulario">
                     <div class="divBtn">
-                        <button type="submit" class="btnCadastrar">Cadastrar</button>
+                        <button type="submit" class="btnCadastrar" id="btnCadastrar">Cadastrar</button>
                     </div>
                 </div>
             </div>
         </form>
     </main>
+    <script type="module" src="../js/cadastro.js"></script>
 </body>
 
 </html>

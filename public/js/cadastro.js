@@ -1,9 +1,8 @@
 const API_BASE = "http://localhost:3000/api";
 
-// CORREÇÃO: Usando a base /api e nomes no singular
-const API = `${API_BASE}/usuario`; // Para cadastro POST
-const API_CURSOS = `${API_BASE}/curso`; // Para listar cursos (GET /api/curso)
-const API_TURMAS = `${API_BASE}/turma`; // Para listar turmas (GET /api/turma/:curso_id)
+const API = `${API_BASE}/usuario`; 
+const API_CURSOS = `${API_BASE}/curso`; 
+const API_TURMAS = `${API_BASE}/turma`; 
 
 const inputNome = document.getElementById("nome");
 const inputCpf = document.getElementById("cpf");
@@ -163,7 +162,7 @@ document.addEventListener("DOMContentLoaded", carregarCursos);
 
 document.addEventListener('DOMContentLoaded', () => {
     const senhaInput = document.getElementById('confirmSenha');
-    const togglePassword = document.getElementById('togglePassword');
+    const togglePassword = document.getElementById('iconConfirmSenha');
 
     if (togglePassword && senhaInput) {
        

@@ -34,7 +34,7 @@ async function carregarCursos() {
 
         const cursos = await resposta.json();
 
-        selectCurso.innerHTML = '<option value="" disabled selected>Selecione seu curso</option>';
+        selectCurso.innerHTML = '<option value="" disabled selected>Curso</option>';
         cursos.forEach((curso) => {
             const option = document.createElement("option");
             option.value = curso.id;

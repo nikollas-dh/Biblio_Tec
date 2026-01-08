@@ -81,13 +81,14 @@ select{
     border-radius: 30px;
     background: transparent;
     color: var(--ciano);
-    
+    cursor: pointer;
     text-align: center;
     text-align-last: center;
 }
 
 option{
     background-color: var(--azul-escuro);
+    /* border-radius: 30px; */
 }
 label,select{
     margin-top: 5%;

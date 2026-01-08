@@ -56,6 +56,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5rem;
+    position: relative;
+    z-index: 1001;
 }
 
 nav {
@@ -205,10 +207,55 @@ main {
     z-index: 1000;
 }
 
-/* .animacao3d{
-    width: auto;
-    height: 40vh;
+.animacao3d {
     position: absolute;
     top: 0;
-    right: -5%;
-} */
+    right: -15%;
+    width: 70%;
+    height: 80%;
+    z-index: 1;
+
+    /* tentei tirar a musica*/
+    pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+    header {
+        padding: 1rem 0.5rem;
+    }
+
+    .animacao3d {
+        scale: 0.0;
+    }
+
+}
+
+@media(max-width: 850px) {
+    header {
+        width: 100%;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        margin-left: -5%;
+    }
+
+    nav a {
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+        transition: color 0.2 ease;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .logoBibliotec {
+        width: 55px;
+    }
+
+    .btnLogin {
+        width: 10vw;
+        justify-content: center;
+    }
+}

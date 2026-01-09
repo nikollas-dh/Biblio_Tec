@@ -95,8 +95,19 @@ nav a:hover {
     border-radius: 50px;
     cursor: pointer;
     border: none;
-    width: 7vw;
+    width: 10%;
     transition: background-color 0.2s ease;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+}
+
+.contentLogin {
+    background-color: var(--branco);
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
 }
 
 .btnLogin:hover {
@@ -239,6 +250,9 @@ main {
 
 @media(max-width: 850px) {
 
+    .btnLogin {
+        width: 20%;
+    }
 
     .content {
         margin-left: 0;
@@ -288,9 +302,7 @@ main {
         width: 50px;
         height: auto;
     }
-    .btnLogin{
-        width: 20%;
-    }
+
     .container {
         padding: 0 1rem;
     }
@@ -320,18 +332,19 @@ main {
         word-wrap: break-word;
         overflow-wrap: break-word;
         width: 100%;
-        font-size: 2.0rem;
+        font-size: 2.5rem;
         margin-top: 10%;
     }
 
     .descricao {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .tag-box {
         width: 15rem;
     }
-    .tag{
+
+    .tag {
         font-size: 0.8rem;
     }
 }

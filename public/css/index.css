@@ -160,7 +160,7 @@ main {
     text-shadow: 0 0 10px rgba(128, 128, 128, 0.418);
 }
 
-.descricacao {
+.descricao {
     font-size: 1.2rem;
     letter-spacing: 0.05em;
     max-width: 35rem;
@@ -231,31 +231,53 @@ main {
 }
 
 @media(max-width: 850px) {
-    header {
+
+
+    .content {
+        margin-left: 0;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     nav {
-        display: flex;
-        align-items: center;
-        gap: 3rem;
-        margin-left: -5%;
+        width: 0;
     }
 
     nav a {
-        font-size: 1rem;
-        letter-spacing: 0.1rem;
-        transition: color 0.2 ease;
-        text-decoration: none;
-        color: inherit;
+        display: none;
     }
 
-    .logoBibliotec {
-        width: 55px;
+   
+
+    .descricao {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
     }
 
-    .btnLogin {
-        width: 10vw;
+    .tag-box {
+        margin: 0 auto;
+    }
+
+    .botoes {
         justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media(max-width:550px){
+    .content h1 {
+        font-size: 3.0rem;
+        line-height: 1.1;
+        /* Diminui o espaço entre as linhas */
+        margin: 1.5rem 0;
+        /* Diminui o respiro vertical */
+        letter-spacing: 0;
+    }
+    .content h1 br {
+        display: none;
     }
 }

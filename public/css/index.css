@@ -9,6 +9,13 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    /* Proíbe o scroll para os lados em todo o site */
+    width: 100%;
+}
+
 body {
     background-color: black;
     color: var(--branco);
@@ -250,7 +257,7 @@ main {
         display: none;
     }
 
-   
+
 
     .descricao {
         margin-left: auto;
@@ -268,16 +275,30 @@ main {
     }
 }
 
-@media(max-width:550px){
+@media(max-width:550px) {
+    .content {
+        margin-top: 5%;
+    }
+
     .content h1 {
         font-size: 3.0rem;
         line-height: 1.1;
-        /* Diminui o espaço entre as linhas */
         margin: 1.5rem 0;
-        /* Diminui o respiro vertical */
         letter-spacing: 0;
+        margin-top: 5%;
     }
+
     .content h1 br {
         display: none;
+    }
+
+    .btnLogin {
+        width: 25vw;
+        justify-content: center;
+    }
+
+    .btnLogin a {
+        text-align: center;
+
     }
 }

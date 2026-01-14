@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/cadastro2.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="icon" type="image/png" href="../img/icon/logo_bibliotec.png">
     <title>Cadastro</title>
 </head>
@@ -13,14 +14,15 @@
     <img src="../img/gradient.png" alt="gradient" class="img_gradient">
     <header>
         <a href="./login.html">
-            <img src="../img/icon/logo_bibliotec.png" alt="logo_bibliotec" class="logoBibliotec">
+            <img src="../img/icon/logo_bibliotec.png" alt="logo_bibliotec" class="logoBibliotec" data-aos="fade-in"
+                data-aos-duration="1000">
         </a>
     </header>
     <main>
         <form id="form-cadastrar">
-            <div class="caixa-cadastro">
-                <h2>Crie sua conta</h2>
-                <div class="divFormulario">
+            <div class="caixa-cadastro" data-aos="fade-in" data-aos-duration="2000">
+                <h2 data-aos="fade-in" data-aos-duration="2000">Crie sua conta</h2>
+                <div class="divFormulario" data-aos="fade-in" data-aos-duration="3000">
                     <fieldset>
                         <legend>Nome</legend>
                         <input type="text" class="entrada" id="nome">
@@ -30,7 +32,7 @@
                         <input type="text" class="entrada" id="cpf">
                     </fieldset>
                 </div>
-                <div class="divFormulario">
+                <div class="divFormulario" data-aos="fade-in" data-aos-duration="3000">
                     <fieldset>
                         <legend>Email</legend>
                         <input type="email" class="entrada" id="email">
@@ -40,7 +42,7 @@
                         <input type="text" class="entrada" id="telefone">
                     </fieldset>
                 </div>
-                <div class="divFormulario">
+                <div class="divFormulario" data-aos="fade-in" data-aos-duration="3000">
                     <select id="curso" required>
                         <option value="" disabled selected>
                             Curso
@@ -50,7 +52,7 @@
                         <option value="" disabled selected>Turma</option>
                     </select>
                 </div>
-                <div class="divFormulario">
+                <div class="divFormulario" data-aos="fade-in" data-aos-duration="3000">
                     <fieldset>
                         <legend>Nova senha</legend>
                         <div class="divSenha">
@@ -70,7 +72,7 @@
                         </div>
                     </fieldset>
                 </div>
-                <div class="divFormulario">
+                <div class="divFormulario" data-aos="fade-in" data-aos-duration="2000">
                     <div class="divBtn">
                         <button type="submit" class="btnCadastrar" id="btnCadastrar">Cadastrar</button>
                     </div>
@@ -79,6 +81,10 @@
         </form>
     </main>
     <script type="module" src="../js/cadastro.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

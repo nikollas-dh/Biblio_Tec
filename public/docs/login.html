@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <link rel="icon" type="image/png" href="../img/icon/logo_bibliotec.png">
 
     <title>Login</title>
@@ -16,29 +18,30 @@
     <header>
         <div id="divLogo">
             <a href="index.html">
-                <img class="logoBibliotec" src="../img/icon/logo_bibliotec.png" alt="LogoBibliotec">
+                <img class="logoBibliotec" src="../img/icon/logo_bibliotec.png" alt="LogoBibliotec" data-aos="fade-in"
+                    data-aos-duration="1000">
             </a>
         </div>
     </header>
     <main>
         <form id="form-login">
-            <div class="neon">
+            <div class="neon" data-aos="fade-in" data-aos-duration="3000">
                 <div class="caixa-login">
                     <div>
-                        <h1>
+                        <h1 data-aos="fade-in" data-aos-duration="1000">
                             Bem vindo ao Biblio Tec!
                         </h1>
-                        <p id="texto">
+                        <p id="texto" data-aos="fade-in" data-aos-duration="1000">
                             Onde o conhecimento e a tecnologia se encontram!
                         </p>
 
-                        <div class="divEntrada">
-                            <fieldset>
+                        <div class="divEntrada" data-aos="fade-in" data-aos-duration="1000">
+                            <fieldset data-aos="fade-in" data-aos-duration="1000">
                                 <legend>Email:</legend>
                                 <input type="email" class="entrada" placeholder="exemplo@email.com" id="email" required>
                             </fieldset>
 
-                            <fieldset>
+                            <fieldset data-aos="fade-in" data-aos-duration="1000">
                                 <legend>Senha:</legend>
                                 <div class="senha-container">
                                     <input type="password" class="entrada" placeholder="Digite sua senha" id="senha"
@@ -51,16 +54,16 @@
                             </fieldset>
                         </div>
                     </div>
-                    <div class="direcionavel">
+                    <div class="direcionavel" data-aos="fade-in" data-aos-duration="1000">
                         <div class="divCadastro">
                             <label>Não tem uma conta?</label>
                             <a href="./cadastro.html" id="linkCadastro">Cadastre-se</a>
                         </div>
-                        <div class="divEsqueceuSenha">
+                        <div class="divEsqueceuSenha" data-aos="fade-in" data-aos-duration="1000">
                             <a href="./recuperar.html" id="linkRecuperar">Esqueci minha senha?</a>
                         </div>
                     </div>
-                    <div class="divBtnLogin">
+                    <div class="divBtnLogin" data-aos="fade-in" data-aos-duration="3500">
                         <button type="submit" id="btnLogin">Acessar</button>
                     </div>
                 </div>
@@ -75,6 +78,10 @@
             <img src="../img/icon/instagram.png" alt="">
         </div>
     </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const senhaInput = document.getElementById('senha');

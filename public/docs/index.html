@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="icon" type="image/png" href="../img/icon/logo_bibliotec.png">
     <title>Biblio Tec</title>
 </head>
@@ -14,21 +15,21 @@
     <div class="layer-blur"></div>
     <div class="container">
         <header>
-            <img src="../img/icon/logo_bibliotec.png" alt="logo_bibliotec" class="logoBibliotec">
+            <img src="../img/icon/logo_bibliotec.png" alt="logo_bibliotec" class="logoBibliotec" data-aos="fade-down" data-aos-duration="1000">
             <nav>
-                <a href="./login.html">BIBLIOTECA</a>
-                <a href="#">RECURSOS</a>
-                <a href="#">CONTATO</a>
-                <a href="#">EVENTOS</a>
+                <a href="./login.html" data-aos="fade-down" data-aos-duration="1500">BIBLIOTECA</a>
+                <a href="#" data-aos="fade-down" data-aos-duration="2000">RECURSOS</a>
+                <a href="#" data-aos="fade-down" data-aos-duration="2500">CONTATO</a>
+                <a href="#" data-aos="fade-down" data-aos-duration="3000">EVENTOS</a>
             </nav>
-            <a href="./login.html" class="btnLogin">
+            <a href="./login.html" class="btnLogin" data-aos="fade-down" data-aos-duration="3000">
                 <button class="contentLogin">
                     LOGIN
                 </button>
             </a>
         </header>
         <main>
-            <div class="content">
+            <div class="content" data-aos="fade-down" data-aos-duration="3000">
                 <div class="tag-box">
                     <!-- <div class="tag">INTRODUÇÃO &wedbar;</div> -->
                     <div class="tag">SEJA BEM-VINDO AO</div>
@@ -49,10 +50,13 @@
         </main>
 
         <spline-viewer class="animacao3d" url="https://prod.spline.design/2xqGxeOXqAbQwqUe/scene.splinecode"
-            unload-events-target="true"></spline-viewer>
+            unload-events-target="true" data-aos="fade-down" data-aos-duration="3000"></spline-viewer>
     </div>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.32/build/spline-viewer.js"></script>
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

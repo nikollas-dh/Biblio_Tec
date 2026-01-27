@@ -111,8 +111,7 @@ nav a:hover {
 }
 
 .btnLogin:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 40px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 40px 20px rgba(255, 255, 255, 0.3);
 }
 
 .btnLogin a {
@@ -194,7 +193,7 @@ main {
 .btnCriarConta {
     color: var(--ciano);
     text-decoration: none;
-    border: 1px solid var(--ciano);
+    border: 2px solid var(--ciano);
     padding: 0.7rem 1.2rem;
     border-radius: 50px;
     font-size: 1.2rem;
@@ -204,7 +203,7 @@ main {
 
 .btnCriarConta:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 10px 0 aqua;
+    box-shadow: 0 0 10px 2px aqua;
 }
 
 .btnAcessar {

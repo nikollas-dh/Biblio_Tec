@@ -6,12 +6,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
     margin: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 header {
-    width: 90%;
+    width: 95%;
     display: flex;
     justify-content: flex-start;
     margin: auto;
@@ -45,7 +46,6 @@ main {
     background: linear-gradient(to right, var(--azul-escuro), var(--azul-marinho), var(--ciano));
     background-size: 200%;
     animation: animationGradient 2.5s linear infinite;
-    /* box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3); */
     cursor: pointer;
     border-radius: 80px;
     display: flex;
@@ -62,8 +62,8 @@ main {
 .caixa-login {
     margin-top: 0%;
     margin-bottom: 0%;
-    width: 35vw;
-    height: 79vh;
+    width: 92%;
+    height: 92%;
     background-color: black;
     padding: 20px;
     /* box-shadow: 0 0 10px rgb(141, 141, 141); */
@@ -86,7 +86,7 @@ h1 {
 
 .divEntrada {
     margin-top: 40px;
-    width: 27vw;
+    width: 75%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -103,7 +103,8 @@ fieldset {
     margin-top: 3%;
 }
 
-#senha {
+#senha,
+span {
     margin-top: 1%;
 }
 
@@ -123,6 +124,7 @@ input[type="password"]::-ms-clear {
     font-size: 20px;
     color: white;
     outline: none;
+    margin-top: 1%;
 }
 
 .senha-container {
@@ -188,8 +190,9 @@ input[type="password"]::-ms-clear {
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
-    width: 60vh;
+    width: 80%;
     margin-left: 40px;
+    /* background-color: aliceblue; */
 }
 
 label {
@@ -234,59 +237,74 @@ footer {
 }
 
 
-/* @media (min-width: 900px) {
-
-    .caixa-login {
-        width: 50%;
-        max-width: 450px;
-        height: 650px;
-        padding-top: 10px;
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-top: 5%;
-        margin-bottom: 5%;
-    }
-
-    #btnLogin {
-        width: 150px;
-        height: 60px;
-        justify-self: end;
-        margin-top: 10%;
-    }
-
-    #direcionavel {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 15px;
-    }
-
-    #linkRecuperar {
-        margin-left: 20px;
-    }
-}
 
 
-@media (max-width: 400px) {
 
+@media (max-width: 550px) {
     h1 {
-        font-size: 22px;
+
+        text-align: center;
+        font-size: 25px;
+
     }
 
     #texto {
-        font-size: 13px;
+        font-size: 14px;
+    }
+
+    .neon {
+        margin-top: 5%;
+        width: 79vw;
+        height: 80vh;
+        background-size: 200%;
+        border-radius: 80px;
+
     }
 
     .caixa-login {
-        margin-top: 25%;
-        margin-bottom: 25%;
-        padding: 15px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 80px;
+        justify-content: center;
+        color: var(--branco);
     }
 
-    fieldset {
-        height: 48px;
+    .direcionavel {
+    }
+}
+
+@media (max-width: 350px) {
+    h1 {
+
+        text-align: center;
+        font-size: 30px;
+
     }
 
-    .entrada {
-        font-size: 16px;
+    #texto {
+        font-size: 12px;
     }
-} */
+
+    .neon {
+        margin-top: 5%;
+        width: 79vw;
+        height: 80vh;
+        background-size: 200%;
+        border-radius: 80px;
+
+    }
+
+    .caixa-login {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 80px;
+        justify-content: center;
+        color: var(--branco);
+    }
+
+    .direcionavel {
+        flex-direction:column ;
+    }
+}

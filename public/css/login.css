@@ -8,8 +8,11 @@ body {
     align-items: center;
     margin: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    /* Usa min-height em vez de height fixo */
 }
+
+
 
 header {
     width: 95%;
@@ -306,6 +309,17 @@ footer {
         /* font-size: 10px; */
 
     }
+
+    .img_gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100vw;
+        opacity: 0.5;
+        z-index: -1;
+        pointer-events: none;
+    }
 }
 
 @media (max-width: 450px) {
@@ -320,51 +334,53 @@ footer {
 
     .neon {
         margin-top: 5%;
-        width: 90%;
-        height: 90%;
+        width: 95%;
+        height: 70%;
         background-size: 200%;
-
-
     }
 
     .caixa-login {
-        width: 85%;
-        height: 90%;
+        width: 88%;
+        height: 92%;
     }
+     .direcionavel {
+        width: 50%;
+        flex-direction: column;
 
+    }
+    a,label{
+        font-size: 12px;
+    }
 
 }
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
     h1 {
 
-        text-align: center;
-        font-size: 30px;
+        font-size: 20px;
 
     }
 
     #texto {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .neon {
         margin-top: 5%;
-        width: 79vw;
-        height: 80vh;
+        width: 95%;
+        height: 90%;
         background-size: 200%;
         border-radius: 80px;
 
     }
 
     .caixa-login {
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        border-radius: 80px;
-        justify-content: center;
-        color: var(--branco);
+        width: 87%;
+        height: 91%;
     }
-
+    .direcionavel{
+        width: 55%;
+    }
     /* fieldset {
         height: 5vh;
     } */

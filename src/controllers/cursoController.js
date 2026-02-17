@@ -1,6 +1,5 @@
 import { db } from "../config/db.js";
 
-// 1. Função listarCursos CORRIGIDA (Remove 'criado_em')
 export const listarCursos = async (req, res) => {
     try {
         const [rows] = await db.query(`
@@ -16,7 +15,6 @@ export const listarCursos = async (req, res) => {
     }
 };
 
-// 2. Função obterCursos CORRIGIDA (Remove 'criado_em')
 export const obterCursos = async (req, res) => {
     const { id } = req.params; 
 

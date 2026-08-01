@@ -57,7 +57,7 @@ fieldset{
     flex-direction: column;
     justify-content: center; 
     box-shadow: 0 0 30px rgb(55, 55, 55);
-    border-radius: 30px;
+    border-radius: 100px;
     cursor: pointer;
 }
 .caixa-cadastro:hover{

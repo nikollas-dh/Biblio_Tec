@@ -1,4 +1,5 @@
 @import url("./style.css");
+
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +9,9 @@
 body {
     background-color: black;
     color: var(--branco);
-    min-height: 100%;
-    }
+    min-height: 100vh;
+}
+
 .img_gradient {
     position: absolute;
     top: 0;
@@ -17,6 +19,7 @@ body {
     opacity: 0.5;
     z-index: -1;
 }
+
 header {
     width: 100%;
     height: 10vh;
@@ -24,62 +27,71 @@ header {
     justify-content: flex-start;
     margin: auto;
 }
-main{
+
+main {
     width: 100%;
-    height: 80%;
+    min-height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px 0;
 }
-fieldset{
+
+.caixa-cadastro {
+    width: 800px;
+    max-width: 95%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 30px rgb(55, 55, 55);
+    border-radius: 40px;
+    cursor: pointer;
+    padding: 40px 20px;
+}
+
+.caixa-cadastro:hover {
+    box-shadow: 0 0 30px var(--ciano);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.divFormulario {   
+    display: flex;
+    flex-direction: column;
     color: var(--ciano);
-    border-radius: 30px;
-    height: 80%;
-    width: 40%; /* Ocupa quase a tela toda no mobile */
-    max-width: 450px; /* Não deixa ficar gigante no computador */
-    border: 1px solid white;
-    margin-top: 3%;
-    padding-left: 2%;
-    padding-right: 2%;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
 }
-.entrada{
+
+fieldset {
+    color: var(--ciano);
+    border-radius: 20px;
+    width: 80%;
+    max-width: 450px;
+    border: 1px solid white;
+    padding: 5px 15px;
+}
+
+.entrada {
     background: transparent;
     width: 100%;
+    height: 30%;
     border: none;
     outline: none;
     color: var(--branco);
-    padding-right: 45px; /* Espaço para o ícone não sobrepor o texto */
 }
-.caixa-cadastro{
-    width: 100%;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    box-shadow: 0 0 30px rgb(55, 55, 55);
-    border-radius: 100px;
-    cursor: pointer;
-}
-.caixa-cadastro:hover{
-        box-shadow: 0 0 30px var(--ciano);
 
-}
-h2{
-    text-align: center;
-}
-.divFormulario{    
-    display: flex;
-    color: var(--ciano);
-    justify-content: center;
-    align-items: center;
-    /* background-color: brown; */
-    gap: 20px;
-}
-select{
-    width: 40%;
-    height: 80%;
+select {
+    width: 80%;
+    max-width: 450px;
+    height: 45px;
     border: 1px solid var(--branco);
-    border-radius: 30px;
+    border-radius: 20px;
     background: transparent;
     color: var(--ciano);
     cursor: pointer;
@@ -87,31 +99,25 @@ select{
     text-align-last: center;
 }
 
-option{
+option {
     background-color: var(--azul-escuro);
-    /* border-radius: 30px; */
 }
-label,select{
-    margin-top: 5%;
-    margin-bottom: 1%;
 
+.divSenha {
+    width: 100%; 
+    display: flex;
+    align-items: center;
 }
+
 .password-toggle {
-    /* position: absolute; */
-    right: 10px;
     cursor: pointer;
     user-select: none;
     color: #666;
     font-size: 24px;
     transition: color 0.2s;
-    margin-right: 1%;
+    margin-left: 10px;
 }
-.divSenha{
-    width: 100%; 
-    height: 80%;
-    display: flex;
-    align-items: center;
-}
+
 .password-toggle:hover {
     color: var(--ciano);
 }
@@ -125,35 +131,21 @@ input[type="password"]::-ms-clear {
     width: 100%;
     display: flex;
     justify-content: center; 
+    margin-top: 10px;
 }
 
-.btnCadastrar{
+.btnCadastrar {
     width: 40%;
     max-width: 200px;
-    height: 40px;
+    height: 5vh;
     border: 1px solid var(--ciano);
     border-radius: 30px;
     background: transparent;
     color: var(--ciano);
-    margin-top: 40px;    
     cursor: pointer;
+    transition: box-shadow 0.3s;
 }
 
-
-.btnCadastrar:hover{
+.btnCadastrar:hover {
     box-shadow: 0 0 20px 0 var(--ciano);
 }
-
-/* @media(max-width: 855px) {
-    .caixa-cadastro{
-        width: 500px;
-        height: 600px;
-    
-    }
-}
-@media(max-width: 550px) {
-    .caixa-cadastro{
-        width: 400px;
-    
-    }
-} */

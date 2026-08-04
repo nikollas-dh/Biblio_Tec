@@ -1,44 +1,111 @@
-# Projeto Biblio Tec – Back-end com Express + Front-end com HTML/JS
+# Biblio Tec – Sistema de Gerenciamento de Biblioteca
 
-🔗 **Acesse o projeto online:**
+> 🚧 **Projeto em refatoração completa** — migração da versão desenvolvida em **Node.js + Express + MariaDB** para uma nova arquitetura utilizando **ASP.NET Core (C#) + SQL Server**.
 
-https://nikollas-dh.github.io/Biblio_Tec/public/docs/
+## 📌 Sobre o projeto
 
-## 📌 Objetivo do Projeto:
+O **Biblio Tec** é um sistema de gerenciamento de biblioteca desenvolvido inicialmente como um projeto em equipe durante o curso técnico. A primeira versão foi construída utilizando **Node.js**, **Express** e **MariaDB**, oferecendo funcionalidades como cadastro de usuários, consulta ao catálogo e cadastro de livros.
 
-O **Biblio Tec** é um sistema de biblioteca desenvolvido em grupo com o objetivo de criar uma plataforma web que permita aos usuários **realizar login**, **buscar livros disponíveis** e **solicitar empréstimos**.
-O projeto tem foco no aprendizado colaborativo de desenvolvimento web, controle de versão com **Git e GitHub**, e integração entre **front-end** e **back-end** utilizando tecnologias amplamente utilizadas no mercado.
+Atualmente, o projeto está sendo **reconstruído do zero**, com foco em arquitetura de software, boas práticas de desenvolvimento e maior escalabilidade.
 
-## 💻 Tecnologias Utilizadas:
+A nova versão está sendo desenvolvida **individualmente** e adota tecnologias amplamente utilizadas no mercado .NET.
 
+---
 
-**HTML5** – Estrutura das páginas e componentes visuais.
+## 🚀 Objetivos da refatoração
 
-**CSS3** – Estilização e responsividade da interface.
+Esta nova versão tem como principais objetivos:
 
-**JavaScript** – Lógica de interação, manipulação do DOM e integração com o banco de dados.
+* Reestruturar completamente a arquitetura da aplicação.
+* Migrar o back-end para **ASP.NET Core Web API**.
+* Utilizar **Entity Framework Core** com **SQL Server**.
+* Implementar autenticação utilizando **JWT**.
+* Aplicar princípios como **SOLID** e separação de responsabilidades.
+* Utilizar **DTOs**, **Services**, **Controllers** e **Entity Framework Migrations**.
+* Melhorar a organização e a manutenção do código.
 
-**MySQL** – Banco de dados relacional utilizado para armazenar usuários, livros e registros de empréstimos.
+---
 
+## 💻 Tecnologias
 
+### Back-end
 
-## 👥 Desenvolvimento Colaborativo
+* C#
+* ASP.NET Core Web API
+* Entity Framework Core
+* SQL Server
+* JWT Authentication
+* BCrypt
+* LINQ
 
-O projeto está sendo desenvolvido por uma **equipe de programadores**, onde cada membro trabalha em uma **branch separada** no GitHub.
-Essa abordagem facilita o **controle de versão**, o **trabalho em equipe** e o **gerenciamento de funcionalidades*" de forma organizada.
+### Front-end
 
+* HTML5
+* CSS3
+* JavaScript
 
-## 📚 Funcionalidades (em desenvolvimento):
+---
 
+## 📂 Arquitetura
 
-- **Login de Usuário**: autenticação segura para acesso ao sistema.
+```text
+BiblioTecApi
+│
+├── Controllers
+├── Data
+├── DTOs
+├── Models
+├── Services
+├── Migrations
+├── Program.cs
+└── appsettings.json
+```
 
-- **Busca de Livros**: o usuário pode procurar títulos disponíveis na biblioteca.
+---
 
-- **Empréstimo de Livros**: funcionalidade que permite reservar ou pegar emprestado um livro.
+## 📚 Funcionalidades
 
-- **Interface Intuitiva**: design limpo e de fácil navegação.
+### Implementadas
 
-## 🏁 Status do Projeto
+* Cadastro de usuários
+* Persistência utilizando Entity Framework Core
+* Migrations
+* Criptografia de senhas com BCrypt
 
-🚧 **Em desenvolvimento** – novas funcionalidades estão sendo implementadas continuamente nas branches do grupo.
+### Em desenvolvimento
+
+* Login com JWT
+* Controle de perfis de usuário
+* Cadastro de livros
+* Pesquisa de livros
+* Empréstimos
+* Reservas
+* Histórico de empréstimos
+
+---
+
+## 🎯 Tecnologias estudadas durante o projeto
+
+Este projeto está sendo utilizado para aprofundar conhecimentos em:
+
+* ASP.NET Core
+* Entity Framework Core
+* SQL Server
+* JWT
+* Injeção de Dependência
+* Arquitetura em Camadas
+* REST API
+* Boas práticas de desenvolvimento
+
+---
+
+## 📈 Status
+
+🚧 **Em desenvolvimento**
+
+A versão anterior em **Node.js + Express** foi finalizada para fins acadêmicos.
+
+Esta nova versão representa uma reconstrução completa do sistema utilizando o ecossistema .NET, com foco em qualidade de código, arquitetura e tecnologias utilizadas em aplicações profissionais.
+
+---
+

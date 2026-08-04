@@ -4,6 +4,10 @@
 
 🔗 **Acesse o projeto online:** https://nikollas-dh.github.io/Biblio_Tec/public/docs/
 
+🧷**Back-end em ASP.NET:** https://github.com/nikollas-dh/BiblioTec_Backend_Refatorado
+
+No momento não é possível testar sem realizar as instalações dos projetos!😥
+ 
 ## 📌 Sobre o projeto
 
 O **Biblio Tec** é um sistema de gerenciamento de biblioteca desenvolvido inicialmente como um projeto em equipe durante o curso técnico. A primeira versão foi construída utilizando **Node.js**, **Express** e **MariaDB**, oferecendo funcionalidades como cadastro de usuários, consulta ao catálogo e cadastro de livros.

@@ -2,6 +2,8 @@
 
 > 🚧 **Projeto em refatoração completa** — migração da versão desenvolvida em **Node.js + Express + MariaDB** para uma nova arquitetura utilizando **ASP.NET Core (C#) + SQL Server**.
 
+🔗 **Acesse o projeto online:** https://nikollas-dh.github.io/Biblio_Tec/public/docs/
+
 ## 📌 Sobre o projeto
 
 O **Biblio Tec** é um sistema de gerenciamento de biblioteca desenvolvido inicialmente como um projeto em equipe durante o curso técnico. A primeira versão foi construída utilizando **Node.js**, **Express** e **MariaDB**, oferecendo funcionalidades como cadastro de usuários, consulta ao catálogo e cadastro de livros.

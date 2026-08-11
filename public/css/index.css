@@ -235,6 +235,42 @@ main {
     /* tentei tirar a musica*/
     pointer-events: none;
 }
+.hero-section {
+    display: flex;
+    align-items: center;       /* Alinha verticalmente ao centro */
+    justify-content: space-between; /* Distribui o espaço entre o texto e a imagem */
+    gap: 2rem;                 /* Espaço de respiro entre o texto e a imagem */
+    min-height: calc(100vh - 100px); /* Ocupa a tela inteira descontando a altura do header */
+}
+
+/* Garante que o texto ocupe no máximo 50% da largura */
+.hero-section main {
+    flex: 1;
+    max-width: 50%;
+}
+
+/* Garante que a imagem se ajuste proporcionalmente no lado direito */
+.hero-imagem {
+    flex: 1;
+    max-width: 45%;
+    height: auto;
+    object-fit: contain;
+    /* Efeito opcional de brilho neon na imagem */
+    filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.4));
+}
+
+/* Responsividade para telas menores (celulares e tablets) */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column; /* Em telas pequenas, coloca a imagem abaixo do texto */
+        text-align: center;
+    }
+
+    .hero-section main,
+    .hero-imagem {
+        max-width: 100%;
+    }
+}
 
 @media (max-width: 1500px) {
     header {

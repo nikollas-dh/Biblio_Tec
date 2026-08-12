@@ -49,24 +49,8 @@ Esta nova versão tem como principais objetivos:
 * CSS3
 * JavaScript
 
----
 
-## 📂 Arquitetura
 
-```text
-BiblioTecApi
-│
-├── Controllers
-├── Data
-├── DTOs
-├── Models
-├── Services
-├── Migrations
-├── Program.cs
-└── appsettings.json
-```
-
----
 
 ## 📚 Funcionalidades
 

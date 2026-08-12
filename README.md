@@ -14,7 +14,7 @@ O **Biblio Tec** é um sistema de gerenciamento de biblioteca desenvolvido inici
 
 Atualmente, o projeto está sendo **reconstruído do zero**, com foco em arquitetura de software, boas práticas de desenvolvimento e maior escalabilidade.
 
-A nova versão está sendo desenvolvida **individualmente** e adota tecnologias amplamente utilizadas no mercado .NET.
+A nova versão está sendo desenvolvida **individualmente** e adota tecnologias amplamente utilizadas no mercado **.NET**.
 
 ---
 
@@ -24,7 +24,6 @@ Esta nova versão tem como principais objetivos:
 
 * Reestruturar completamente a arquitetura da aplicação.
 * Migrar o back-end para **ASP.NET Core Web API**.
-* Utilizar **Entity Framework Core** com **SQL Server**.
 * Implementar autenticação utilizando **JWT**.
 * Aplicar princípios como **SOLID** e separação de responsabilidades.
 * Utilizar **DTOs**, **Services**, **Controllers** e **Entity Framework Migrations**.
@@ -71,22 +70,17 @@ BiblioTecApi
 
 ## 📚 Funcionalidades
 
-### Implementadas
-
-* Cadastro de usuários
-* Persistência utilizando Entity Framework Core
-* Migrations
-* Criptografia de senhas com BCrypt
-
-### Em desenvolvimento
-
-* Login com JWT
-* Controle de perfis de usuário
-* Cadastro de livros
-* Pesquisa de livros
-* Empréstimos
-* Reservas
-* Histórico de empréstimos
+- [X] Cadastro de usuários
+- [X] Persistência utilizando Entity Framework Core
+- [X] Migrations
+- [X] Criptografia de senhas com BCrypt
+- [X] Login com JWT
+- [ ] Controle de perfis de usuário
+- [ ] Cadastro de livros
+- [ ] Pesquisa de livros
+- [ ] Empréstimos
+- [ ] Reservas
+- [ ] Histórico de empréstimos
 
 ---
 
